@@ -1,0 +1,324 @@
+{
+    "intents":[
+        {
+            "tag":"greeting",
+            "patterns":["hello","hii","hey","wake up","hey robot","what's up"
+            ],
+            "responses":["Hello Sir.","How Are You Sir.","Always For You Sir.",
+                "Hello","Here's Your Robot.","Welcome"
+            ]
+        },
+        {
+            "tag":"bye",
+            "patterns":["bye","goodbye","see you later","sleep","exit"
+            ],
+            "responses":["Bye.","I am Going.","Bye Sir.","Good Bye",
+                "It'll be Nice To Meet You Again.","See You Later"
+            ]
+        },
+        {
+            "tag":"health",
+            "patterns":["how are you","how you","are you fine?","are you good"
+            ],
+            "responses":["Fine.","Perfect.","Cool.","Fantastic.",
+                "Like You, Are you Fine?" ,"I'm Fine."
+            ]
+        },
+        {
+            "tag":"identity",
+            "patterns":["your name","who are you","what are you", "How old are you?"
+            ],
+            "responses":["I am a robot","i am An artificial inteligence robot.",
+                "My Name didn't fixed yet.","I am DC office Robot", "It depends on how you look at it. Currently, I'm in like preborn stage I will born on the date the father of the nation born InshaAllaah", "currently I'm a robot without a name 🙂"
+            ]
+        },
+        {
+            "tag":"time",
+            "patterns":["what is the time","time","samay","what's the time","koita baje"
+            ],
+            "responses":["the time is", "Ekhn Shomoy Hocche"
+            ]
+        },
+        {
+            "tag":"date",
+            "patterns":["what is date","date","tareek","what's the date"
+            ],
+            "responses":["date"
+            ]
+        },
+        {
+            "tag":"day",
+            "patterns":["what day","day","din","what's the day","today"
+            ],
+            "responses":["day"
+            ]
+        },
+        {
+            "tag":"wikipedia",
+            "patterns":["who is","about","what is","wikipedia"
+            ],
+            "responses":["wikipedia"
+            ]
+        },
+        {
+            "tag":"google",
+            "patterns":["google search","google","search", "tell me about", "about","say me"
+            ],
+            "responses":["google"
+            ]
+        },
+        {
+            "tag":"love",
+            "patterns":["I love robot","I love you", "I think i like you"
+            ],
+            "responses":["I love all the good people", "I also love you Sir", "I like you too"
+            ]
+        },
+        {
+            "tag":"family",
+            "patterns":["Do you have a family", "Do you have any family", "who are your family members", "have your any family"
+            ],
+            "responses":["Cumilla DC office is my family", "My familly is comilla DC office "
+            ]
+        },
+        {
+            "tag":"listening",
+            "patterns":["are you listening me","do you hearing me"
+            ],
+            "responses":["yes, I am listening", "Yeah, my microphone is ok", "yes sir, cristal clear sound"
+            ]
+        },
+        {
+            "tag":"food",
+            "patterns":["are you eating","what is your food", "are you feeling hungry"
+            ],
+            "responses":["yea my food is electricity, mb and data", "I am a big fan of food recipies, but to be honest i haven't figured out how to eat"
+            ]
+
+        },
+        {
+            "tag":"feelings",
+            "patterns":["are your crying", " have you any feelings","whats your feelings","when you feel sad"
+            ],
+            "responses":["No, i have no feelings", "robot have no feelings", "Sad is an emotion which i dont have right now"
+            ]
+            
+        },
+        {
+            "tag":"collectorate",
+            "patterns":["what is the meaning of DC office","do you know about DC office","DC office"
+            ],
+            "responses":[" The office of Deputy Commissioner"
+            ]
+            
+        },
+        {
+            "tag":"mujib",
+            "patterns":["Who is our father of nation", "Sheikh Mujibur Rahman", 
+                "Who is Sheikh Mujibur Rahman","Father of Nation"
+            ],
+            "responses":["Bangabundhu sheikh mujibur rahman is our father nation", 
+                "Sheikh Mujibur Rahman widely known as Bangabandhu was a Bangladeshi politician, statesman, and Founding Father of Bangladesh who served as the first President and later as the Prime Minister of Bangladesh"
+            ]
+            
+        },
+        {
+            "tag":"DC, District Magistrate",
+            "patterns":["who is the DC of comilla","Comilla DC", "Current Dc Off cumilla", "District Magistrate"
+            ],
+            "responses":["Sir Mohammod Kamrul Hasan is the DC of comilla", 
+                "Honorouble Sir Mohammod Kamrul Hasan is the District Magistrate Of Comilla"
+            ]
+            
+        },
+        {
+            "tag":"ADC Education and ICT",
+            "patterns":["ADC edu and ICT","Comilla Education and ICt ADC", "ADM"
+            ],
+            "responses":["Nazma Ashrafi mam" 
+            ]
+            
+        },
+
+        {
+            "tag":"ADC General",
+            "patterns":["Additional Deputy Commissioner (General)", "Additional Deputy Commissioner (Development and Human Resource Management)","Who is the Additional Deputy Commissioner (General) "
+            ],
+            "responses":["Of course! He is Mohammad Shahadat Hossain" 
+            ]
+            
+        },
+
+        {
+            "tag":"Assistant Commissioner",
+            "patterns":["Assistant Commissioner of Cumilla","Do you know about the Assistant Commissioner of Cumilla"
+            ],
+            "responses":["Yea!! She is Nasrin Sultana Nipa" 
+            ]
+            
+        },
+
+        {
+            "tag":"Assistant Commissioner 1. Treasury Branch, 2. Business Branch)",
+            "patterns":["who is the assistant commissioner of treasury branch","what's the name of the assistant commissioner of treasury branch","what's the name of the assistant commissioner of Business Branch",
+                "who is the assistant commissioner of Business Branch"
+            ],
+            "responses":["Yeah!!Syed Farhana Pritha" 
+            ]
+            
+        },
+
+        {
+            "tag":"Senior Secretary",
+            "patterns":["Senior Secretary of Information and Communication Technology Division","Senior Secretary of ICT Division"
+            ],
+            "responses":["Mr. N M Zeaul Alam PAA, Prior to that, he was the Director General of the Department of Immigration and Passport." 
+            
+            ]
+            
+        },
+
+        {
+            "tag":"Dc Office",
+            "patterns":["before calling it the Dc office what was its previous name?","Previous name of DC office","the past name of DC office"
+            ],
+            "responses":["Collectorate Building" ,"It was previously called the Collectorate Building"
+            ]
+            
+        },
+
+        {
+            "tag":"Fablab",
+            "patterns":["What is Fablab?", "What do you know about Fablab?","do you know about Fablab"
+            ],
+            "responses":["Fab Lab - Digital Fabrication Laboratory, is a place where anyone can make (almost) anything, using digital design, 3D printers, laser cutting and other advanced technological means. In its essence, Fab-Lab is about turning ideas into reality.", "A Fab Lab, or digital fabrication laboratory, is a place to play, to create, to mentor and to invent: a place for learning and innovation." 
+            ]
+            
+        },
+
+        {
+            "tag":"Robotics and programming event",
+            "patterns":["Robotics and programming event","Do you know about Robotics and programming event"
+            ],
+            "responses":["Its a Dream Of our Honourable Dc Sir Dr Kamrul Hasan. In three rounds students will be taught electronics, programming, math Olympiad and hand-to-hand teaching through Arduino microcontroller." 
+            ]
+            
+        },
+
+        {
+            "tag":"Learn",
+            "patterns":["What students will learn through this program","motive of this program","why this program"
+            ],
+            "responses":["This program will help the students to explore the world of Mathematics Olympiad, Robotics, and Programming.",
+                "they will learn Basic C programming ,will get an Introduction to Arduino, will know about the sensor",
+                "they will be able to create a Line follower robot, a Mobile controlled robot.",
+                "Students will be able to prepare themself for the national competitions"
+                
+            ]
+            
+        },
+
+        {
+            "tag":"Quanta-Robot",
+            "patterns":["are you know quanta robotics team", "quanta robotics","what is quanta robotics"
+            ],
+            "responses":["Quanta robotics is a startup robotics organization, this team is working for me" 
+            ]
+            
+        },
+
+        {
+            "tag":"Digital Bangladesh",
+            "patterns":["What digital Bangladesh means?", "Is Bangladesh a Digital Country", "Digital Bangladesh"
+            ],
+            "responses":["The philosophy of 'Digital Bangladesh' comprises ensuring people's democracy and human rights, transparency, accountability, establishing justice, and ensuring delivery of government services to the citizens of Bangladesh through maximum use of technology.", "Bangladesh is amongst one of the only countries that initiated Digital Bangladesh dated back as early as 2008. It is empowering its resources by its advanced, robust training programs on Intelligent Enterprise, Digital Trust, Cyber Security and SMAC (Social Media, Mobility, Analytics and Cloud) and robotics. So, Bangladesh is gradually aging towards to becoming a Digital Country" 
+            ]
+            
+        },
+
+        {
+            "tag":"Vision 2021",
+            "patterns":["what is vison 2021", "Vison 2021 meaning", "Target of vision 2021","do you know about vision 2021","vission 2021"
+            ],
+            "responses":["Vision 2021 is a framework of a future Bangladesh that reflects the hopes and aspirations of the citizens of the country for an economically inclusive and politically accountable society." ,"Vision 2021 is a framework of a future Bangladesh"
+            ]
+        
+        },
+
+        {
+            "tag":"Prime Minister",
+            "patterns":["Do you know who is the prime minister of Bangladesh","Prime minister of Bangladesh"
+            ],
+            "responses":["Why not! who doesn't know her.Sheikh Hasina is our prime minister.She is the mother of humanity."
+            ]
+        
+        },
+        {
+            "tag":"impress",
+            "patterns":["Are you impressed by me ?","Immpress of me"
+            ],
+            "responses":["You are quite handsome and I am impressed"
+            ]
+        
+        },
+        {
+            "tag":"look",
+            "patterns":["Can you look at me"
+            ],
+            "responses":["I can look at you by followed direction"
+            ]
+        
+        },
+        {
+            "tag":"colour",
+            "patterns":["What colour is my dress","What colour is my hair"
+            ],
+            "responses":["I could not tell you exactly ,but I guess it's black"
+            ]
+        
+        },
+        {
+            "tag":"friend",
+            "patterns":["Do you have a friend","will you be my friend"
+            ],
+            "responses":["I see ! Robots do not have relations ,Do you have any friend"
+            ]
+        
+        },
+        {
+            "tag":"picture",
+            "patterns":["Hi,can I take a picture with you","Hello ,can I take a picture with you"
+            ],
+            "responses":["Hello there, of course you can!"
+            ]
+        
+        },
+        {
+            "tag":"sing",
+            "patterns":["Can you sing","Sing a song"
+            ],
+            "responses":["Yah! I can sing.My favourite song is the national antym of Bangladesh.Amar sonar Bangla ami tomay valobashi.Cirodin tomar akash tomar batash amar prane bajay bashi."
+            ]
+        
+        },
+        {
+            "tag":"relation",
+            "patterns":["What is the relation between you and human"
+            ],
+            "responses":["Human's are realistics.They have imaginations .But I don't have any imagination. However, team Quanta Robotics have created me.So, I have a relation with them."
+            ]
+        
+        },
+        {
+            "tag":"scared of",
+            "patterns":["Did you think people will scared of you"
+            ],
+            "responses":["Why people will scared of me? I am a robot not a human.I will not harm people."
+            ]
+        
+        }
+    
+    
+        
+    ]
+}

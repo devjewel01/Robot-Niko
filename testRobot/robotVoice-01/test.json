@@ -1,0 +1,640 @@
+{
+    "organizers": [
+      {
+        "id": 1,
+        "image": "/images/team_organizers/dc.png",
+        "name": "Mohammad Kamrul Hasan",
+        "department": "Deputy Commissioner(DC), Cumilla",
+        "phone": "01733354900",
+        "email": "dccomilla@mopa.gov.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ""
+      },
+      {
+        "id": 2,
+        "image": "/images/team_organizers/nazma-mam.png",
+        "name": "Nazma Ashrafi",
+        "department": "Additional Deputy Commissioner (E&ICT)",
+        "phone": "01733354904",
+        "email": "adceictcomilla@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ""
+      },
+      {
+        "id": 3,
+        "image": "/images/team_organizers/nipa-mam-02.jpg",
+        "name": "Nasrin Sultana Nipa",
+        "department": "Assistant Commissioner & Excutive Magistrate",
+        "phone": "01733-354917",
+        "email": " aceducumilla@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ""
+      }
+    ],
+  
+    "Robotics Team": [
+    {
+        "id": 1,
+        "image": "",
+        "name": "Shanjit Mondal",
+        "department": "DEPT. of Physics, CoU",
+        "phone": "",
+        "email": "",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Robotics"]
+      },
+      {
+        "id": 2,
+        "image": "",
+        "name": "Jewel Nath",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01874280811",
+        "email": "devjewel01@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Robotics", "Machine Learner"]
+      },
+      {
+        "id": 3,
+        "image": "",
+        "name": "Anik Chakraborty",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01761951604",
+        "email": "anikchakraborty1999@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": [
+          "Competitive Programmer",
+          "Machine Learning",
+          "Robotics"
+        ]
+      },
+      {
+        "id": 4,
+        "image": "",
+        "name": "K.M. TOUSIF BIN PARVES",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01620962987",
+        "email": "tousifbinparves@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer", "Robotics"]
+      },
+      {
+        "id": 5,
+        "image": "",
+        "name": "Meheniger Alam",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01828094337",
+        "email": "mehenigeralam@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Web Developer", "Programmer", "Robotics"]
+      }
+    ],
+  
+    "developers": [
+      {
+        "id": 1,
+        "image": "",
+        "name": "Saiful Islam",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01689740070",
+        "email": "saiful70.me@gmail.com",
+        "social": {
+          "facebook": "saiful70.me",
+          "linkedin": "saiful70",
+          "github": "saiful-70",
+          "discord": "saiful70#7411"
+        },
+        "speciality": ["Frontend Web Developer", "Programmer"]
+      },
+      {
+        "id": 2,
+        "image": "",
+        "name": "Mohammad Shuvo",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01866502939",
+        "email": "shuvojr1379@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["UI/UX Designer", "Graphic Designer", "Web Developer"]
+      }
+    ],
+
+    "Programmer's Team": [
+      {
+        "id": 1,
+        "image": "",
+        "name": "Jewel Nath",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01874280811",
+        "email": "devjewel01@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Robotics", "Machine Learner"]
+      },
+      {
+        "id": 2,
+        "image": "",
+        "name": "Anik Chakraborty",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01761951604",
+        "email": "anikchakraborty1999@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": [
+          "Competitive Programmer",
+          "Machine Learning",
+          "Robotics",
+          "Web Developer"
+        ]
+      },
+      {
+        "id": 3,
+        "image": "",
+        "name": "K.M. TOUSIF BIN PARVES",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01620962987",
+        "email": "tousifbinparves@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer", "Robotics"]
+      },
+      {
+        "id": 4,
+        "image": "",
+        "name": "Mohiuddin Khan Mahin",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01537130006",
+        "email": "mahinkhan1408@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer", "Robotics"]
+      },
+      {
+        "id": 5,
+        "image": "",
+        "name": "Saiful Islam",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01689740070",
+        "email": "saiful70.me@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Frontend Web Developer", "Programmer"]
+      },
+      {
+        "id": 6,
+        "image": "",
+        "name": "Mohammad Shuvo",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01866502939",
+        "email": "shuvojr1379@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["UI/UX Designer", "Graphic Designer", "Web Developer"]
+      },
+      {
+        "id": 7,
+        "image": "",
+        "name": "Meheniger Alam",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01828094337",
+        "email": "mehenigeralam@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Web Developer", "Programmer"]
+      },
+      {
+        "id": 8,
+        "image": "",
+        "name": "Jahid Karim Fahim",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01533871766",
+        "email": "jahidfahim207@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer", "App Developer"]
+      },
+      {
+        "id": 9,
+        "image": "",
+        "name": "Najmul Islam Nayeem",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01830671247",
+        "email": "inayeem044@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Full-Stack Web Developer"]
+      },
+      {
+        "id": 10,
+        "image": "",
+        "name": "Rakibul Islam",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01643690085",
+        "email": "rakibict@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 11,
+        "image": "",
+        "name": "M A Noman",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01732856985",
+        "email": "mdabunomanma@gmail",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 12,
+        "image": "",
+        "name": "Imtiaj Aurpon",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01932230232",
+        "email": "imtiajaurpon@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 13,
+        "image": "",
+        "name": "Iftekhar Fahim",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01824135330",
+        "email": "decayfast76@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 14,
+        "image": "",
+        "name": "Mestu Paul",
+        "department": "DEPT. of CSE, CoU",
+        "phone": "01791832812",
+        "email": "paulmestu@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer", "Robotics"]
+      },
+      {
+        "id": 15,
+        "image": "",
+        "name": "Mazharul Hasan",
+        "department": "DEPT. of CSE, CoU",
+        "phone": "01631981121",
+        "email": "mazhar11808006@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Blockchain", "Cloud Computing", "Programmer"]
+      },
+      {
+        "id": 16,
+        "image": "",
+        "name": "Md. Rakib Hossain",
+        "department": "DEPT. of CSE, CoU",
+        "phone": "01980079568",
+        "email": "rakibhjoy@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 17,
+        "image": "",
+        "name": "Eftekhar Nahim",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01823791294",
+        "email": "eftekharnahim11@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 18,
+        "image": "",
+        "name": "Md. Khayrul Islam",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01786963614",
+        "email": "khayrulmithu648@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer", "Web Developer"]
+      },
+      {
+        "id": 19,
+        "image": "",
+        "name": "Syed Khaled Hossain",
+        "department": "DEPT. of CSE, CoU",
+        "phone": "01575178424",
+        "email": "khaledrazu01@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer", "Machine Learning"]
+      },
+      {
+        "id": 20,
+        "image": "",
+        "name": "Hridoy Chandra Das",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01746476121",
+        "email": "hridoydas0367@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 21,
+        "image": "",
+        "name": "Nurul Ahad Farhan ",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01622525752",
+        "email": "farhanahad3@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Web Developer", "SEO", "Programmer"]
+      },
+      {
+        "id": 22,
+        "image": "",
+        "name": "Tarek Hossain",
+        "department": "DEPT. of CSE, CoU",
+        "phone": "01609676568",
+        "email": "mdtarek168504@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer", "Machine Learning"]
+      },
+      {
+        "id": 23,
+        "image": "",
+        "name": "Md. Mahedi Hasan",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01866649676",
+        "email": "mailto:hasanshozib24@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["UI/UX designer", "Graphics Designer"]
+      },
+      {
+        "id": 24,
+        "image": "",
+        "name": "Mohammad Forhad Hossain",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01792037877",
+        "email": "               mhforhad920@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer"]
+      },
+      {
+        "id": 25,
+        "image": "",
+        "name": "Bonusriee Datta",
+        "department": "DEPT. of CSE, CoU",
+        "phone": "01558708635",
+        "email": "bonusreedatta820@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 26,
+        "image": "",
+        "name": "Md Omitul Islam",
+        "department": "DEPT. of CSE, CoU",
+        "phone": "01713889746",
+        "email": "omitul1010@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 27,
+        "image": "",
+        "name": "Mohammad Shahjalal Khan",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01634208511",
+        "email": "shahjalalrabbi@stud.cou.ac.bd",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer", "Graphics Design"]
+      },
+      {
+        "id": 28,
+        "image": "",
+        "name": "Prome Saha Resha",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01784710363",
+        "email": "promesaha5678@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Competitive Programmer"]
+      },
+      {
+        "id": 29,
+        "image": "",
+        "name": "Niaz Al Masum",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01829833372",
+        "email": "niazalmasum@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer", "Robotics"]
+      },
+      {
+        "id": 30,
+        "image": "",
+        "name": "Shekh Humaira Sunzida",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01739817425",
+        "email": "sunzidahumaira.311@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer"]
+      },
+      {
+        "id": 31,
+        "image": "",
+        "name": "Sheikh Mohammad Sohag",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01815258534",
+        "email": "sohag.ap11@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer"]
+      },
+      {
+        "id": 32,
+        "image": "",
+        "name": "Md.Ishtieyak Ahmed",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01894826997",
+        "email": "ishtieyaksifat@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer"]
+      },
+      {
+        "id": 33,
+        "image": "",
+        "name": "Md.Rasel Ahmed",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01836157905",
+        "email": "Raselahmed112710@gmail.com ",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Web Developing", "Programming"]
+      },
+      {
+        "id": 34,
+        "image": "",
+        "name": "Akash Hasnat",
+        "department": "DEPT. of ICT, CoU",
+        "phone": "01917204716",
+        "email": "akashhasnat1378@gmail.com",
+        "social": {
+          "facebook": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "speciality": ["Programmer", "Machine Learning"]
+      }
+    ]
+  }
+  
