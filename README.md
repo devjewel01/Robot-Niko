@@ -73,7 +73,7 @@
 
 <br>
 
-<img src="Extras/Pic/gif1.gif" width="80%" >
+<img src="extras/images/gif1.gif" width="50%" >
 
 <br>
 
