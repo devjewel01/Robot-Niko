@@ -7,9 +7,13 @@
 ![Stargazers](https://img.shields.io/github/stars/devjewel01/Robot-Niko.svg?logo=github)
 ![Issues](https://img.shields.io/github/issues/devjewel01/Robot-Niko.svg?logo=github)
 
-<img align='right' src="extras/images/robot-front.png" width="350">
+
 
 ## Features:
+<hr>
+
+<img align='right' src="extras/images/robot-front.png" width="350">
+
 - [ ] **Robot Voice**
   - [ ] WakeWord
   - [X] Listening
