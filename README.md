@@ -37,12 +37,16 @@
 
 <img align='right' src="extras/images/robot-side.png" width="350">
 
+<br>
+
 - [ ] **Robot Mobility**
   - [ ] Go forward, backward, left and right using Wheel 
   - [ ] Object Avoiding Mode 
   - [ ] Human Following Mode 
   - [ ] Path planning
   - [ ] Mapping a location 
+  
+<br>
 
 - [ ] **Robot Arm Movement**
   - [ ] Handsake 
