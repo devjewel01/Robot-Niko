@@ -1,5 +1,4 @@
 # Robot Niko
-**Humanoid Robot Using Raspberry PI**
 
 ![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
@@ -8,8 +7,21 @@
 ![Issues](https://img.shields.io/github/issues/devjewel01/Robot-Niko.svg?logo=github)
 
 
+ <a href="#Robot-Niko">Introduction</a></br>
+ <a href="#Features">Features</a></br>
+ <a href="#Device">Component and Device</a></br>
+ <a href="#Contribution">Contributions</a></br>
+ <a href="#Instalation">Instalation</a></br>
+ <a href="#languageTools">Language and Tools</a></br>
+ <a href="#Diagram">Robot Diagram</a></br>
+ <a href="#memory">Memories</a></br>
+ <a href="#Acknowledge">Acknowledge</a></br>
 
-## Features:
+<p id="Robot-Niko"></p>
+
+**Humanoid Robot Using Raspberry PI**
+
+<h2 id="Features">Features</h2> 
 <hr>
 
 <img align='right' src="extras/images/robot-front.jpg" width="350">
@@ -77,7 +89,22 @@
 
 <br>
 
-### Looking for contributors!
+<h2 id="Device">Component and Device</h2>
+
+1. **Raspberry Pi** microprocessor
+2. **Arduino** microcontroller
+3. **Servo Motors** 
+4. **DC Motors** 
+5. **Ultrasonic Sensors** 
+6. **LCD Display** 
+7. **Gas sensor** 
+8. **Smoke sensor**
+9.  **Fire sensor**
+10. **Gyroscope sensor**
+11. **Gps Tracker** 
+12. **LED matrix cube**
+
+<h2 id="Contribution">Looking for contributors!</h2>
 Looking for contributors to help build out the Robot. There are a lot of work to do. This would be a good oppurtunity to learn Robotics, ROS, Machine Learning and how to Engineer an entire Robot system from the ground up. You can add your any idea to our project.
 
 <br>
@@ -93,7 +120,7 @@ Follow these algorithms to contribute to the voice assistant project.
 
 <br>
 
-### Installation Robot System
+<h2 id="Instalation">Installation Robot System</h2>
 
 
 ```sh
@@ -109,4 +136,30 @@ sudo chmod +x robot-installer.sh
 sudo ./robot-installer.sh 
 ```
 
+<h2 id="languageTools">Language and Tools</h2>
 
+| Python | C++ |  Bash | Terminal | Raspberry Pi |  Arduino |
+| ------ | ----| ------| -------- | ------------ | --------- |
+|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/cpp/cpp.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/bash/bash.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/raspberry-pi/raspberry-pi.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/arduino/arduino.png" />|
+
+<br />
+
+
+<h2 id="Diagram">Robot Diagram</h2>
+
+<img width="60%"  src="extras/images/robot-back.png">
+
+
+
+<h2 id="memory">Memories</h2>
+<details>
+    <summary>
+        <strong>Photos:</strong>
+    </summary>
+    <img src="pic" width="50%"/>
+
+</details>
+
+<h2 id="Acknowledge"> Acknowledge</h2>
+
+ * [StackOverflow](https://stackoverflow.com/questions/tagged/raspberry-pi)
