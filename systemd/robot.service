@@ -1,12 +1,12 @@
 [Unit]
-Description=Google Assistant-Voice
+Description=Robot-Niko
 Wants=network-online.target
 After=network-online.target
 
 [Service]
-Environment=VIRTUAL_ENV=/home/pi/env
+Environment=VIRTUAL_ENV=/home/pi/robotEnv
 Environment=PATH=/home/pi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ExecStart=/home/pi/env/bin/python -u /home/pi/Robot-Blueberry/src/main.py --project_id 'blueberry1-f8eca' --device_model_id 'blueberry1-f8eca-robot-6uiju9'
+ExecStart=/home/pi/robotEnv/bin/python -u /home/pi/Robot-Niko/src/main.py --project_id '----------' --device_model_id '--------'
 
 WorkingDirectory=/home/pi/
 StandardOutput=inherit
