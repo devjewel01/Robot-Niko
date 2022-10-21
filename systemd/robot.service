@@ -6,7 +6,7 @@ After=network-online.target
 [Service]
 Environment=VIRTUAL_ENV=/home/pi/robotEnv
 Environment=PATH=/home/pi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ExecStart=/home/pi/robotEnv/bin/python -u /home/pi/Robot-Niko/src/main.py --project_id '----------' --device_model_id '--------'
+ExecStart=/home/pi/robotEnv/bin/python -u /home/pi/Robot-Niko/src/main.py --project_id 'robotniko-niko' --device_model_id 'robotniko-niko-l2yi46'
 
 WorkingDirectory=/home/pi/
 StandardOutput=inherit
