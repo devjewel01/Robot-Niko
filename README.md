@@ -24,7 +24,7 @@
 <h2 id="Features">Features</h2> 
 <hr>
 
-<img align='right' src="extras/images/robot-front.jpg" width="350">
+<img align='right' src="Extras/images/robot-front.jpg" width="350">
 
 - [ ] **Robot Voice**
   - [ ] WakeWord
@@ -53,7 +53,7 @@
   - [ ] Tells you latest news feeds.
   - [ ] Send an Email
 
-<img align='right' src="extras/images/robot-side.png" width="350">
+<img align='right' src="Extras/images/robot-side.png" width="350">
 
 <br>
 
@@ -85,7 +85,7 @@
 
 <br>
 
-<img src="extras/images/gif1.gif" width="50%" >
+<img src="Extras/images/gif1.gif" width="50%" >
 
 <br>
 
@@ -147,7 +147,7 @@ sudo ./robot-installer.sh
 
 <h2 id="Diagram">Robot Diagram</h2>
 
-<img width="60%"  src="extras/images/robot-back.png">
+<img width="60%"  src="Extras/images/robot-back.png">
 
 
 
