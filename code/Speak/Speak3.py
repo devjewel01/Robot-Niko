@@ -19,3 +19,5 @@ def Speak(Text):
     engine.say(text=Text)
     engine.runAndWait()
     print("    ")
+
+Speak("Hello check,   sound testing")

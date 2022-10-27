@@ -23,7 +23,7 @@ sed 's/#.*//' ${GIT_DIR}/Requirements/robot-system-requirements.txt | xargs sudo
 echo ""
 cd /home/${USER}/
 python3 -m venv robotEnv
-env/bin/python -m pip install --upgrade pip setuptools wheel
+robotEnv/bin/python -m pip install --upgrade pip setuptools wheel
 source robotEnv/bin/activate
 pip install -r ${GIT_DIR}/Requirements/robot-pip-requirements.txt
 
@@ -38,7 +38,7 @@ pip install google-assistant-library==1.1.0
 
 pip install google-assistant-grpc==0.3.0
 pip install google-assistant-sdk==0.6.0
-pip install google-assistant-sdk[samples]==0.6.0
+pip install google-assistant-sdk[samples]
 google-oauthlib-tool --scope https://www.googleapis.com/auth/assistant-sdk-prototype \
           --scope https://www.googleapis.com/auth/gcm \
           --save --headless --client-secrets $credname
