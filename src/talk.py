@@ -63,4 +63,3 @@ def say(words,sourcelang=None,destinationlang=None):
             sayword=words
         
         gttssay(sayword,translanguage,gender)
-say("helle, this is robot niko")
