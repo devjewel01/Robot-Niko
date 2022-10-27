@@ -16,16 +16,24 @@ TTSChoice='GTTS'
 
 translator = Translator()
 femalettsfilename="/tmp/female-say.mp3"
+malettsfilename="/tmp/male-say.wav"
 ttsfilename="/tmp/gcloud.mp3"
 language='en-US'
 translanguage=language.split('-')[0]
 gender='Female'
 
+
+
+#gTTS
 def gttssay(phrase,saylang,specgender):
     tts = gTTS(text=phrase, lang=saylang)
     tts.save(femalettsfilename)
-    os.system("mpg123 "+femalettsfilename)
+    
+    os.system('sox ' + femalettsfilename + ' ' + malettsfilename + ' pitch -450')
     os.remove(femalettsfilename)
+    os.system('aplay ' + malettsfilename)
+    os.remove(malettsfilename)
+    
 
 
 def trans(words,destlang,srclang):
@@ -37,8 +45,11 @@ def trans(words,destlang,srclang):
     return transword
 
 
+
+#Text to speech converter with translation
 def say(words,sourcelang=None,destinationlang=None):
     if sourcelang!=None and destinationlang!=None:
+        
         sayword=trans(words,destinationlang,sourcelang)
         gttssay(sayword,translanguage,gender)
     else:
@@ -50,4 +61,6 @@ def say(words,sourcelang=None,destinationlang=None):
             sayword=trans(words,translanguage,sourcelanguage)
         else:
             sayword=words
+        
         gttssay(sayword,translanguage,gender)
+say("helle, this is robot niko")

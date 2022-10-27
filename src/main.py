@@ -254,7 +254,7 @@ class Myassistant():
                 if str(custom_conversation['Conversation']['Question'][i][0]).lower() in str(usrcmd).lower():
                     self.assistant.stop_conversation()
                     selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
-                    # speakOffline(selectedans[0])
+                    say(selectedans[0])
                     break
             except Keyerror:
                 say('Please check if the number of questions matches the number of answers')
