@@ -23,7 +23,7 @@ sed 's/#.*//' ${GIT_DIR}/Requirements/robot-system-requirements.txt | xargs sudo
 echo ""
 cd /home/${USER}/
 python3 -m venv robotEnv
-env/bin/python -m pip install --upgrade pip setuptools wheel
+robotEnv/bin/python -m pip install --upgrade pip setuptools wheel
 source robotEnv/bin/activate
 pip install -r ${GIT_DIR}/Requirements/robot-pip-requirements.txt
 

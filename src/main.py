@@ -1,21 +1,9 @@
 #!/usr/bin/env python
-# Copyright 2017 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 
-from moveGoogle import  speakOffline, speakOnline
-from sensor import sensorOff, sensorOn
+
+# from moveGoogle import  speakOffline, speakOnline
+# from sensor import sensorOff, sensorOn
 from talk import say
 from talk import custom_conversation
 from threading import Thread
@@ -37,7 +25,7 @@ from google.assistant.library import Assistant
 from google.assistant.library.event import EventType
 from google.assistant.library.file_helpers import existing_file
 from google.assistant.library.device_helpers import register_device
-from indicator import assistantindicator
+# from indicator import assistantindicator
 
 try:
     FileNotFoundError
@@ -63,6 +51,9 @@ USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
 
 mutestopbutton=True
 
+
+
+access_key = "RZk+UIYxsDmjiYXb4ctA0dx8SOfMxpFcm0wlGUz2WWg6rOwCmTf7nA=="
 picovoice_models=['/home/pi/Robot-Niko/Extras/hey-niko.ppn']
 wakeword_length=1
 
@@ -96,13 +87,13 @@ class Myassistant():
 
         if event.type == EventType.ON_START_FINISHED:
             self.can_start_conversation = True
-            if os.path.isfile("{}/.mute".format(USER_PATH)):
-                assistantindicator('mute')
+            # if os.path.isfile("{}/.mute".format(USER_PATH)):
+                # assistantindicator('mute')
             
-            os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-off.sh")
+            # os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-off.sh")
             self.assistant.set_mic_mute(True)
-            time.sleep(0.9)
-            os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-on.sh")
+            # time.sleep(0.9)
+            # os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-on.sh")
 
             self.t1.start()
 
@@ -110,30 +101,30 @@ class Myassistant():
         if event.type == EventType.ON_CONVERSATION_TURN_STARTED:
             subprocess.Popen(["aplay", "{}/audio-files/listening.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.can_start_conversation = False
-            assistantindicator('listening')
+            # assistantindicator('listening')
 
 
         if (event.type == EventType.ON_CONVERSATION_TURN_TIMEOUT or event.type == EventType.ON_NO_RESPONSE):
             self.can_start_conversation = True
-            assistantindicator('off')
+            # assistantindicator('off')
             
-            os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-off.sh")
+            # os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-off.sh")
             self.assistant.set_mic_mute(True)
-            time.sleep(0.9)
-            os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-on.sh")
-            if os.path.isfile("{}/.mute".format(USER_PATH)):
-                assistantindicator('mute')
+            # time.sleep(0.9)
+            # os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-on.sh")
+            # if os.path.isfile("{}/.mute".format(USER_PATH)):
+            #     assistantindicator('mute')
 
 
-        if (event.type == EventType.ON_RESPONDING_STARTED and event.args and not event.args['is_error_response']):
-            assistantindicator('speaking')
+        # if (event.type == EventType.ON_RESPONDING_STARTED and event.args and not event.args['is_error_response']):
+        #     assistantindicator('speaking')
 
-        if event.type == EventType.ON_RESPONDING_FINISHED:
-            assistantindicator('off')
+        # if event.type == EventType.ON_RESPONDING_FINISHED:
+        #     assistantindicator('off')
 
 
         if event.type == EventType.ON_RECOGNIZING_SPEECH_FINISHED:
-            assistantindicator('off')
+            # assistantindicator('off')
             if self.singleresposne:
                 self.assistant.stop_conversation()
                 self.singledetectedresponse= event.args["text"]
@@ -142,20 +133,20 @@ class Myassistant():
                 self.custom_command(usrcmd)
 
 
-        if event.type == EventType.ON_RENDER_RESPONSE:
-            assistantindicator('off')
+        # if event.type == EventType.ON_RENDER_RESPONSE:
+        #     assistantindicator('off')
 
 
         if (event.type == EventType.ON_CONVERSATION_TURN_FINISHED and event.args and not event.args['with_follow_on_turn']):
             self.can_start_conversation = True
-            assistantindicator('off')
+            # assistantindicator('off')
             
-            os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-off.sh")
+            # os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-off.sh")
             self.assistant.set_mic_mute(True)
-            time.sleep(0.9)
-            os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-on.sh")
-            if os.path.isfile("{}/.mute".format(USER_PATH)):
-                assistantindicator('mute')
+            # time.sleep(0.9)
+            # os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-on.sh")
+            # if os.path.isfile("{}/.mute".format(USER_PATH)):
+            #     assistantindicator('mute')
 
 
         if event.type == EventType.ON_DEVICE_ACTION:
@@ -191,10 +182,10 @@ class Myassistant():
     def detected(self):
         if self.can_start_conversation == True:
             if self.mutestatus:
-                os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-off.sh")
+                # os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-off.sh")
                 self.assistant.set_mic_mute(False)
-                time.sleep(1)
-                os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-on.sh")
+                # time.sleep(1)
+                # os.system("sudo /home/pi/Robot-Niko/audio-setup/sound-on.sh")
                 self.assistant.start_conversation()
             if not self.mutestatus:
                 self.assistant.start_conversation()
@@ -211,6 +202,7 @@ class Myassistant():
         audio_stream = None
         try:
             porcupine = pvporcupine.create(
+                access_key=access_key,
                 library_path=self._library_path,
                 model_path=self._model_path,
                 keyword_paths=self._keyword_paths,
@@ -262,33 +254,33 @@ class Myassistant():
                 if str(custom_conversation['Conversation']['Question'][i][0]).lower() in str(usrcmd).lower():
                     self.assistant.stop_conversation()
                     selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
-                    speakOffline(selectedans[0])
+                    # speakOffline(selectedans[0])
                     break
             except Keyerror:
                 say('Please check if the number of questions matches the number of answers')
 
 
-        for i in range(1,numInput+1):
-            try:
-                if str(custom_conversation['Command']['Input'][i][0]).lower() in str(usrcmd).lower():
-                    self.assistant.stop_conversation()
-                    selected=random.sample(custom_conversation['Command']['Output'][i],1)
-                    os.system("python3 /home/pi/Robot-Niko/src/movement/"+selected[0])
-                    break
-            except Keyerror:
-                say('Please check if the number of inputs matches the number of outputs')
+        # for i in range(1,numInput+1):
+        #     try:
+        #         if str(custom_conversation['Command']['Input'][i][0]).lower() in str(usrcmd).lower():
+        #             self.assistant.stop_conversation()
+        #             selected=random.sample(custom_conversation['Command']['Output'][i],1)
+        #             os.system("python3 /home/pi/Robot-Niko/src/movement/"+selected[0])
+        #             break
+        #     except Keyerror:
+        #         say('Please check if the number of inputs matches the number of outputs')
 
-        if 'active sensor' in str(usrcmd).lower():
-            print("listen active sensor")
-            self.assistant.stop_conversation()
-            t1 = multiprocessing.Process(target=sensorOn, args=[])
-            print("sensor running")
-            t1.start()
+        # if 'active sensor' in str(usrcmd).lower():
+        #     print("listen active sensor")
+        #     self.assistant.stop_conversation()
+        #     t1 = multiprocessing.Process(target=sensorOn, args=[])
+        #     print("sensor running")
+        #     t1.start()
             
             
-        if 'stop sensor'.lower() in str(usrcmd).lower():
-            self.assistant.stop_conversation()
-            sensorOff()
+        # if 'stop sensor'.lower() in str(usrcmd).lower():
+        #     self.assistant.stop_conversation()
+        #     sensorOff()
 
 
 
@@ -373,8 +365,8 @@ class Myassistant():
                     print(WARNING_NOT_REGISTERED)
 
             for event in events:
-                if event.type == EventType.ON_RENDER_RESPONSE:
-                    speakOnline((int)(len(event.args["text"])/20))
+                # if event.type == EventType.ON_RENDER_RESPONSE:
+                #     speakOnline((int)(len(event.args["text"])/20))
                 if event.type == EventType.ON_START_FINISHED and args.query:
                     assistant.send_text_query(args.query)
                 self.process_event(event)
