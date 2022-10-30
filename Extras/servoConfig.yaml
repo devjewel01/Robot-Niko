@@ -1,0 +1,210 @@
+servoPin:
+  head:
+    rotateHead: 0
+    neck: 1
+    neckLeft: 2
+    neckRight: 3
+  eye:
+    eyeX: 4
+    eyeY: 5
+  mouth: 
+    jaw: 6
+  rightHand:
+    arm:
+      bicep: 7
+      rotateArm: 8
+      omoplate: 9
+      shoulder: 10
+    hand:
+      wrist: 11
+      thumb: 12
+      index: 13
+      middle: 14
+      ring: 15
+      pinky: 16
+  leftHand:
+    arm:
+      bicep: 17
+      rotateArm: 18
+      omoplate: 19
+      shoulder: 20
+    hand:
+      wrist: 21
+      thumb: 22
+      index: 23
+      middle: 24
+      ring: 25
+      pinky: 26
+
+
+
+
+initialPosition:
+  head:
+    rotateHead: 90
+    neck: 90
+    neckLeft: 90
+    neckRight: 90
+  eye:
+    eyeX: 90
+    eyeY: 90
+  mouth: 
+    jaw: 10
+  rightHand:
+    arm:
+      bicep: 0
+      rotateArm: 90
+      omoplate: 10
+      shoulder: 30
+    hand:
+      wrist: 90
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
+  leftHand:
+    arm:
+      bicep: 0
+      rotateArm: 90
+      omoplate: 10
+      shoulder: 30
+    hand:
+      wrist: 90
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
+
+
+
+
+currentPosition:
+  head:
+    rotateHead: 90
+    neck: 90
+    neckLeft: 90
+    neckRight: 90
+  eye:
+    eyeX: 90
+    eyeY: 90
+  mouth: 
+    jaw: 10
+  rightHand:
+    arm:
+      bicep: 0
+      rotateArm: 90
+      omoplate: 10
+      shoulder: 30
+    hand:
+      wrist: 90
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
+  leftHand:
+    arm:
+      bicep: 0
+      rotateArm: 90
+      omoplate: 10
+      shoulder: 30
+    hand:
+      wrist: 90
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
+
+
+
+
+
+minPosition:
+  head:
+    rotateHead: 30
+    neck: 20
+    neckLeft: 60
+    neckRight: 60
+  eye:
+    eyeX: 60
+    eyeY: 60
+  mouth: 
+    jaw: 10
+  rightHand:
+    arm:
+      bicep: 0
+      rotateArm: 40
+      omoplate: 10
+      shoulder: 0
+    hand:
+      wrist: 0
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
+  leftHand:
+    arm:
+      bicep: 0
+      rotateArm: 40
+      omoplate: 10
+      shoulder: 0
+    hand:
+      wrist: 0
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
+
+
+
+
+maxPosition:
+  head:
+    rotateHead: 150
+    neck: 160
+    neckLeft: 130
+    neckRight: 130
+  eye:
+    eyeX: 120
+    eyeY: 120
+  mouth: 
+    jaw: 25
+  rightHand:
+    arm:
+      bicep: 90
+      rotateArm: 180
+      omoplate: 80
+      shoulder: 180
+    hand:
+      wrist: 180
+      thumb: 180
+      index: 180
+      middle: 180
+      ring: 180
+      pinky: 180
+  leftHand:
+    arm:
+      bicep: 90
+      rotateArm: 180
+      omoplate: 80
+      shoulder: 180
+    hand:
+      wrist: 180
+      thumb: 180
+      index: 180
+      middle: 180
+      ring: 180
+      pinky: 180
+
+
+
+
+
+
+
+
