@@ -29,8 +29,10 @@ def mapRange(value, inMin, inMax, outMin, outMax):
 
 print("......Enter servoNumber and Degree.........")
 
-while True:
+
+while False:
     n, v = map(int, input().split())
+    n -= 1
     v = int(mapRange(v, 0, 180, 100, 600))
     if(n<16):
         pwm1.set_pwm(n, 0, v)
