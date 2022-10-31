@@ -1,0 +1,69 @@
+servoPin:
+  head:
+    rotateHead: 12
+    neck: 14
+    neckLeft: 17
+    neckRight: 1
+  eye:
+    eyeX: 0
+    eyeY: 16
+  mouth: 
+    jaw: 15
+  rightHand:
+    arm:
+      shoulder: 2
+      omoplate: 3
+      rotateArm: 4
+      bicep: 5 
+    hand:
+      wrist: 6
+      thumb: 7
+      index: 8
+      middle: 9
+      ring: 10
+      pinky: 11
+  leftHand:
+    arm:
+      shoulder: 18
+      omoplate: 19
+      rotateArm: 20
+      bicep: 21
+    hand:
+      wrist: 22
+      thumb: 23
+      index: 24
+      middle: 25
+      ring: 26
+      pinky: 27
+
+
+
+
+initialPosition:
+  
+
+
+
+currentPosition:
+  
+
+
+
+
+
+minPosition:
+  
+
+
+
+
+maxPosition:
+  
+
+
+
+
+
+
+
+
