@@ -15,9 +15,12 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-chrome_options = Options()
-chrome_options.add_argument('--log-level=3')
-#chrome_options.headless = True
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('window-size=1920x1480')
+
 PathofDriver = Service("Driver/chromedriver")
 driver = webdriver.Chrome(service=PathofDriver,options=chrome_options)
 driver.maximize_window()
@@ -32,8 +35,10 @@ sleep(2)
 driver.find_element(by=By.XPATH, value='//*[@id="mat-dialog-0"]/app-pw-voices/mat-dialog-content/div/mat-selection-list/mat-list-option[8]/div/div[2]/div/div[1]').click()
 driver.find_element(by=By.XPATH, value='//*[@id="mat-dialog-0"]/app-pw-voices/div/div/button').click()
 
-def say(Text):
+talkRunning = False
 
+def say(Text):
+    talkRunning = True
     try:
         driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-scroll"]/div[1]/button').click()
         sleep(1)
@@ -58,3 +63,4 @@ def say(Text):
     print("")
     print(f" Robot-Niko : {Text}.")
     print("")
+    talkRunning = False

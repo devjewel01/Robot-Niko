@@ -2,7 +2,7 @@
 
 function set_volume()
 {
-    amixer -c 1 set Speaker $1 >/dev/null
+    amixer -c 1 set Speaker $0 >/dev/null
 }
 
 vol=50

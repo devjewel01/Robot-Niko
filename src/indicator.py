@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 import RPi.GPIO as GPIO
-from moveGoogle import yes
-from arduino import get_command
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
@@ -20,7 +18,6 @@ def assistantindicator(activity):
     if activity=='listening':
         GPIO.output(speakingindicator,GPIO.LOW)
         GPIO.output(listeningindicator,GPIO.HIGH)
-        yes(2)
        
     elif activity=='speaking':
         GPIO.output(speakingindicator,GPIO.HIGH)
@@ -36,3 +33,4 @@ def assistantindicator(activity):
         GPIO.output(speakingindicator,GPIO.HIGH)
         GPIO.output(listeningindicator,GPIO.HIGH)
         
+
