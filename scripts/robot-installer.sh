@@ -14,7 +14,7 @@ fi
 
 clear
 echo ""
-credname="/home/pi/robot.json"
+credname="/home/pi/robotNiko.json"
 
 sudo apt-get update -y
 sed 's/#.*//' ${GIT_DIR}/Requirements/robot-system-requirements.txt | xargs sudo apt-get install -y
