@@ -59,8 +59,8 @@ wakeword_length=1
 
 numQuestion=len(custom_conversation['Conversation']['Question'])
 numAnswer=len(custom_conversation['Conversation']['Answer'])
-numInput=len(custom_conversation['Command']['Input'])
-numOutput=len(custom_conversation['Command']['Output'])
+#numInput=len(custom_conversation['Command']['Input'])
+#numOutput=len(custom_conversation['Command']['Output'])
 
 
 class Myassistant():
