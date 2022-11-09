@@ -83,6 +83,8 @@ class Myassistant():
         print('event is ', event)
         print()
         if event.type == EventType.ON_MUTED_CHANGED:
+            while talkRunning:
+                pass
             self.mutestatus=event.args["is_muted"]
 
 
@@ -187,7 +189,7 @@ class Myassistant():
                 os.system("amixer -D pulse sset Master 0%")
                 self.assistant.set_mic_mute(False)
                 time.sleep(1)
-                os.system("amixer -D pulse sset Master 70%")
+                os.system("amixer -D pulse sset Master 100%")
                 self.assistant.start_conversation()
             if not self.mutestatus:
                 self.assistant.start_conversation()
@@ -257,6 +259,8 @@ class Myassistant():
                     self.assistant.stop_conversation()
                     selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
                     say(selectedans[0])
+                    while talkRunning:
+                        pass
                     break
             except Keyerror:
                 say('Please check if the number of questions matches the number of answers')
