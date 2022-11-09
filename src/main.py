@@ -5,7 +5,6 @@
 # from moveGoogle import  speakOffline, speakOnline
 # from sensor import sensorOff, sensorOn
 from talk import say
-from talk import talkRunning
 from talk import custom_conversation
 from threading import Thread
 import multiprocessing
@@ -76,15 +75,13 @@ class Myassistant():
         self._sensitivities = [0.5]*wakeword_length
         self.mutestatus=False
         self.singleresposne=False
-        self.singledetectedresponse=''       
+        self.singledetectedrespone=''
         self.t1 = Thread(target=self.picovoice_run)
 
     def process_event(self,event):
         print('event is ', event)
         print()
         if event.type == EventType.ON_MUTED_CHANGED:
-            while talkRunning:
-                pass
             self.mutestatus=event.args["is_muted"]
 
 
@@ -92,11 +89,11 @@ class Myassistant():
             self.can_start_conversation = True
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
-            
-            # os.system("amixer -D pulse sset Master 0%")
+
+            os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
-            # time.sleep(0.9)
-            # os.system("amixer -D pulse sset Master 70%")
+            time.sleep(0.9)
+            os.system("amixer -D pulse sset Master 70%")
 
             self.t1.start()
 
@@ -110,11 +107,11 @@ class Myassistant():
         if (event.type == EventType.ON_CONVERSATION_TURN_TIMEOUT or event.type == EventType.ON_NO_RESPONSE):
             self.can_start_conversation = True
             assistantindicator('off')
-            
-            # os.system("amixer -D pulse sset Master 0%")
+
+            os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
-            # time.sleep(0.9)
-            # os.system("amixer -D pulse sset Master 70%")
+            time.sleep(0.9)
+            os.system("amixer -D pulse sset Master 70%")
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
 
@@ -143,12 +140,11 @@ class Myassistant():
         if (event.type == EventType.ON_CONVERSATION_TURN_FINISHED and event.args and not event.args['with_follow_on_turn']):
             self.can_start_conversation = True
             assistantindicator('off')
-            while talkRunning:
-                pass
-            # os.system("amixer -D pulse sset Master 0%")
+
+            os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
-            # time.sleep(0.9)
-            # os.system("amixer -D pulse sset Master 70%")
+            time.sleep(0.9)
+            os.system("amixer -D pulse sset Master 70%")
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
 
@@ -162,7 +158,7 @@ class Myassistant():
             onlineAnswer= event.args["text"]
             print('online answer is  ', onlineAnswer)
             print('length of answer = ', len(onlineAnswer))
-             
+
 
 
     def register_device(self,project_id, credentials, device_model_id, device_id):
@@ -259,8 +255,7 @@ class Myassistant():
                     self.assistant.stop_conversation()
                     selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
                     say(selectedans[0])
-                    while talkRunning:
-                        pass
+                    time.sleep(5)
                     break
             except Keyerror:
                 say('Please check if the number of questions matches the number of answers')
@@ -371,7 +366,7 @@ class Myassistant():
                     print(WARNING_NOT_REGISTERED)
 
             for event in events:
-                # if event.type == EventType.ON_RENDER_RESPONSE:
+                #if event.type == EventType.ON_RENDER_RESPONSE:
                 #     speakOnline((int)(len(event.args["text"])/20))
                 if event.type == EventType.ON_START_FINISHED and args.query:
                     assistant.send_text_query(args.query)

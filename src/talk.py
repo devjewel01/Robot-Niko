@@ -35,10 +35,8 @@ sleep(2)
 driver.find_element(by=By.XPATH, value='//*[@id="mat-dialog-0"]/app-pw-voices/mat-dialog-content/div/mat-selection-list/mat-list-option[8]/div/div[2]/div/div[1]').click()
 driver.find_element(by=By.XPATH, value='//*[@id="mat-dialog-0"]/app-pw-voices/div/div/button').click()
 
-talkRunning = False
 
 def say(Text):
-    talkRunning = True
     try:
         driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-scroll"]/div[1]/button').click()
         sleep(1)
@@ -63,4 +61,3 @@ def say(Text):
     print("")
     print(f" Robot-Niko : {Text}.")
     print("")
-    talkRunning = False
