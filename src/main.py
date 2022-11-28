@@ -248,15 +248,15 @@ class Myassistant():
 
 
     def custom_command(self,usrcmd):
-
         for i in range(1,numQuestion+1):
             try:
-                if str(custom_conversation['Conversation']['Question'][i][0]).lower() in str(usrcmd).lower():
-                    self.assistant.stop_conversation()
-                    selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
-                    say(selectedans[0])
-                    time.sleep(5)
-                    break
+                for ques in custom_conversation['Conversation']['Question'][i]:
+                    if str(ques).lower() in str(usrcmd).lower():
+                        self.assistant.stop_conversation()
+                        selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
+                        say(*selectedans)
+                        time.sleep(5)
+                        break
             except Keyerror:
                 say('Please check if the number of questions matches the number of answers')
 
