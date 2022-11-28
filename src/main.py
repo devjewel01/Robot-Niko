@@ -4,6 +4,7 @@
 
 # from moveGoogle import  speakOffline, speakOnline
 # from sensor import sensorOff, sensorOn
+from move import moveJaw
 from talk import say
 from talk import custom_conversation
 from threading import Thread
@@ -366,8 +367,8 @@ class Myassistant():
                     print(WARNING_NOT_REGISTERED)
 
             for event in events:
-                #if event.type == EventType.ON_RENDER_RESPONSE:
-                #     speakOnline((int)(len(event.args["text"])/20))
+                if event.type == EventType.ON_RENDER_RESPONSE:
+                     moveJaw((int)(len(event.args["text"])/20))
                 if event.type == EventType.ON_START_FINISHED and args.query:
                     assistant.send_text_query(args.query)
                 self.process_event(event)
