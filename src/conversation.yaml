@@ -260,7 +260,7 @@ Conversation:
       - "Cumilla DC office is my family"
       - "My familly is comilla DC office"
     27:
-      - 'i am a robot, i don't eat food. i might need electricity to charge my battries'
+      - "i am a robot, i don't eat food. i might need electricity to charge my battries"
     28:
       - "The office of Deputy Commissioner"
     29:
@@ -322,9 +322,9 @@ Conversation:
     56:
       - 'Musa Ibrahim'
     57:
-      - 'I am supporting the best team.sorry, i don't want to say the name'
+      - "I am supporting the best team.sorry, i don't want to say the name"
     58:
-      - 'yes i can. this part is in update, i do not have much information about it'
+      - "yes i can. this part is in update, i do not have much information about it"
     59:
       - 'Raspberry Pi, 3D printer and a lot of code'
     60:

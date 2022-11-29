@@ -89,11 +89,11 @@ def changeDegree(pin,newDegree,time1=0.05,time2=0):
 
 
 def moveJaw(len):
-    for _ in range(int(len/5)):
-        servoMove(15,100)
-        time.sleep(0.3)
+    for _ in range(int((len+5)/6)):
+        servoMove(15,110)
+        time.sleep(0.5)
         servoMove(15,60)
-        time.sleep(0.3)
+        time.sleep(0.5)
 
 
 
