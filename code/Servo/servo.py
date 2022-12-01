@@ -28,7 +28,6 @@ def mapRange(value, inMin, inMax, outMin, outMax):
     return outMin + (((value - inMin) / (inMax - inMin)) * (outMax - outMin))
 
 def servoMove(n, v):
-    n -= 1
     v = int(mapRange(v, 0, 180, 100, 600))
     if(n<16):
         pwm1.set_pwm(n, 0, v)

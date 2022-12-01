@@ -4,8 +4,6 @@ import os
 import os.path
 import yaml
 import time
-from __future__ import division
-
 
 import Adafruit_PCA9685
 
@@ -91,11 +89,11 @@ def changeDegree(pin,newDegree,time1=0.05,time2=0):
 
 
 def moveJaw(len):
-    for _ in range(len):
-        servoMove(15,100)
+    for _ in range(int((len+5)/6)):
+        servoMove(15,110)
         time.sleep(0.5)
         servoMove(15,60)
-    
+        time.sleep(0.5)
 
 
 
