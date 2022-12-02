@@ -1,190 +1,118 @@
 servoPin:
   head:
-    rotateHead: 12
-    neck: 14
-    neckLeft: 17
-    neckRight: 1
+    rotateHead: 11
+    neck: 12
+    neckLeft: 14
+    neckRight: 13
   eye:
-    eyeX: 0
-    eyeY: 16
+    eyeX: 10
+    eyeY: 26
   mouth: 
     jaw: 15
   rightHand:
     arm:
-      shoulder: 2
-      omoplate: 3
-      rotateArm: 4
-      bicep: 5 
+      shoulder: 0
+      omoplate: 1
+      rotateArm: 2
+      bicep: 3 
     hand:
-      wrist: 6
-      thumb: 7
-      index: 8
-      middle: 9
-      ring: 10
-      pinky: 11
+      wrist: 4
+      thumb: 5
+      index: 6
+      middle: 7
+      ring: 8
+      pinky: 9
   leftHand:
     arm:
-      shoulder: 18
-      omoplate: 19
-      rotateArm: 20
-      bicep: 21
+      shoulder: 16
+      omoplate: 17
+      rotateArm: 18
+      bicep: 19
     hand:
-      wrist: 22
-      thumb: 23
-      index: 24
-      middle: 25
-      ring: 26
-      pinky: 27
+      wrist: 20
+      thumb: 21
+      index: 22
+      middle: 23
+      ring: 24
+      pinky: 25
 
 
 
 
 initialPosition:
-  - 90
-  - 30
-  - 10
-  - 90
-  - 0
-  - 90
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 90
-  - 0
-  - 90
-  - 50
-  - 120
-  - 90
-  - 30
-  - 10
-  - 90
-  - 0
-  - 90
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  head:
+    rotateHead: 90
+    neck: 30
+    neckLeft: 85
+    neckRight: 100
+  eye:
+    eyeX: 90
+    eyeY: 120
+  mouth: 
+    jaw: 15
+  rightHand:
+    arm:
+      shoulder: 90
+      omoplate: 90
+      rotateArm: 90
+      bicep: 90
+    hand:
+      wrist: 90
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
+  leftHand:
+    arm:
+      shoulder: 90
+      omoplate: 100
+      rotateArm: 45
+      bicep: 90
+    hand:
+      wrist: 90
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
 
 currentPosition:
-  - 90
-  - 30
-  - 10
-  - 90
-  - 0
-  - 90
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 90
-  - 0
-  - 90
-  - 50
-  - 120
-  - 90
-  - 30
-  - 10
-  - 90
-  - 0
-  - 90
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-
-
-
-
-minPosition:
-  - 60
-  - 60
-  - 0
-  - 10
-  - 40
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 30
-  - 180
-  - 20
-  - 50
-  - 110
-  - 60
-  - 0
-  - 10
-  - 40
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-
-
-
-
-maxPosition:
-  - 120
-  - 110
-  - 180
-  - 80
-  - 180
-  - 90
-  - 180
-  - 180
-  - 180
-  - 180
-  - 180
-  - 180
-  - 150
-  - 180
-  - 60
-  - 110
-  - 160
-  - 130
-  - 180
-  - 80
-  - 180
-  - 90
-  - 180
-  - 180
-  - 180
-  - 180
-  - 180
-  - 180
-  - 180
-  - 180
-  - 180
-  - 180
-
-
-
-
-
-
+  head:
+    rotateHead: 90
+    neck: 30
+    neckLeft: 85
+    neckRight: 100
+  eye:
+    eyeX: 90
+    eyeY: 120
+  mouth: 
+    jaw: 15
+  rightHand:
+    arm:
+      shoulder: 90
+      omoplate: 90
+      rotateArm: 90
+      bicep: 90
+    hand:
+      wrist: 90
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
+  leftHand:
+    arm:
+      shoulder: 90
+      omoplate: 100
+      rotateArm: 45
+      bicep: 90
+    hand:
+      wrist: 90
+      thumb: 0
+      index: 0
+      middle: 0
+      ring: 0
+      pinky: 0
 
 

@@ -1,10 +1,8 @@
-#!/usr/bin/env python
+#!/home/pi/robotEnv/bin python 
 
 
 
-# from moveGoogle import  speakOffline, speakOnline
-# from sensor import sensorOff, sensorOn
-from move import moveJaw
+from move import mouthExpression
 from talk import say
 from talk import custom_conversation
 from threading import Thread
@@ -80,7 +78,8 @@ class Myassistant():
         self.t1 = Thread(target=self.picovoice_run)
 
     def process_event(self,event):
-        print('event is ', event)
+        print()
+        print('Now event is ', event)
         print()
         if event.type == EventType.ON_MUTED_CHANGED:
             self.mutestatus=event.args["is_muted"]
@@ -94,7 +93,7 @@ class Myassistant():
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("amixer -D pulse sset Master 70%")
+            os.system("amixer -D pulse sset Master 100%")
 
             self.t1.start()
 
@@ -112,7 +111,7 @@ class Myassistant():
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("amixer -D pulse sset Master 70%")
+            os.system("amixer -D pulse sset Master 100%")
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
 
@@ -145,7 +144,7 @@ class Myassistant():
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("amixer -D pulse sset Master 70%")
+            os.system("amixer -D pulse sset Master 100%")
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
 
@@ -159,7 +158,6 @@ class Myassistant():
             onlineAnswer= event.args["text"]
             print('online answer is  ', onlineAnswer)
             print('length of answer = ', len(onlineAnswer))
-            #moveJaw(len(onlineAnswer))
 
 
 
@@ -370,7 +368,7 @@ class Myassistant():
 
             for event in events:
                 if event.type == EventType.ON_RENDER_RESPONSE:
-                     moveJaw((int)(len(event.args["text"])))
+                     mouthExpression((int)(len(event.args["text"])))
                 if event.type == EventType.ON_START_FINISHED and args.query:
                     assistant.send_text_query(args.query)
                 self.process_event(event)

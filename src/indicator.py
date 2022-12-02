@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/pi/robotEnv/bin python 
 
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
