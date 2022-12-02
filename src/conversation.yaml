@@ -319,7 +319,13 @@ Conversation:
       - "What is School of Robotics "
       - "school of Robotics"
     105:
+<<<<<<< HEAD
       - " Can u tell who is here now "
+=======
+      - " Can u tell, who is here now "
+    106:
+      - "when will tazbi get a girlfriend"
+>>>>>>> fea699e61905aef25df2ba8bd8adb0b14dc2e7c5
     
      
 
@@ -556,4 +562,10 @@ Conversation:
       - " School of Robotics is the first institute of Bangladesh, which teacher 4 different branches of Technology. In school of Robotics any particular person can take admission . it is situated in cumilla and DC Kamrul Hasan is the founder of it "
     105:
       - " YES, DC Kamrul Hasan sir is here. Welcome sir in the world of NIKO"
+<<<<<<< HEAD
   
+=======
+    106:
+      - "he already has a gay friend name fahim"
+  
+>>>>>>> fea699e61905aef25df2ba8bd8adb0b14dc2e7c5
