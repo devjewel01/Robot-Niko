@@ -284,6 +284,44 @@ Conversation:
       - "how fast can you move"
       - "your speed"
       - "your walking speed"
+    94:
+      - "Where is Comilla University"
+      - "what is the location of Comilla University"
+    95:
+      - "what is Comilla University"
+      - "Tell me something about Comilla University"
+    96:
+      - "Who is the VC of Comilla University"
+      - "Vice Chancellor of Comilla University"
+      - " VC Comilla University"
+    97:
+      - "How many departments in the Comilla University"
+      - "departments of Comilla University"
+      - "Number of Departments in Comilla University"
+    98:
+      - "How many faculty in the Comilla University"
+      - "faculties in comilla university"
+    99:
+      - "Who is the Dean of Engineering Faculty in Comilla University"
+      - " Dean ,Engineering Faculty , Comilla University"
+    100:
+      - "who is chairman of ICT Department of Comilla University"
+      - "chairman of ICT Department, Comilla University"
+    101:
+      - " Who is the Current DC of Cumilla"
+      - " Deputy commissioner of Cumilla "
+      - " DC of Cumilla"
+    102:
+      - "How many children does DC Kamrul Hasan have"
+    103:
+      - "Who is Nazma Ashrafi"
+    104:
+      - "What is School of Robotics "
+      - "school of Robotics"
+    105:
+      - " Can u tell, who is here now "
+    
+     
 
 
   Answer:
@@ -494,8 +532,28 @@ Conversation:
       - "So funny. Can't you see i don't have legs."
     93:
       - "there is no accurate result of that, approximately 5 kilometers per hour"
-
-
-
-      
-    
+    94:
+      - " It is located in Salmanpur, Kotbari, Cumilla"
+    95:
+      - "Comilla University is the 26th public university in Bangladesh, It was Established in 2006, There are 5 faculties and 19 departments.Currently Professor Doctor A F M Abdul Moine is the Vice Chancellor "
+    96:
+      - "Professor Dr. A.F.M Abdul Moine is the Vice chancellor of Comilla University"
+    97:
+      - "There are 19 departments in Comilla University"
+    98:
+      - "There are 5 Faculties in Comilla University"
+    99:
+      - " Dr. Mohammad Saifur Rahman is the Dean of Engineering Faculty in Comilla University"
+    100:
+      - " Dr. Mohammad Saifur Rahman is the chairman of ICT Department, Comilla Univerisity"
+    101:
+      - " Mohammad Kamrul hasan is the Deputy Commissioner of Cumilla"
+    102:
+      - "Deputy Commissioner Kamrul Hasan have two son"
+    103:
+      - "Nazma Ashrafi is the Assistant Deputy Commissioner of ICT and Education"
+    104:
+      - " School of Robotics is the first institute of Bangladesh, which teacher 4 different branches of Technology. In school of Robotics any particular person can take admission . it is situated in cumilla and DC Kamrul Hasan is the founder of it "
+    105:
+      - " YES, DC Kamrul Hasan sir is here. Welcome sir in the world of NIKO"
+  
