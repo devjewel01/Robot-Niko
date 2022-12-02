@@ -78,7 +78,8 @@ class Myassistant():
         self.t1 = Thread(target=self.picovoice_run)
 
     def process_event(self,event):
-        print('event is ', event)
+        print()
+        print('Now event is ', event)
         print()
         if event.type == EventType.ON_MUTED_CHANGED:
             self.mutestatus=event.args["is_muted"]
@@ -92,7 +93,7 @@ class Myassistant():
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("amixer -D pulse sset Master 70%")
+            os.system("amixer -D pulse sset Master 100%")
 
             self.t1.start()
 
@@ -110,7 +111,7 @@ class Myassistant():
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("amixer -D pulse sset Master 70%")
+            os.system("amixer -D pulse sset Master 100%")
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
 
@@ -143,7 +144,7 @@ class Myassistant():
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
-            os.system("amixer -D pulse sset Master 70%")
+            os.system("amixer -D pulse sset Master 100%")
             if os.path.isfile("{}/.mute".format(USER_PATH)):
                 assistantindicator('mute')
 

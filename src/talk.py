@@ -4,6 +4,8 @@
 import os
 import os.path
 import yaml
+from move import mouthExpression
+
 
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
 USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
@@ -56,8 +58,9 @@ def say(Text):
     xpathtec = '//*[@id="inputDiv"]'
     driver.find_element(by=By.XPATH, value=xpathtec).click()
     driver.find_element(by=By.XPATH, value=xpathtec).send_keys(Data)
+    mouthExpression(len(Data))
     driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-page"]/div[1]/div/div[2]/app-pw-reading-bar/div/div/button[3]').click()
-    sleep(1)
+    # sleep(1)
 
     #try:
     #    driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-scroll"]/div[1]/button').click()

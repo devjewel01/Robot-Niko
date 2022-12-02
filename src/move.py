@@ -96,6 +96,7 @@ def moveJaw(mv):
         time.sleep(0.3)
 
 def mouthExpression(length):
+    time.sleep(0.2)
     t = int((length+9)/10)
     p1 = multiprocessing.Process(target=moveJaw,args=[t])
     p1.start()
