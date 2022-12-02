@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/pi/robotEnv/bin python 
 
 from time import sleep
 import RPi.GPIO as io
@@ -7,158 +7,103 @@ io.setwarnings(False)
 PWM_MAX = 100
 
 
-# Left
-L_L_EN = 22 
-L_R_EN = 23 
-L_L_PWM = 18 
-L_R_PWM = 17
 
-# Right
-R_L_EN = 13 
-R_R_EN = 19 
-R_L_PWM = 12 
-R_R_PWM = 6 
+leftForward = 5
+leftBackward = 6
+leftMotorSpeed = 12 
 
+rightForward = 19
+rightBackward = 26
+rightMotorSpeed = 13
 
-leftmotor_in1_pin = L_L_EN
-leftmotor_in2_pin = L_R_EN
-io.setup(leftmotor_in1_pin, io.OUT)
-io.setup(leftmotor_in2_pin, io.OUT)
+io.setup(leftForward, io.OUT)
+io.setup(leftBackward, io.OUT)
+io.setup(rightForward, io.OUT)
+io.setup(rightBackward, io.OUT)
 
+io.output(leftForward, True)
+io.output(leftBackward, True)
+io.output(rightForward, True)
+io.output(rightBackward, True)
 
-rightmotor_in1_pin = R_L_EN
-rightmotor_in2_pin = R_R_EN
-io.setup(rightmotor_in1_pin, io.OUT)
-io.setup(rightmotor_in2_pin, io.OUT)
+io.setup(leftMotorSpeed, io.OUT)
+io.setup(rightMotorSpeed, io.OUT)
 
 
-io.output(leftmotor_in1_pin, True)
-io.output(leftmotor_in2_pin, True)
-io.output(rightmotor_in1_pin, True)
-io.output(rightmotor_in2_pin, True)
+leftMotorSpeed = io.PWM(leftMotorSpeed,100)
+leftMotorSpeed.start(0)
+leftMotorSpeed.ChangeDutyCycle(0)
 
-
-
-leftmotorpwm_pin_l = L_L_PWM 
-leftmotorpwm_pin_r = L_R_PWM
-
-rightmotorpwm_pin_l = R_L_PWM
-rightmotorpwm_pin_r = R_R_PWM
-
-
-io.setup(leftmotorpwm_pin_l, io.OUT)
-io.setup(leftmotorpwm_pin_r, io.OUT)
-
-io.setup(rightmotorpwm_pin_l, io.OUT)
-io.setup(rightmotorpwm_pin_r, io.OUT)
-
-
-leftmotorpwm_l = io.PWM(leftmotorpwm_pin_l,100)
-leftmotorpwm_r = io.PWM(leftmotorpwm_pin_r,100)
-
-rightmotorpwm_l = io.PWM(rightmotorpwm_pin_l,100)
-rightmotorpwm_r = io.PWM(rightmotorpwm_pin_r,100)
-
-
-leftmotorpwm_l.start(0)
-leftmotorpwm_r.start(0)
-
-leftmotorpwm_l.ChangeDutyCycle(0)
-leftmotorpwm_r.ChangeDutyCycle(0)
-
-
-rightmotorpwm_l.start(0)
-rightmotorpwm_r.start(0)
-
-rightmotorpwm_l.ChangeDutyCycle(0)
-rightmotorpwm_r.ChangeDutyCycle(0)
+rightMotorSpeed = io.PWM(rightMotorSpeed,100)
+rightMotorSpeed.start(0)
+rightMotorSpeed.ChangeDutyCycle(0)
 
 
 
 def Forward(speed=50):
-   io.output(leftmotor_in1_pin, True)
-   io.output(leftmotor_in2_pin, False)
-   io.output(rightmotor_in1_pin, True)
-   io.output(rightmotor_in2_pin, False)
+   io.output(leftForward, True)
+   io.output(leftBackward, False)
+   io.output(rightForward, True)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(speed)
+   rightMotorSpeed.ChangeDutyCycle(speed)
 
-   leftmotorpwm_l.ChangeDutyCycle(speed)
-   leftmotorpwm_r.ChangeDutyCycle(0)	
-   rightmotorpwm_l.ChangeDutyCycle(speed)
-   rightmotorpwm_r.ChangeDutyCycle(0)
 
 def Backward(speed=50):
-   io.output(leftmotor_in1_pin, False)
-   io.output(leftmotor_in2_pin, True)
-   io.output(rightmotor_in1_pin, False)
-   io.output(rightmotor_in2_pin, True)
+   io.output(leftForward, False)
+   io.output(leftBackward, True)
+   io.output(rightForward, False)
+   io.output(rightBackward, True)
+   leftMotorSpeed.ChangeDutyCycle(speed)
+   rightMotorSpeed.ChangeDutyCycle(speed)
 
-   leftmotorpwm_l.ChangeDutyCycle(0)
-   leftmotorpwm_r.ChangeDutyCycle(speed)	
-   rightmotorpwm_l.ChangeDutyCycle(0)
-   rightmotorpwm_r.ChangeDutyCycle(speed)
 
 def Left(speed=50):
-   io.output(leftmotor_in1_pin,  False)
-   io.output(leftmotor_in2_pin,  True)
-   io.output(rightmotor_in1_pin, True)
-   io.output(rightmotor_in2_pin, False)
-
-   leftmotorpwm_l.ChangeDutyCycle(speed)
-   leftmotorpwm_r.ChangeDutyCycle(0)	
-   rightmotorpwm_l.ChangeDutyCycle(speed)
-   rightmotorpwm_r.ChangeDutyCycle(0)
-
+   io.output(leftForward,  False)
+   io.output(leftBackward,  True)
+   io.output(rightForward, True)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(speed)
+   rightMotorSpeed.ChangeDutyCycle(speed)
    sleep(1)
    Stop()
 
+
 def Right(speed=50):
-   io.output(leftmotor_in1_pin,  True)
-   io.output(leftmotor_in2_pin,  False)
-   io.output(rightmotor_in1_pin, False)
-   io.output(rightmotor_in2_pin, True)
-
-   leftmotorpwm_l.ChangeDutyCycle(speed)
-   leftmotorpwm_r.ChangeDutyCycle(0)	
-   rightmotorpwm_l.ChangeDutyCycle(0)
-   rightmotorpwm_r.ChangeDutyCycle(speed)
-
+   io.output(leftForward,  True)
+   io.output(leftBackward,  False)
+   io.output(rightForward, False)
+   io.output(rightBackward, True)
+   leftMotorSpeed.ChangeDutyCycle(speed)
+   rightMotorSpeed.ChangeDutyCycle(speed)
    sleep(1)
    Stop()
 
 def leftCircle(speed=50):
-   io.output(leftmotor_in1_pin,  False)
-   io.output(leftmotor_in2_pin,  True)
-   io.output(rightmotor_in1_pin, True)
-   io.output(rightmotor_in2_pin, False)
-
-   leftmotorpwm_l.ChangeDutyCycle(speed)
-   leftmotorpwm_r.ChangeDutyCycle(0)	
-   rightmotorpwm_l.ChangeDutyCycle(speed)
-   rightmotorpwm_r.ChangeDutyCycle(0)
+   io.output(leftForward,  False)
+   io.output(leftBackward,  True)
+   io.output(rightForward, True)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(speed)
+   rightMotorSpeed.ChangeDutyCycle(speed)
    
 
 def rightCircle(speed=50):
-   io.output(leftmotor_in1_pin,  True)
-   io.output(leftmotor_in2_pin,  False)
-   io.output(rightmotor_in1_pin, False)
-   io.output(rightmotor_in2_pin, True)
-
-   leftmotorpwm_l.ChangeDutyCycle(speed)
-   leftmotorpwm_r.ChangeDutyCycle(0)	
-   rightmotorpwm_l.ChangeDutyCycle(0)
-   rightmotorpwm_r.ChangeDutyCycle(speed)
+   io.output(leftForward,  True)
+   io.output(leftBackward,  False)
+   io.output(rightForward, False)
+   io.output(rightBackward, True)
+   leftMotorSpeed.ChangeDutyCycle(speed)
+   rightMotorSpeed.ChangeDutyCycle(speed)
 
 
 def Stop(speed=50):
-   io.output(leftmotor_in1_pin, False)
-   io.output(leftmotor_in2_pin, False)
-   io.output(rightmotor_in1_pin, False)
-   io.output(rightmotor_in2_pin, False)
-
-   leftmotorpwm_l.ChangeDutyCycle(0)
-   leftmotorpwm_r.ChangeDutyCycle(0)	
-   rightmotorpwm_l.ChangeDutyCycle(0)
-   rightmotorpwm_r.ChangeDutyCycle(0)
+   io.output(leftForward, False)
+   io.output(leftBackward, False)
+   io.output(rightForward, False)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(0)
+   rightMotorSpeed.ChangeDutyCycle(0)
 
 
 def setMotorLeft(power):
@@ -167,17 +112,14 @@ def setMotorLeft(power):
       pwm = -int(PWM_MAX * power)
       if pwm > PWM_MAX:
          pwm = PWM_MAX
-      leftmotorpwm_l.ChangeDutyCycle(pwm)
-      leftmotorpwm_r.ChangeDutyCycle(0)	  
+      leftMotorSpeed.ChangeDutyCycle(pwm)
    elif power > 0:
       pwm = int(PWM_MAX * power)
       if pwm > PWM_MAX:
          pwm = PWM_MAX
-      leftmotorpwm_l.ChangeDutyCycle(0)
-      leftmotorpwm_r.ChangeDutyCycle(pwm)
+      leftMotorSpeed.ChangeDutyCycle(pwm)
    else:
-      leftmotorpwm_l.ChangeDutyCycle(0)
-      leftmotorpwm_r.ChangeDutyCycle(0)
+      leftMotorSpeed.ChangeDutyCycle(0)
 	  
 
 def setMotorRight(power):
@@ -186,25 +128,21 @@ def setMotorRight(power):
       pwm = -int(PWM_MAX * power)
       if pwm > PWM_MAX:
          pwm = PWM_MAX
-      rightmotorpwm_l.ChangeDutyCycle(pwm)
-      rightmotorpwm_r.ChangeDutyCycle(0)
+      rightMotorSpeed.ChangeDutyCycle(pwm)
    elif power > 0:
       pwm = int(PWM_MAX * power)
       if pwm > PWM_MAX:
          pwm = PWM_MAX
-      rightmotorpwm_l.ChangeDutyCycle(0)
-      rightmotorpwm_r.ChangeDutyCycle(pwm)
+      rightMotorSpeed.ChangeDutyCycle(pwm)
    else:
-      rightmotorpwm_l.ChangeDutyCycle(0)
-      rightmotorpwm_r.ChangeDutyCycle(0)
-   
+      rightMotorSpeed.ChangeDutyCycle(0)
 
 
 def exit():
-   io.output(leftmotor_in1_pin,  False)
-   io.output(leftmotor_in2_pin,  False)
-   io.output(rightmotor_in1_pin, False)
-   io.output(rightmotor_in2_pin, False)
+   io.output(leftForward,  False)
+   io.output(leftBackward,  False)
+   io.output(rightForward, False)
+   io.output(rightBackward, False)
    io.cleanup()
    
 
