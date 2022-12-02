@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/pi/robotEnv/bin python 
 
 from googletrans import Translator
 from gtts import gTTS

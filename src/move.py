@@ -1,9 +1,10 @@
-#!/usr/bin/env python
+#!/home/pi/robotEnv/bin python 
 
 import os
 import os.path
 import yaml
 import time
+import multiprocessing
 
 import Adafruit_PCA9685
 
@@ -87,14 +88,17 @@ def changeDegree(pin,newDegree,time1=0.05,time2=0):
 
 
 
-
-def moveJaw(len):
-    for _ in range(int((len+5)/6)):
+def moveJaw(length):
+    for _ in range(length):
         servoMove(15,110)
         time.sleep(0.5)
         servoMove(15,60)
         time.sleep(0.5)
-
+    
+def mouthExpression(length):
+    t = int((length+4)/5)
+    p1 = multiprocessing.Process(target=moveJaw,args=[t])
+    p1.start()
 
 
 

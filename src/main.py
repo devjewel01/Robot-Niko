@@ -1,10 +1,8 @@
-#!/usr/bin/env python
+#!/home/pi/robotEnv/bin python 
 
 
 
-# from moveGoogle import  speakOffline, speakOnline
-# from sensor import sensorOff, sensorOn
-from move import moveJaw
+from move import mouthExpression
 from talk import say
 from talk import custom_conversation
 from threading import Thread
@@ -159,7 +157,6 @@ class Myassistant():
             onlineAnswer= event.args["text"]
             print('online answer is  ', onlineAnswer)
             print('length of answer = ', len(onlineAnswer))
-            #moveJaw(len(onlineAnswer))
 
 
 
@@ -370,7 +367,7 @@ class Myassistant():
 
             for event in events:
                 if event.type == EventType.ON_RENDER_RESPONSE:
-                     moveJaw((int)(len(event.args["text"])))
+                     mouthExpression((int)(len(event.args["text"])))
                 if event.type == EventType.ON_START_FINISHED and args.query:
                     assistant.send_text_query(args.query)
                 self.process_event(event)

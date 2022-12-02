@@ -1,3 +1,5 @@
+#!/home/pi/robotEnv/bin python 
+
 import os
 import os.path
 import yaml

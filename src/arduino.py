@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/home/pi/robotEnv/bin python 
+
 import serial
 
 ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
