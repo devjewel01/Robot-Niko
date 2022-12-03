@@ -22,4 +22,18 @@ def moveEye():
 def setOnPosition():
     servoMove(10, 90)
     servoMove(26, 120)
+
+def moveLeft():
+    servoMove(10, 60)
+
+def moveRight():
+    servoMove(10, 120)
+
+def moveUp():
+    servoMove(26, 110)
+
+def moveDown():
+    servoMove(26, 160)
+
+
     

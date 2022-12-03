@@ -8,8 +8,10 @@ def moveJaw(t=1):
         servoMove(15,60)
         sleep(0.5)
 
+
 def openMouth():
     servoMove(15, 120)
+
 
 def closeMouth():
     servoMove(15, 60)

@@ -88,16 +88,22 @@ def changeDegree(pin,newDegree,time1=0.05,time2=0):
 
 
 
-def moveJaw(mv):
-    for _ in range(mv):
+def moveJaw(t):
+    for _ in range(t):
         servoMove(15,110)
         time.sleep(0.3)
         servoMove(15,60)
         time.sleep(0.3)
 
-def mouthExpression(length):
-    time.sleep(0.2)
-    t = int((length+9)/10)
+
+def mouthExpression(mode, length):
+    if mode=="offline":
+        time.sleep(1)
+        t = int((length+10)/7)
+    if mode=="online":
+        time.sleep(0.2)
+        t = int((length+9)/10)
+
     p1 = multiprocessing.Process(target=moveJaw,args=[t])
     p1.start()
 
