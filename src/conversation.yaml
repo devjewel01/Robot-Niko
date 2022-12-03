@@ -455,6 +455,7 @@ Conversation:
       - "Robotics School"
       - "What School of Robotics"
     105:
+<<<<<<< HEAD
       - "Can u tell, who is here now "
       - "Can u tel who is here now"
       - "can u tell who is here now"
@@ -464,6 +465,9 @@ Conversation:
       - "u tell who is here"
       - "who is here now"
 
+=======
+      - " Can u tell who is here now "
+>>>>>>> 6a35ba5f9d719ada56bff125b1c52188bceb9ce8
     106:
       - "can u control human"
       - " u control human"
@@ -956,6 +960,7 @@ Conversation:
       - "No, I can't control human. I'm Controlled by human"
     107:
       - "I love all human but the woman most"
+<<<<<<< HEAD
     108:
       - "very meritorious people born"
     109:
@@ -977,3 +982,5 @@ Conversation:
     117:
       - "  shanjit vai is the blood of me, ilove his bike"
   
+=======
+>>>>>>> 6a35ba5f9d719ada56bff125b1c52188bceb9ce8

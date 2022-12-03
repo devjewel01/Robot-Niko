@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/pi/robotEnv/bin python 
 
 import os
 import os.path
@@ -86,14 +86,6 @@ def changeDegree(pin,newDegree,time1=0.05,time2=0):
         time.sleep(time1)
 
 
-
-
-def moveJaw(len):
-    for _ in range(int((len+5)/6)):
-        servoMove(15,110)
-        time.sleep(0.5)
-        servoMove(15,60)
-        time.sleep(0.5)
 
 
 
