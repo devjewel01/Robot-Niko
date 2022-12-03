@@ -5,7 +5,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 #Indicators
-listeningindicator=5
+listeningindicator=4
 speakingindicator=6
 
 GPIO.setup(listeningindicator, GPIO.OUT)
