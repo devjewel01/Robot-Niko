@@ -16,20 +16,20 @@ servo_max = 600
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
 
 def readYaml():
-    with open('{}../src/servoConfiguration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/servoConfiguration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         servoConfig = yaml.load(conf, Loader=yaml.FullLoader)
     return servoConfig
 
 
 def writeYaml(s=None):
-    with open('{}../src/servoConfiguration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
+    with open('{}/servoConfiguration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
             yaml.dump(s,conf)
 
 
 servoConfig = readYaml()
 
 if servoConfig == None:
-    with open('{}../src/servoConfigurationBackUp.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/servoConfigurationBackUp.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         servoBackUp = yaml.load(conf, Loader=yaml.FullLoader)
     writeYaml(servoBackUp)
     servoConfig = readYaml()
