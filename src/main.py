@@ -368,7 +368,7 @@ class Myassistant():
 
             for event in events:
                 if event.type == EventType.ON_RENDER_RESPONSE:
-                     mouthExpression((int)(len(event.args["text"])))
+                     mouthExpression("online", (int)(len(event.args["text"])) )
                 if event.type == EventType.ON_START_FINISHED and args.query:
                     assistant.send_text_query(args.query)
                 self.process_event(event)

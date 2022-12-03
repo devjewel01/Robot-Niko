@@ -7,7 +7,6 @@ io.setwarnings(False)
 PWM_MAX = 100
 
 
-
 leftForward = 5
 leftBackward = 0
 leftMotorSpeed = 13 
@@ -78,6 +77,7 @@ def Right(speed=50):
    rightMotorSpeed.ChangeDutyCycle(speed)
    sleep(1)
    Stop()
+
 
 def leftCircle(speed=50):
    io.output(leftForward,  False)

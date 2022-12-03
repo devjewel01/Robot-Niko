@@ -1,19 +1,16 @@
-#!/usr/bin/env python3
+#!/home/pi/robotEnv/bin python 
 
 
 import os, readchar
 import motorMove as motor
 
-
 speedleft = 0
 speedright = 0
-
 
 print("w/s: accelerate")
 print("a/d: steer")
 print("q: stop robot")
 print("x: exit programm")
-
 
 def getch():
    ch = readchar.readchar()
@@ -30,18 +27,16 @@ def printscreen():
    print("Left motor speed: ", speedleft)
    print("Right motor speed ", speedright)
 
+
 while True:
    char = getch()
-   
    if(char == "w"):
       speedleft = speedleft + 0.1
       speedright = speedright + 0.1
-
       if speedleft > 1:
          speedleft = 1
       if speedright > 1:
          speedright = 1
-
       motor.setMotorLeft(speedleft)
       motor.setMotorRight(speedright)
       printscreen()
@@ -49,17 +44,13 @@ while True:
    if(char == "s"):
       speedleft = speedleft - 0.1
       speedright = speedright - 0.1
-
       if speedleft < -1:
          speedleft = -1
       if speedright < -1:
          speedright = -1
-         
-     
       motor.setMotorLeft(speedleft)
       motor.setMotorRight(speedright)
       printscreen()
-
 
    if(char == "q"):
       speedleft = 0
@@ -70,14 +61,11 @@ while True:
 
    if(char == "d"):      
       speedright = speedright - 0.1
-      speedleft = speedleft + 0.1
-      
+      speedleft = speedleft + 0.1 
       if speedright < -1:
-         speedright = -1
-      
+         speedright = -1    
       if speedleft > 1:
-         speedleft = 1
-      
+         speedleft = 1  
       motor.setMotorLeft(speedleft)
       motor.setMotorRight(speedright)
       printscreen()
@@ -85,14 +73,11 @@ while True:
 
    if(char == "a"):
       speedleft = speedleft - 0.1
-      speedright = speedright + 0.1
-         
+      speedright = speedright + 0.1    
       if speedleft < -1:
-         speedleft = -1
-      
+         speedleft = -1   
       if speedright > 1:
-         speedright = 1
-      
+         speedright = 1 
       motor.setMotorLeft(speedleft)
       motor.setMotorRight(speedright)
       printscreen()
@@ -105,6 +90,5 @@ while True:
       print("Program Ended")
       break
    
-
    char = ""
    
