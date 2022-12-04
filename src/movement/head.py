@@ -10,9 +10,15 @@ def rotate():
 
 def moveLeft():
     servoMove(11, 30)
+    
+def moveLeftmid():
+    servoMove(11, 60)
 
 def moveRight():
     servoMove(11, 150)
+    
+def moveRightmid():
+    servoMove(11, 120)
 
 def setOnPosition():
     servoMove(11, 90)
