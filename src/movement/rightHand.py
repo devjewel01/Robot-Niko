@@ -47,6 +47,16 @@ def thumbsup():
         servoMove(9, d)
         sleep(t)
 
+def gunshot():
+    servoMove(4, 0)
+    sleep(t)
+    for d in range(180):
+        servoMove(5, 180-d)
+        servoMove(6, 180-d)
+        servoMove(7, d)
+        servoMove(8, d)
+        servoMove(9, d)
+        
 def twofinger():
     servoMove(4, 90)
     sleep(t)    

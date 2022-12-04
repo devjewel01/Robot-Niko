@@ -64,6 +64,16 @@ def twofinger():
         servoMove(25, d)
         sleep(t)
 
+def gunshot():
+    servoMove(20, 2)
+    sleep(t)
+    for d in range(180):
+        servoMove(21, 180-d)
+        servoMove(22, 180-d)
+        servoMove(23, d)
+        servoMove(24, d)
+        servoMove(25, d)
+
 def pointing():
     servoMove(20, 10)
     sleep(t)
