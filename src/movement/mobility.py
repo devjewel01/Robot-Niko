@@ -1,9 +1,11 @@
 #!/home/pi/robotEnv/bin python 
 
 from time import sleep
+
 import RPi.GPIO as io
 io.setmode(io.BCM)
 io.setwarnings(False)
+
 PWM_MAX = 100
 
 

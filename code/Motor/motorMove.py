@@ -9,7 +9,7 @@ PWM_MAX = 100
 
 
 leftForward = 5
-leftBackward = 0
+leftBackward = 21
 leftMotorSpeed = 13 
 
 rightForward = 6
@@ -161,4 +161,39 @@ def exit():
    io.output(rightBackward, False)
    io.cleanup()
    
+
+def LF():
+   io.output(leftForward, True)
+   io.output(leftBackward, False)
+   io.output(rightForward, False)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(50)
+   rightMotorSpeed.ChangeDutyCycle(0)
+
+
+
+def LB():
+   io.output(leftForward, False)
+   io.output(leftBackward, True)
+   io.output(rightForward, False)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(50)
+   rightMotorSpeed.ChangeDutyCycle(0)
+
+def RF():
+   io.output(leftForward, False)
+   io.output(leftBackward, False)
+   io.output(rightForward, True)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(0)
+   rightMotorSpeed.ChangeDutyCycle(50)
+
+def RB():
+   io.output(leftForward, False)
+   io.output(leftBackward, False)
+   io.output(rightForward, False)
+   io.output(rightBackward, True)
+   leftMotorSpeed.ChangeDutyCycle(0)
+   rightMotorSpeed.ChangeDutyCycle(50)
+
 

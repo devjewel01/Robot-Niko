@@ -1,8 +1,8 @@
 from move import servoMove
 from time import sleep
 
-def grip():
-    for d in range(180):
+def grip(deg=180):
+    for d in range(deg):
         servoMove(5, d)
         servoMove(6, d)
         servoMove(7, d)
