@@ -104,14 +104,15 @@ def moveJaw(mv=1):
 def speakingContinue():
     while True:
         if io.input(talkingInput):
-            print("speaking detecting")
+            #print("robot is speaking")
             moveJaw()
         else:
-            print("speaking off")
+            #print("speaking off")
 
 def speakingModeOn():
     speakingOn = multiprocessing.Process(target=speakingContinue, args=())
-    speakingOn.start
+    speakingOn.start()
+
 
 
 
