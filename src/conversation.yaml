@@ -270,7 +270,7 @@ Conversation:
       - "can you use laptop"
       - "can  you use this laptop"
     90:
-      - "do  you smoke"
+      - "do you smoke"
       - "can you smoke"
     91:
       - "do you have night vision"
@@ -285,16 +285,16 @@ Conversation:
       - "your walking speed"
     94:
       - "Where is Comilla University"
-      - "what is the location of Comilla University"
+      - "what is the location of kumaun University"
     95:
       - "what is Comilla University"
       - "what is kummila University"
       - "what is Kunaila University"
       - "what is komilla University"
-      - " what is Kamaila University"
-      - " what is Kanaila University"
-      - " what is Komila University"
-      - " what is Kumila University"
+      - "what is Kamaila University"
+      - "what is Kanaila University"
+      - "what is Komila University"
+      - "what is Kumila University"
       - "Tell me something about Comilla University"
       - "Tell me something about kummila University"
       - "Tell me something about kunaila University"
@@ -302,7 +302,7 @@ Conversation:
       - "Tell me something about kanaila University"
       - "Tell me something about kumila University"
       - "Tell me something about komila University"
-      - "Tell me something about kamaila University"
+      - "Tell me something about kumaun University"
     96:
       - "Who is the VC of Comilla University"      
       - "Who is the VC of kummila University"
@@ -375,7 +375,7 @@ Conversation:
       - "faculties in comilla university"
     99:
       - "Who is the Dean of Engineering Faculty in Comilla University"
-      - " Dean ,Engineering Faculty , Comilla University"
+      - "dean of engineering faculty"
     100:
       - "who is chairman of ICT Department of Comilla University"
       - "chairman of ICT Department, Comilla University"
@@ -430,7 +430,7 @@ Conversation:
       - "What is School of Robotics "
       - "school of Robotics"
       - "School of robot"
-      - " Robotic School"
+      - "Robotic School"
       - "Robotics School"
       - "What School of Robotics"
     105:
@@ -488,14 +488,11 @@ Conversation:
       -  "Comilla Famous"
     109:
       - "Who created you"
-      - "Who creates you"
-      - "who create you"
       - "created you"
       - "creates you"
-      - "create you"
       - "how you was created"
       - "how you was create"
-      - "how you are created"
+      - "your creator"
       - "how you are create"
       - "created niko"
       - "who created niko"
@@ -670,21 +667,45 @@ Conversation:
       - "tousif"
     119:
       - "anik chokroborti"
-      - "who is onik chokroborti"
+      - "who is onik chakraborti"
+      - "ionic chakraborti"
     120:
       - "Adc General of Kumilla District"
-      - "Additional District Commissioner of kumilla"
+      - "Additional District Commissioner"
     121: 
       - "Cumilla Robotics and programming club founded"
-      - "What do you know about Kumilla Robotics and programming Club"
+      - "What do you know about Robotics and programming Club"
     122:
       - "can you imagine"
     123: 
       - "are you google"
       - "google"
       - "google is you"
+    124: 
+      - "you have any father"
+      - "you have a father"
+      - "is your father"
+      - "have a mother"
+      - "have any mother"
+      - "are you have mother"
+      - "who is your mother"
+      - "have a brother"
+      - "have any brother"
+      - "are you have bother"
+      - "who is your brother"
+      - "you have a sister"
+      - "you have any sister"
+      - "are you have sister"
+      - "who is your sister"
+    
+    125: 
+      - "who is this"
+    126: 
+      - "can you walk"
 
+      
 
+      
 
 
 
@@ -900,7 +921,7 @@ Conversation:
     91:
       - "No, i don't have that feature right now"
     92:
-      - "So funny. Can't you see i don't have legs."
+      - "at this stage no, but if i get a driving license, i may take a chance"
     93:
       - "there is no accurate result of that, approximately 5 kilometers per hour"
     94:
@@ -936,7 +957,7 @@ Conversation:
     109:
       - "At first i was merely a dream of Dc Kamrul hasan sir. Then Team quanta Robotics make it happen and made me real. Now here i am."
     110:
-      - "Ymm, with a bit of calculation i can dream in my imagination. haha!"
+      - "mmmm, with a bit of calculation i can dream in my imagination. hahaha!"
     111:
       - "dc kamrul bro"
     112:
@@ -950,7 +971,7 @@ Conversation:
     116:
       - "jewel is the heart of me, i love his girlfriend"
     117:
-      - " shanjit is the blood of me, i love his bike"
+      - "shanjit is the blood of me, i love his bike"
     118:
       - "Tawsif is one of my creator."
     119:
@@ -962,6 +983,13 @@ Conversation:
     122: 
       - "there is a saying, imagination is the process of thinking something clearly. i am trying to achieve to that level"
     123:
-      - "i am sad to hear this. Saying again im nikoo. Niko the robot"
+      - "i am sad to hear this. Saying again,  im niko. Niko the robot"
       - "i am niko the robot"
       - "no, i am niko"
+    124: 
+      - "No, but i have a bunch of engineer friends from comilla university whom i can call a family "
+    125: 
+      - "I am your robo friend niko. Niko the robot"
+    126: 
+      - "i can run with my steering wheels. but walking, its a little bit complex for me at this stage. But i am hopefull to do it in future."
+      
