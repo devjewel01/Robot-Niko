@@ -77,3 +77,15 @@ def test():
     
     sleep(2)
 
+def handshake():
+    servoMove(1, 140)
+    sleep(1)
+    servoMove(4, 50)
+    sleep(1)
+    grip(100)
+    sleep(3)
+    open()
+    sleep(1)
+    servoMove(4, 90)
+    sleep(1)
+    servoMove(1, 120)
