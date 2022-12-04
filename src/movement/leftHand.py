@@ -42,6 +42,28 @@ def wristInside():
 def wristPosition():
     servoMove(20, 90)
 
+def thumbsup():
+    servoMove(20, 90)
+    sleep(t)    
+    for d in range(180):
+        servoMove(21, 180-d)
+        servoMove(22, d)
+        servoMove(23, d)
+        servoMove(24, d)
+        servoMove(25, d)
+        sleep(t)
+
+def pointing():
+    servoMove(20, 10)
+    sleep(t)
+    for d in range(180):
+        servoMove(21, d)
+        servoMove(22, 180-d)
+        servoMove(23, d)
+        servoMove(24, d)
+        servoMove(25, d)
+        sleep(t)
+
 def test():
     for d in range(120):
         servoMove(21, 80)
