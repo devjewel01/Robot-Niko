@@ -31,8 +31,6 @@ Action:
       - "go right"
     10:
       - "move in circle"
-    11:
-      - ""
 
   
   Output:
@@ -43,7 +41,7 @@ Action:
     3:
       - "rightHand.grip()"
     4:
-      - "rithtHand.grip()"
+      - "leftHand.grip()"
     5:
       - "mobility.Forward(40)"
     6:
