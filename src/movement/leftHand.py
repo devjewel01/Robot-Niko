@@ -53,6 +53,17 @@ def thumbsup():
         servoMove(25, d)
         sleep(t)
 
+def twofinger():
+    servoMove(20, 90)
+    sleep(t)    
+    for d in range(180):
+        servoMove(21, d)
+        servoMove(22, 180-d)
+        servoMove(23, 180-d)
+        servoMove(24, d)
+        servoMove(25, d)
+        sleep(t)
+
 def pointing():
     servoMove(20, 10)
     sleep(t)
