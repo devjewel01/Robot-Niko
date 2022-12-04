@@ -1,6 +1,6 @@
 from move import servoMove
 from time import sleep
-
+t = 0.0008
 def grip(deg=180):
     for d in range(deg):
         servoMove(5, d)
@@ -35,6 +35,28 @@ def wristInside():
 
 def wristPosition():
     servoMove(4, 90)
+
+def thumbsup():
+    servoMove(4, 170)
+    sleep(t)    
+    for d in range(180):
+        servoMove(5, 180-d)
+        servoMove(6, d)
+        servoMove(7, d)
+        servoMove(8, d)
+        servoMove(9, d)
+        sleep(t)
+
+def pointing():
+    servoMove(4, 90)
+    sleep(t)
+    for d in range(180):
+        servoMove(5, d)
+        servoMove(6, 180-d)
+        servoMove(7, d)
+        servoMove(8, d)
+        servoMove(9, d)
+        sleep(t)
 
 def test():
     for d in range(180):
