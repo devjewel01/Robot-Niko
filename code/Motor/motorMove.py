@@ -114,8 +114,6 @@ def setMotorLeft(power):
          pwm = PWM_MAX
       io.output(leftForward, False)
       io.output(leftBackward, True)
-      io.output(rightForward, False)
-      io.output(rightBackward, True)
       leftMotorSpeed.ChangeDutyCycle(pwm)
    elif power > 0:
       pwm = int(PWM_MAX * power)
@@ -123,8 +121,6 @@ def setMotorLeft(power):
          pwm = PWM_MAX
       io.output(leftForward, True)
       io.output(leftBackward, False)
-      io.output(rightForward, True)
-      io.output(rightBackward, False)
       leftMotorSpeed.ChangeDutyCycle(pwm)
    else:
       leftMotorSpeed.ChangeDutyCycle(0)
@@ -136,8 +132,6 @@ def setMotorRight(power):
       pwm = -int(PWM_MAX * power)
       if pwm > PWM_MAX:
          pwm = PWM_MAX
-      io.output(leftForward, False)
-      io.output(leftBackward, True)
       io.output(rightForward, False)
       io.output(rightBackward, True)
       rightMotorSpeed.ChangeDutyCycle(pwm)
@@ -145,8 +139,6 @@ def setMotorRight(power):
       pwm = int(PWM_MAX * power)
       if pwm > PWM_MAX:
          pwm = PWM_MAX
-      io.output(leftForward, True)
-      io.output(leftBackward, False)
       io.output(rightForward, True)
       io.output(rightBackward, False)
       rightMotorSpeed.ChangeDutyCycle(pwm)

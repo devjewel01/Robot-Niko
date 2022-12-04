@@ -6,6 +6,12 @@ import yaml
 import time
 import multiprocessing
 
+import RPi.GPIO as io
+io.setmode(io.BCM)
+io.setwarnings(False)
+talkingInput = 18
+io.setup(talkingInput, io.IN)
+
 import Adafruit_PCA9685
 
 pwm1 = Adafruit_PCA9685.PCA9685(address=0x40, busnum=1)
@@ -88,25 +94,25 @@ def changeDegree(pin,newDegree,time1=0.05,time2=0):
 
 
 
-def moveJaw(mv, t):
-    time.sleep(t)
+def moveJaw(mv=1):
     for _ in range(mv):
         servoMove(15,90)
         time.sleep(0.2)
         servoMove(15,70)
-        time.sleep(0.2)
+        time.sleep(0.2) 
 
+def speakingContinue():
+    while True:
+        if io.input(talkingInput):
+            print("speaking detecting")
+            moveJaw()
+        else:
+            print("speaking off")
 
-def mouthExpression(mode, length):
-    if mode=="offline":
-        t = 3
-        mv = int((length)/7)
-    if mode=="online":
-        t = 0.5
-        mv = int((length+9)/9)
+def speakingModeOn():
+    speakingOn = multiprocessing.Process(target=speakingContinue, args=())
+    speakingOn.start
 
-    p1 = multiprocessing.Process(target=moveJaw, args=(mv, t))
-    p1.start()
 
 
 
