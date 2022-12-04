@@ -24,7 +24,7 @@ def openMouth():
 def closeMouth():
     servoMove(15, 60)
 
-def speakingMode():
+def speakingContinue():
     while True:
         if io.input(talkingInput):
             print("speaking detecting")
@@ -32,6 +32,6 @@ def speakingMode():
         else:
             print("speaking off")
 
-def speaking():
-    p1 = multiprocessing.Process(target=speakingMode, args=())
-    p1.start
+def speakingModeOn():
+    speakingOn = multiprocessing.Process(target=speakingContinue, args=())
+    speakingOn.start
