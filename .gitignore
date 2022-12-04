@@ -4,6 +4,7 @@ __pycache__/
 
 *.pyc
 *.pyo
+*.swp
 
 code/Face_Recognition/
 src/Face_Recognition
