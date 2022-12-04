@@ -1,3 +1,66 @@
+
+Action:
+  Input:
+    1:
+      - "hands up"
+      - "hand up"
+    2:
+      - "handshake"
+      - "hand shake"
+    3:
+      - "right finger grip"
+      - "right hand grip"
+      - "right hand finger grip"
+      - "test your finger"
+    4:
+      - "left hand grip"
+      - "left finger grip"
+      - "left hand finger grip"
+    5:
+      - "go forward"
+      - "go in front"
+    6:
+      - "Back forward"
+      - "go back"
+    7:
+      - "Stop"
+      - "Stop the robot"
+    8:
+      - "go left"
+    9:
+      - "go right"
+    10:
+      - "move in circle"
+    11:
+      - ""
+
+  
+  Output:
+    1:
+      - "hand.handsup()"
+    2:
+      - "rightHand.handshane()"
+    3:
+      - "rightHand.grip()"
+    4:
+      - "rithtHand.grip()"
+    5:
+      - "mobility.Forward(40)"
+    6:
+      - "mobility.Backward(40)"
+    7: 
+      - "mobility.Stop()"
+    8:
+      - "mobility.Left()"
+    9:
+      - "mobility.Right()"
+    10:
+      - "mobility.rightCircle()"
+      - "mobility.leftCircle()"
+    
+
+
+
 Conversation:
   Question:
     1:
@@ -967,30 +1030,3 @@ Conversation:
       - "no, i am niko"
 
 
-Action:
-  Input:
-    1:
-      - "hands up"
-      - "hand up"
-    2:
-      - "handshake"
-      - "hand shake"
-    3:
-      - "right finger grip"
-      - "right hand grip"
-      - "right hand finger grip"
-      - "test your finger"
-    4:
-      - "left hand grip"
-      - "left finger grip"
-      - "left hand finger grip"
-  
-  Output:
-    1:
-      - "movement.hand.handsup()"
-    2:
-      - "movement.rightHand.handshane()"
-    3:
-      - "movement.rightHand.grip()"
-    4:
-      - "movement.rithtHand.grip()"
