@@ -58,8 +58,8 @@ wakeword_length=1
 
 numQuestion=len(custom_conversation['Conversation']['Question'])
 numAnswer=len(custom_conversation['Conversation']['Answer'])
-#numInput=len(custom_conversation['Command']['Input'])
-#numOutput=len(custom_conversation['Command']['Output'])
+numInput=len(custom_conversation['Action']['Input'])
+numOutput=len(custom_conversation['Action']['Output'])
 
 speakingModeOn()
 
@@ -263,15 +263,16 @@ class Myassistant():
                 say('Please check if the number of questions matches the number of answers')
 
 
-        # for i in range(1,numInput+1):
-        #     try:
-        #         if str(custom_conversation['Command']['Input'][i][0]).lower() in str(usrcmd).lower():
-        #             self.assistant.stop_conversation()
-        #             selected=random.sample(custom_conversation['Command']['Output'][i],1)
-        #             os.system("python3 /home/pi/Robot-Niko/src/movement/"+selected[0])
-        #             break
-        #     except Keyerror:
-        #         say('Please check if the number of inputs matches the number of outputs')
+        for i in range(1,numInput+1):
+            try:
+                for ques in custom_conversation['Action']['Input'][i]:
+                    if str(ques).lower() in str(usrcmd).lower():
+                        self.assistant.stop_conversation()
+                        selectedans=random.sample(custom_conversation['Action']['Output'][i],1)
+                        eval(selectedans[0])
+                        break
+            except Keyerror:
+                say('Please check if the number of questions matches the number of answers')
 
         # if 'active sensor' in str(usrcmd).lower():
         #     print("listen active sensor")

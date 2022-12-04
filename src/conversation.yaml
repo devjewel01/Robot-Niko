@@ -965,3 +965,29 @@ Conversation:
       - "i am sad to hear this. Saying again im nikoo. Niko the robot"
       - "i am niko the robot"
       - "no, i am niko"
+
+
+Action:
+  Input:
+    1:
+      - "hands up"
+      - "hand up"
+    2:
+      - "handshake"
+      - "hands shake"
+    3:
+      - "right finger grip"
+      - "right hand grip"
+    4:
+      - "left hand grip"
+      - "left finger grip"
+  
+  Output:
+    1:
+      - 'movement.hand.handsup()'
+    2:
+      - 'movement.rightHand.handshane()'
+    3:
+      - 'movement.rightHand.grip()'
+    4:
+      - 'movement.rithtHand.grip()'
