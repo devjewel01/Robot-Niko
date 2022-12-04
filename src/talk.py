@@ -4,7 +4,6 @@
 import os
 import os.path
 import yaml
-from move import mouthExpression
 
 
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
