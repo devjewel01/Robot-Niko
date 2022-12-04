@@ -1,16 +1,15 @@
 #!/home/pi/robotEnv/bin python 
 
 from time import sleep
-
 import RPi.GPIO as io
 io.setmode(io.BCM)
 io.setwarnings(False)
-
 PWM_MAX = 100
 
 
+
 leftForward = 5
-leftBackward = 0
+leftBackward = 21
 leftMotorSpeed = 13 
 
 rightForward = 6
@@ -80,7 +79,6 @@ def Right(speed=50):
    sleep(1)
    Stop()
 
-
 def leftCircle(speed=50):
    io.output(leftForward,  False)
    io.output(leftBackward,  True)
@@ -116,8 +114,6 @@ def setMotorLeft(power):
          pwm = PWM_MAX
       io.output(leftForward, False)
       io.output(leftBackward, True)
-      io.output(rightForward, False)
-      io.output(rightBackward, True)
       leftMotorSpeed.ChangeDutyCycle(pwm)
    elif power > 0:
       pwm = int(PWM_MAX * power)
@@ -125,8 +121,6 @@ def setMotorLeft(power):
          pwm = PWM_MAX
       io.output(leftForward, True)
       io.output(leftBackward, False)
-      io.output(rightForward, True)
-      io.output(rightBackward, False)
       leftMotorSpeed.ChangeDutyCycle(pwm)
    else:
       leftMotorSpeed.ChangeDutyCycle(0)
@@ -138,8 +132,6 @@ def setMotorRight(power):
       pwm = -int(PWM_MAX * power)
       if pwm > PWM_MAX:
          pwm = PWM_MAX
-      io.output(leftForward, False)
-      io.output(leftBackward, True)
       io.output(rightForward, False)
       io.output(rightBackward, True)
       rightMotorSpeed.ChangeDutyCycle(pwm)
@@ -147,8 +139,6 @@ def setMotorRight(power):
       pwm = int(PWM_MAX * power)
       if pwm > PWM_MAX:
          pwm = PWM_MAX
-      io.output(leftForward, True)
-      io.output(leftBackward, False)
       io.output(rightForward, True)
       io.output(rightBackward, False)
       rightMotorSpeed.ChangeDutyCycle(pwm)
@@ -163,4 +153,39 @@ def exit():
    io.output(rightBackward, False)
    io.cleanup()
    
+
+def LF():
+   io.output(leftForward, True)
+   io.output(leftBackward, False)
+   io.output(rightForward, False)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(50)
+   rightMotorSpeed.ChangeDutyCycle(0)
+
+
+
+def LB():
+   io.output(leftForward, False)
+   io.output(leftBackward, True)
+   io.output(rightForward, False)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(50)
+   rightMotorSpeed.ChangeDutyCycle(0)
+
+def RF():
+   io.output(leftForward, False)
+   io.output(leftBackward, False)
+   io.output(rightForward, True)
+   io.output(rightBackward, False)
+   leftMotorSpeed.ChangeDutyCycle(0)
+   rightMotorSpeed.ChangeDutyCycle(50)
+
+def RB():
+   io.output(leftForward, False)
+   io.output(leftBackward, False)
+   io.output(rightForward, False)
+   io.output(rightBackward, True)
+   leftMotorSpeed.ChangeDutyCycle(0)
+   rightMotorSpeed.ChangeDutyCycle(50)
+
 

@@ -2,7 +2,7 @@
 
 
 
-from move import mouthExpression
+from move import speakingModeOn
 from talk import say
 from talk import custom_conversation
 from threading import Thread
@@ -61,6 +61,7 @@ numAnswer=len(custom_conversation['Conversation']['Answer'])
 #numInput=len(custom_conversation['Command']['Input'])
 #numOutput=len(custom_conversation['Command']['Output'])
 
+speakingModeOn()
 
 class Myassistant():
 
@@ -368,7 +369,8 @@ class Myassistant():
 
             for event in events:
                 if event.type == EventType.ON_RENDER_RESPONSE:
-                     mouthExpression("online", (int)(len(event.args["text"])) )
+                    #  mouthExpression("online", (int)(len(event.args["text"])) )
+                    nothing = None
                 if event.type == EventType.ON_START_FINISHED and args.query:
                     assistant.send_text_query(args.query)
                 self.process_event(event)
