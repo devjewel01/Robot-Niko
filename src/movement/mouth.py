@@ -27,8 +27,10 @@ def closeMouth():
 def speakingMode():
     while True:
         if io.input(talkingInput):
+            print("speaking detecting")
             moveJaw()
-    
+        else:
+            print("speaking off")
 
 def speaking():
     p1 = multiprocessing.Process(target=speakingMode, args=())
