@@ -974,20 +974,23 @@ Action:
       - "hand up"
     2:
       - "handshake"
-      - "hands shake"
+      - "hand shake"
     3:
       - "right finger grip"
       - "right hand grip"
+      - "right hand finger grip"
+      - "test your finger"
     4:
       - "left hand grip"
       - "left finger grip"
+      - "left hand finger grip"
   
   Output:
     1:
-      - 'movement.hand.handsup()'
+      - "movement.hand.handsup()"
     2:
-      - 'movement.rightHand.handshane()'
+      - "movement.rightHand.handshane()"
     3:
-      - 'movement.rightHand.grip()'
+      - "movement.rightHand.grip()"
     4:
-      - 'movement.rithtHand.grip()'
+      - "movement.rithtHand.grip()"

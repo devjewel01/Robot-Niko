@@ -1,6 +1,9 @@
 #!/home/pi/robotEnv/bin python 
 
 
+import movement.rightHand
+import movement.leftHand
+import movement.hand
 
 from move import speakingModeOn
 from talk import say
