@@ -6,6 +6,5 @@ __pycache__/
 *.pyo
 *.swp
 
-code/Face_Recognition/
-src/Face_Recognition
+*.dat
 
