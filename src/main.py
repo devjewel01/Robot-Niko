@@ -1,13 +1,8 @@
 #!/home/pi/robotEnv/bin python 
 
+import sys
+sys.path.append("home/pi/Robot-Niko/src/movement")
 
-import movement.rightHand
-import movement.leftHand
-import movement.hand
-
-from move import speakingModeOn
-from talk import say
-from talk import custom_conversation
 from threading import Thread
 import multiprocessing
 import argparse
@@ -27,7 +22,14 @@ from google.assistant.library import Assistant
 from google.assistant.library.event import EventType
 from google.assistant.library.file_helpers import existing_file
 from google.assistant.library.device_helpers import register_device
-from indicator import assistantindicator
+from indicator import robotIndicator
+from rightHand import grip, open
+from leftHand import grip, open
+from hand import handshake, handup
+from mobility import Forward, Backward, Stop, Left, Right, rightCircle, leftCircle
+from move import speakingModeOn
+from talk import say
+from talk import custom_conversation
 
 try:
     FileNotFoundError
@@ -92,7 +94,7 @@ class Myassistant():
         if event.type == EventType.ON_START_FINISHED:
             self.can_start_conversation = True
             if os.path.isfile("{}/.mute".format(USER_PATH)):
-                assistantindicator('mute')
+                robotIndicator('mute')
 
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
@@ -105,30 +107,30 @@ class Myassistant():
         if event.type == EventType.ON_CONVERSATION_TURN_STARTED:
             subprocess.Popen(["aplay", "{}/audio-files/listening.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.can_start_conversation = False
-            assistantindicator('listening')
+            robotIndicator('listening')
 
 
         if (event.type == EventType.ON_CONVERSATION_TURN_TIMEOUT or event.type == EventType.ON_NO_RESPONSE):
             self.can_start_conversation = True
-            assistantindicator('off')
+            robotIndicator('off')
 
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
             os.system("amixer -D pulse sset Master 100%")
             if os.path.isfile("{}/.mute".format(USER_PATH)):
-                assistantindicator('mute')
+                robotIndicator('mute')
 
 
         if (event.type == EventType.ON_RESPONDING_STARTED and event.args and not event.args['is_error_response']):
-            assistantindicator('speaking')
+            robotIndicator('speaking')
 
         if event.type == EventType.ON_RESPONDING_FINISHED:
-            assistantindicator('off')
+            robotIndicator('off')
 
 
         if event.type == EventType.ON_RECOGNIZING_SPEECH_FINISHED:
-            assistantindicator('off')
+            robotIndicator('off')
             if self.singleresposne:
                 self.assistant.stop_conversation()
                 self.singledetectedresponse= event.args["text"]
@@ -138,19 +140,19 @@ class Myassistant():
 
 
         if event.type == EventType.ON_RENDER_RESPONSE:
-            assistantindicator('off')
+            robotIndicator('off')
 
 
         if (event.type == EventType.ON_CONVERSATION_TURN_FINISHED and event.args and not event.args['with_follow_on_turn']):
             self.can_start_conversation = True
-            assistantindicator('off')
+            robotIndicator('off')
 
             os.system("amixer -D pulse sset Master 0%")
             self.assistant.set_mic_mute(True)
             time.sleep(0.9)
             os.system("amixer -D pulse sset Master 100%")
             if os.path.isfile("{}/.mute".format(USER_PATH)):
-                assistantindicator('mute')
+                robotIndicator('mute')
 
 
         if event.type == EventType.ON_DEVICE_ACTION:
