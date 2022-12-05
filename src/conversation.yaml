@@ -76,6 +76,7 @@ Conversation:
     4:
       - 'Who is the DC of Comilla'
       - "Comilla DC"
+      - "who is the dc"
       - "Dc Of cumilla"
       - "District Magistrate"
     5:
@@ -426,7 +427,6 @@ Conversation:
       - "tousif"
     99:
       - "anik chokroborti"
-
     100:
       - "Adc General"
       - "Additional District Commissioner in General"
@@ -464,18 +464,31 @@ Conversation:
       - "Nazma Ashrafi"
       - "ADC edu and ict"
       - "ADC and ict"
-      - "ABC and ICT"
-      - "ADC"
-
+      - "ADC and Education"
+      - "ADC ICT"
+      - "ADC Education and ICT"
+      - "ADC in Education and ICT"
+    108:
+      - "how many upazilla"
+      - "upazilla in"
+    109:
+      - "NDC"
+    110:
+      - "do you have artificial intelligence"
+      - "any artificial intelligence"
+      - "do you have AI"
+      - "any       
+    111:
+      - "made by google"
       
-
-      
-
-
-
-
-
-      
+    112:
+      - "your programmer"
+      - "who is your Coder"
+      - "Who make your software"
+    113:
+      - "your origin"
+    114:
+      - "your birthday"
     
      
 
@@ -489,7 +502,7 @@ Conversation:
     3: 
       - 'I build in Comilla DC office Fab Lab'
     4:
-      - "Honorouble Mohammod Kamrul Hasan sir is the District Magistrate Of Comilla"
+      - "Honorouble Mohammod Kamrul Hasan sir is the District Magistrate Of Comilla..... Thank your sir for taking the initiative to make me happen"
     5:
       - 'My created made me like a male'
     6:
@@ -709,9 +722,11 @@ Conversation:
     106: 
       - "i can run with my steering wheels. but walking, its a little bit complex for me at this stage. But i am hopefull to do it in future."
     107:
-      - "Nazma Ashrafi is the Assistant Deputy Commissioner of ICT and Education"
-
-
+      - "Nazma Ashrafe Mam is the Additional Deputy Commissioner of ICT and Education"
+    108:
+      - "there are total 17 upazilla in comilla"
+    109:
+      - "kaniz fatema mam is the NDC of comilla"
 
 
 
