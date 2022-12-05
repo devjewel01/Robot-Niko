@@ -66,6 +66,7 @@ Conversation:
       - 'your name'
       - "who are you"
       - "what are you"
+      - "what is the name"
     2:
       - 'full form of DC'
     3:
@@ -94,6 +95,7 @@ Conversation:
       - "what's up"
       - "are you fine?"
       - "are you good"
+      - "whatsapp"
     10:
       - 'when fab lab was established'
     11:
@@ -346,13 +348,8 @@ Conversation:
       - "chilren of DC sir"
     
     83:
-      - "Who is Nazma Ashrafi"
-      - "Who is Nama Asrafi"
-      - "Who is Nazma Asrafi"
-      - "Who is Nazma Asafi"
-      - "Who is Nama Asafi"
-      - "ADC edu and ict"
-      - "ADC adu and ict"
+      - "What is your dream"
+
     84:
       - "What is School of Robotics "
       - "school of Robotics"
@@ -389,6 +386,7 @@ Conversation:
       - "created niko"
       - "who created niko"
       - "niko was created by"
+      - "are you"
     89:
       - "I love you"
     90:  
@@ -462,6 +460,12 @@ Conversation:
       - "who is this"
     106: 
       - "can you walk"
+    107:
+      - "Nazma Ashrafi"
+      - "ADC edu and ict"
+      - "ADC and ict"
+      - "ABC and ICT"
+      - "ADC"
 
       
 
@@ -655,7 +659,7 @@ Conversation:
     82:
       - "Deputy Commissioner Kamrul Hasan have two son"
     83:
-      - "Nazma Ashrafi is the Assistant Deputy Commissioner of ICT and Education"
+      - "My dream to marry robot shopia"
     84:
       - "School of Robotics is the first robotics training institute of Bangladesh, which teaches 4 different branches of Technology. In school of Robotics any particular person can take admission . it is situated in cumilla and DC Kamrul Hasan is the founder of it "
     85:
@@ -704,8 +708,8 @@ Conversation:
       - "I am your robo friend niko. Niko the robot"
     106: 
       - "i can run with my steering wheels. but walking, its a little bit complex for me at this stage. But i am hopefull to do it in future."
-      
-
+    107:
+      - "Nazma Ashrafi is the Assistant Deputy Commissioner of ICT and Education"
 
 
 

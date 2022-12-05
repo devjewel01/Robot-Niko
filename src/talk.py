@@ -56,7 +56,9 @@ def say(Text):
     Data = str(Text)
     xpathtec = '//*[@id="inputDiv"]'
     driver.find_element(by=By.XPATH, value=xpathtec).click()
+    sleep(0.5)
     driver.find_element(by=By.XPATH, value=xpathtec).send_keys(Data)
+    sleep(1)
     driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-page"]/div[1]/div/div[2]/app-pw-reading-bar/div/div/button[3]').click()
     sleep(2)
 
