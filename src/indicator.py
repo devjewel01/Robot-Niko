@@ -13,7 +13,7 @@ GPIO.setup(speakingindicator, GPIO.OUT)
 GPIO.output(listeningindicator, GPIO.LOW)
 GPIO.output(speakingindicator, GPIO.LOW)
 
-def assistantindicator(activity):
+def robotIndicator(activity):
     activity=activity.lower()
     if activity=='listening':
         GPIO.output(speakingindicator,GPIO.LOW)
