@@ -118,3 +118,39 @@ def handshake():
     sleep(1)
     servoMove(4, 90)
     servoMove(1, 120)
+
+def rhf(a,b,c,d,e):
+    grip()
+    servoMove(4, 90)
+    sleep(1)
+    if a== True :
+        servoMove(5, 0)
+    if b== True :
+        servoMove(6, 0)
+    if c== True :
+        servoMove(7, 0)
+    if d== True :
+        servoMove(8, 0)
+    if e== True :
+        servoMove(9, 0)
+    sleep(4)
+    grip()
+
+def rhbicepup():
+    servoMove(3, 35)
+
+def rhnumber(a,b,c,d,e):
+    servoMove(0, 110)
+    sleep(1)
+    servoMove(2, 130)
+    sleep(1)
+    rhbicepup()
+    sleep(1)
+    servoMove(1, 130)
+    sleep(1)
+    rhf(a,b,c,d,e)
+    
+
+
+
+
