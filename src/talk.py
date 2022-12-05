@@ -58,15 +58,9 @@ def say(Text):
     driver.find_element(by=By.XPATH, value=xpathtec).click()
     driver.find_element(by=By.XPATH, value=xpathtec).send_keys(Data)
     driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-page"]/div[1]/div/div[2]/app-pw-reading-bar/div/div/button[3]').click()
-    #sleep(1)
+    sleep(2)
 
-    #try:
-    #    driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-scroll"]/div[1]/button').click()
-    #    sleep(0.5)
-    #
-    #except:
-    #    pass
     
     print("")
-    print(f" Robot-Niko : {Text}.")
+    print(f" Robot-Niko Answer : {Text}.")
     print("")
