@@ -79,14 +79,14 @@ def pointing():
         servoMove(9, d)
         sleep(t)
 
-def test():
+def gripOnOff():
     for d in range(180):
         servoMove(5, d)
         servoMove(6, d)
         servoMove(7, d)
         servoMove(8, d)
         servoMove(9, d)
-
+        sleep(t)
     sleep(2)
 
     for d in range(180, 0, -1):
@@ -95,7 +95,7 @@ def test():
         servoMove(7, d)
         servoMove(8, d)
         servoMove(9, d)
-    
+        sleep(t)
     sleep(2)
 
 def handshake():
