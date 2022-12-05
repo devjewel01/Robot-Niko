@@ -1,6 +1,7 @@
 from move import servoMove
 from time import sleep
 t = 0.0008
+
 def grip(deg=180):
     for d in range(deg):
         servoMove(5, d)
@@ -154,3 +155,8 @@ def rhnumber(a,b,c,d,e):
 
 
 
+
+
+def salute():
+
+    

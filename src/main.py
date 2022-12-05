@@ -1,8 +1,6 @@
 #!/home/pi/robotEnv/bin python 
 
 import sys
-sys.path.append("home/pi/Robot-Niko/src/movement")
-
 from threading import Thread
 import multiprocessing
 import argparse
@@ -23,11 +21,13 @@ from google.assistant.library.event import EventType
 from google.assistant.library.file_helpers import existing_file
 from google.assistant.library.device_helpers import register_device
 from indicator import robotIndicator
-from rightHand import grip, open
-from leftHand import grip, open
-from hand import handshake, handup
-from mobility import Forward, Backward, Stop, Left, Right, rightCircle, leftCircle
-from move import speakingModeOn
+
+#from rightHand import grip, open
+#from leftHand import grip, open
+#from hand import handshake, handup
+#from mobility import Forward, Backward, Stop, Left, Right, rightCircle, leftCircle
+#from move import speakingModeOn
+
 from talk import say
 from talk import custom_conversation
 
@@ -66,7 +66,7 @@ numAnswer=len(custom_conversation['Conversation']['Answer'])
 numInput=len(custom_conversation['Action']['Input'])
 numOutput=len(custom_conversation['Action']['Output'])
 
-speakingModeOn()
+#speakingModeOn()
 
 class Myassistant():
 
@@ -262,7 +262,8 @@ class Myassistant():
                         selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
                         say(*selectedans)
                         print("offline answer length = ", len(*selectedans))
-                        time.sleep(len(*selectedans)/5)
+                        # l = (int)(len(*selectedans))/8
+                        # time.sleep(max(4,l))
                         break
             except Keyerror:
                 say('Please check if the number of questions matches the number of answers')
@@ -279,17 +280,6 @@ class Myassistant():
             except Keyerror:
                 say('Please check if the number of questions matches the number of answers')
 
-        # if 'active sensor' in str(usrcmd).lower():
-        #     print("listen active sensor")
-        #     self.assistant.stop_conversation()
-        #     t1 = multiprocessing.Process(target=sensorOn, args=[])
-        #     print("sensor running")
-        #     t1.start()
-            
-            
-        # if 'stop sensor'.lower() in str(usrcmd).lower():
-        #     self.assistant.stop_conversation()
-        #     sensorOff()
 
 
 
