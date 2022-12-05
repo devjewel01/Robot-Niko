@@ -1,6 +1,7 @@
 import sys
 sys.path.append("/home/pi/Robot-Niko/src/movement")
-from head import setOnPosition, moveLeft, moveRight, servoMove
+from head import  servoMove
+from time import sleep
 
 import cv2
 
@@ -16,7 +17,8 @@ while cap.isOpened():
     for (x, y , w ,h) in faces:
         cv2.rectangle(img, (x,y), (x+w, y+h), (0, 0 , 0), 3)
         print(x, y)
-        servoMove(11, (int)(90+(-250+x)/10))        
+        servoMove(11, (int)(90+(-250+x)/12))
+        sleep(0.1)        
 
     cv2.imshow('img', img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
