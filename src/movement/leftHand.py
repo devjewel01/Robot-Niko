@@ -85,6 +85,34 @@ def pointing():
         servoMove(25, d)
         sleep(t)
 
+def lhf(a,b,c,d,e):
+    grip()
+    servoMove(20, 10)
+    sleep(1)
+    if a== True :
+        servoMove(21, 0)
+    if b== True :
+        servoMove(22, 0)
+    if c== True :
+        servoMove(23, 0)
+    if d== True :
+        servoMove(24, 0)
+    if e== True :
+        servoMove(25, 0)
+    sleep(4)
+    grip()
+
+def lhnumber(a,b,c,d,e):
+    servoMove(16, 150)
+    sleep(1)
+    servoMove(18, 45)
+    sleep(1)
+    #bicepkoibro
+    sleep(1)
+    servoMove(17, 95)
+    sleep(1)
+    lhf(a,b,c,d,e)
+
 def test():
     for d in range(120):
         servoMove(21, 80)
