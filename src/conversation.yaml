@@ -66,6 +66,7 @@ Conversation:
       - 'your name'
       - "who are you"
       - "what are you"
+      - "what is the name"
     2:
       - 'full form of DC'
     3:
