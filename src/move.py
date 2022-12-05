@@ -108,6 +108,7 @@ def speakingContinue():
             moveJaw()
         else:
             #print("speaking off")
+            pass
 
 def speakingModeOn():
     speakingOn = multiprocessing.Process(target=speakingContinue, args=())
