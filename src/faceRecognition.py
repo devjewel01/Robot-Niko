@@ -2,6 +2,7 @@ from talk import say
 from time import sleep
 from movement.rightHand import handshake
 import multiprocessing
+sleep(3)
 
 appear = []
 
