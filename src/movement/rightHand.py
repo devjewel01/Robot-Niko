@@ -117,7 +117,7 @@ def handshake():
     open()
     for x in range(30, 60):
         servoMove(3, x)
-        sleep(1)
+        sleep(td)
     sleep(1)
     servoMove(4, 90)
     for x in range(150, 120, -1):
