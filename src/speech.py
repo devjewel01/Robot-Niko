@@ -43,23 +43,25 @@ from move import speakingModeOn, servoMove
 from movement.head import rotate as rotateHead
 from movement.hand import omoplateUp, omoplateDown, shoulderUp, shoulderDown, bicepUp, bicepDown, rotateArm
 from time import sleep
-
-speakingModeOn()
+sleep(2)
+#speakingModeOn()
 
 say("Hello World")
 # rotateHead()
+sleep(5)
 
 say("I am robot niko... version 1.0")
 # omoplateUp()
+sleep(5)
 # sleep(1)
 # omoplateDown()
 
 say("speed 1.5 Giga Heartz,  64-bit quad-core ARM  processor")
 # bicepUp()
-# sleep(1)
+sleep(1)
 # bicepDown()
 
-say("with 8 Giga Byte RAM and  120 Giga byte  ROM.")
+#say("with 8 Giga Byte RAM and  120 Giga byte  ROM.")
 # rotateArm()
 
 

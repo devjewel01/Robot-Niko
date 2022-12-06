@@ -36,7 +36,7 @@ sleep(0.5)
 driver.find_element(by=By.XPATH, value='//*[@id="v_5"]').click()
 driver.find_element(by=By.XPATH, value='/html/body/app-root/app-voice-selection/div/div[3]/button').click()
 
-#sleep(1)
+sleep(3)
 #driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-scroll"]/div[1]/button').click()
 #driver.find_element(by=By.XPATH, value='//*[@id="pw-reading-page"]/div[1]/div/div[2]/app-pw-reading-bar/div/div/button[1]/span[1]/svg/use').click()
 
@@ -54,6 +54,7 @@ def say(Text):
         pass
 
     Data = str(Text)
+    sleep(0.5)
     xpathtec = '//*[@id="inputDiv"]'
     driver.find_element(by=By.XPATH, value=xpathtec).click()
     sleep(0.5)
