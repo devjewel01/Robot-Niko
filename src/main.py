@@ -26,8 +26,8 @@ from indicator import robotIndicator
 #from leftHand import grip, open
 #from hand import handshake, handup
 #from mobility import Forward, Backward, Stop, Left, Right, rightCircle, leftCircle
-#from move import speakingModeOn
 
+from move import speakingModeOn
 from talk import say
 from talk import custom_conversation
 
@@ -66,10 +66,9 @@ numAnswer=len(custom_conversation['Conversation']['Answer'])
 numInput=len(custom_conversation['Action']['Input'])
 numOutput=len(custom_conversation['Action']['Output'])
 
-#speakingModeOn()
+speakingModeOn()
 
 class Myassistant():
-
     def __init__(self):
         self.can_start_conversation=False
         self.assistant=None

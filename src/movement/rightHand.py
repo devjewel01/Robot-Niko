@@ -152,11 +152,4 @@ def rhnumber(a,b,c,d,e):
     rhf(a,b,c,d,e)
     
 
-
-
-
-
-
-def salute():
-
     

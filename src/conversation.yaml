@@ -94,7 +94,7 @@ Conversation:
       - 'how are you'
       - 'how do you doing'
       - "what's up"
-      - "are you fine?"
+      - "are you fine"
       - "are you good"
       - "whatsapp"
     10:
@@ -516,9 +516,9 @@ Conversation:
     8:
       - 'nearly 1 year'
     9:
-      - 'I am fine. and you?'
-      - 'I am doing well. what about you?'
-      - 'i am Feel Perfect in DC office'
+      - "I am fine. and you?"
+      - "I am doing well. what about you"
+      - "i am Feel Perfect in DC office"
     10:
       - 'In March 2021 fab lab has been established'
     11:
