@@ -1,4 +1,4 @@
-from talkOld import say
+from talk import say
 from time import sleep
 from movement.rightHand import handshake
 import multiprocessing
@@ -10,12 +10,12 @@ def detect(name):
     if appear.count(name)==0:
         print("first time found")
         appear.append(name)
-        if name == "DC":
+        if name == "DC" or name=="DC Sir":
             cmd = "Hello Honorable DC Kamrul Hasan sir, it's good to see you"
             say(cmd)
             handshake()
             sleep(1)
-            say("its a honour to have you with us... Have a beautiful day")
+            say("it's a honour to have you with us... Have a beautiful day sir")
             
         else:
             cmd = "Hello " + name + " sir, how are you, I am happy to see you"
