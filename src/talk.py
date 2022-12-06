@@ -33,25 +33,21 @@ driver.maximize_window()
 Website = "https://text-to-speech.org/"
 driver.get(Website)
 
-sleep(0.5)
-driver.find_element(by=By.XPATH, value='//*[@id="select_language"]').click()
-driver.find_element(by=By.XPATH, value='//*[@id="select_language"]/option[1]').click()
-
 
 def say(Text):
     try:
-        driver.find_element(by=By.XPATH, value='//*[@id="clearBtn"]').click()
+        driver.find_element(by=By.XPATH, value='//*[@id="text_to_convert"]').clear()
         sleep(0.5)
 
     except:
         pass
 
     Data = str(Text)
-    xpathtec = '//*[@id="text_box"]'
+    xpathtec = '//*[@id="text_to_convert"]'
     driver.find_element(by=By.XPATH, value=xpathtec).click()
     driver.find_element(by=By.XPATH, value=xpathtec).send_keys(Data)
     sleep(0.5)
-    driver.find_element(by=By.XPATH, value='//*[@id="play_button"]').click()
+    driver.find_element(by=By.XPATH, value='//*[@id="convertbtn"]').click()
 
     print("")
     print(f" Robot-Niko Answer : {Text}.")
