@@ -1,6 +1,6 @@
 from move import servoMove
 from time import sleep
-t = 0.0008
+t = 0.001
 
 def grip(deg=180):
     for d in range(deg):

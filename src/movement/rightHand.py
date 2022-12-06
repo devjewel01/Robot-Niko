@@ -100,26 +100,31 @@ def gripOnOff():
     sleep(2)
 
 def handshake():
-    servoMove(1, 150)
-    sleep(2)
-    servoMove(3,30)
-    sleep(2)
-    servoMove(4, 20)
-    sleep(2)
-    grip(100)
+    td = 0.1
+    servoMove(1, 120)
+    sleep(0.5)
+    for x in range(120, 150):
+        servoMove(1, x)
+        sleep(td)
     sleep(1)
-    for _ in range(3):
-        servoMove(3, 50)
-        sleep(1)
-        servoMove(3, 30)
+    for x in range(60, 30, -1):
+        servoMove(3, x)
+        sleep(td)
+    servoMove(4, 20)
+    sleep(1)
+    grip(100)
     sleep(2)
     open()
-    sleep(1)
-    servoMove(3, 60)
+    for x in range(30, 60):
+        servoMove(3, x)
+        sleep(1)
     sleep(1)
     servoMove(4, 90)
-    servoMove(1, 120)
-
+    for x in range(150, 120, -1):
+        servoMove(1, x)
+        sleep(td)
+    
+    
 def rhf(a,b,c,d,e):
     grip()
     servoMove(4, 90)
@@ -152,4 +157,69 @@ def rhnumber(a,b,c,d,e):
     rhf(a,b,c,d,e)
     
 
-    
+
+
+def shoulderUp():
+    t = 0.1
+    r = 100
+    for _ in range(20):
+        servoMove(0, r)
+        servoMove(16, l)
+        r += 1
+        sleep(t)
+
+def shoulderDown():
+    t = 0.1
+    r = 120
+    for _ in range(20):
+        servoMove(0, r)
+        r -= 1
+        sleep(t)
+
+
+def omoplateUp():
+    t = 0.1
+    r = 120
+    for _ in range(20):
+        servoMove(1, r)
+        r+=1
+        sleep(t)
+        
+def omoplateDown():
+    t = 0.1
+    r = 140
+    for _ in range(20):
+        servoMove(1, r)
+        r -= 1
+        sleep(t)
+
+def bicepUp():
+    t = 0.1
+    r = 60
+    for _ in range(30):
+        servoMove(3, r)
+        r -= 1
+        sleep(t)
+
+def bicepDown():
+    t = 0.1
+    r = 30
+    for _ in range(20):
+        servoMove(3, r)
+        r += 1
+        sleep(t)
+
+
+def rotateArm():
+    t = 0.1
+    r = 130
+    for _ in range(40):
+        servoMove(2, r)
+        r -= 1
+        sleep(t)
+    sleep(1)
+    r = 90
+    for _ in range(40):
+        servoMove(2, r)
+        r += 1
+        sleep(t)

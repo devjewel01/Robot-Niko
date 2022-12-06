@@ -1,6 +1,7 @@
 from move import servoMove
 from time import sleep
 t = 0.1
+ft = 0.05
 
 def rotate():
     # servoMove(11, 0)
@@ -19,16 +20,24 @@ def rotate():
     #servoMove(11, 90)
 
 def moveLeft():
-    servoMove(11, 30)
+    for d in range(90, 30, -1):
+        servoMove(11, d)
+        sleep(ft)
     
 def moveLeftmid():
-    servoMove(11, 60)
+    for d in range(90, 60, -1):
+        servoMove(11, d)
+        sleep(ft)
 
 def moveRight():
-    servoMove(11, 150)
+    for d in range(90, 150):
+        servoMove(11, d)
+        sleep(ft)
     
 def moveRightmid():
-    servoMove(11, 120)
+    for d in range(0, 120):
+        servoMove(11, d)
+        sleep(ft)
 
 def setOnPosition():
     servoMove(11, 90)

@@ -27,10 +27,11 @@ def closeMouth():
 def speakingContinue():
     while True:
         if io.input(talkingInput):
-            print("speaking detecting")
+            # print("speaking detecting")
             moveJaw()
         else:
-            print("speaking off")
+            # print("speaking off")
+            sp = None 
 
 def speakingModeOn():
     speakingOn = multiprocessing.Process(target=speakingContinue, args=())
