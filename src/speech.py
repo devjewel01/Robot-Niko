@@ -62,7 +62,7 @@ def a1():
     sleep(5)
 
 def a2():
-    say("Thank you everyone for come here in my launching program....... At first, i want to express my warm gratatude to our honourable DC kamrul hasan sir........because of his creative thinking It was possible for me to be here.")
+    say(" At first, i want to express my warm gratatude to our honourable DC kamrul hasan sir........because of his creative thinking It was possible for me to be here.")
     omoplateUp()
     sleep(1)
     omoplateDown()
@@ -79,7 +79,7 @@ def a4():
     say(" I have 29 Degree of Freedoms for arm movement..... I Have a 7 inch display for operating me...... I have two high torque motor for my mobility.")
 
 def a5():
-    say("At first, I was merely a dream of DC kamrul hasan sir......  Then I group of aspired students from Comilla university  named quanta robotics make it happen.......I want mention thier name. they are shanjit Mondol, Jewel Nath, Anik chakraborty, Tawsif bin parves, Mahin Khan")
+    say("I am created by a group of aspired students from Comilla university  named quanta robotics make it happen.......I want mention thier name. they are shanjit Mondol from physics department, Jewel Nath from ICT department, Anik chakraborty from ICT department, Tawsif bin parves from ICT department, Mahin Khan from ICT department")
 
 def a6():
     say(" Let's talk about my features... I can generate any answer for your random questions...... I can take fruitful dicisions in any situations based on my computitions")
