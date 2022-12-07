@@ -77,7 +77,7 @@ def a3():
 
 def a4():
     say(" I have 29 Degree of Freedoms for arm movement..... I Have a 7 inch display for operating me...... I have two high torque motor for my mobility.")
-
+    
 def a5():
     say("I am created by a group of aspired students from Comilla university  named quanta robotics make it happen.......I want mention thier name. they are shanjit Mondol from physics department, Jewel Nath from ICT department, Anik chakraborty from ICT department, Tawsif bin parves from ICT department, Mahin Khan from ICT department")
 
@@ -88,10 +88,12 @@ def a7():
     say("I can recognize humans and differentiate individual person..... I can be controlled remotely ..... I can learn through my environment, although i am stilling my learning phase..... I am tring to be a great assistants to the humans")
 
 def a8():
-    say("I am  created with a scientific goal in mind.....  Until now It was challenging to create a body of a robot, since it required complex, expensive manufacturing methods..... In just a few days, it is now possible to experiment with different body shapes thanks to 3D printing, which is used to create my body. I am bangladesh first 100% home manufactured 3D printed robot.... As the government of bangladesh as emphasising on 4th Industrial revolation... I can said proudly that, I am the live 4th industrial revolution")
-
+    say("I am  created with a scientific goal in mind.....  Until now It was challenging to create a body of a robot, since it required complex,expensive manufacturing methods.....")
 def a9():
-    say("Lastly but not lately I expressing my thanks towards ADC general Mohammad Shahadat Hossain sir..... ADC in Education and ICT Nazma Asrafee mam, Assistnat Commissioner Nasrin Sultana Nipa mam, ..... Assistant Commissionar Kaniz Fatema Mam, Assistant Commissioner Atis Sarkar Sir... .. all the DC office employees for assisting in my project....... Without their, the project was impossible to finish....... Thank you again all")
+    say("In just a few days, it is now possible to experiment with different body shapes thanks to 3D printing, which is used to create my body. .... As the government of bangladesh as emphasising on 4th Industrial revolation... I can said proudly that, I am the live 4th industrial revolution")
+
+def a10():
+    say("I am bangladesh first 100% home manufactured 3D printed robot. Thank  you  all")
 
 
 

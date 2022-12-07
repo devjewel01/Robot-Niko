@@ -7,8 +7,8 @@ from selenium.webdriver.common.by import By
 
 chrome_options = Options()
 chrome_options.add_argument('--log-level=3')
-chrome_options.headless = True
-PathofDriver = Service("Driver/chromedriver")
+#chrome_options.headless = True
+PathofDriver = Service("/usr/bin/chromedriver")
 driver = webdriver.Chrome(service=PathofDriver,options=chrome_options)
 driver.maximize_window()
 

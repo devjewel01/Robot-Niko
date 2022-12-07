@@ -28,9 +28,10 @@ Conversation:
       - "are you good"
       - "whatsapp"
     6:
-      - 'when fab lab was established'  
+      - 'predict fifa'  
+      - "fifa champion"
     7:
-      - 'your height'
+      - "quanta robotics"
     8:
       - 'what do you do'
       - 'Why were you made'
@@ -183,7 +184,7 @@ Conversation:
     40:
       - "Who created you"
       - "created you"
-      - "creates you"
+      - "made you"
       - "how you was created"
       - "how you was create"
       - "your creator"
@@ -192,6 +193,10 @@ Conversation:
       - "who created niko"
       - "niko was created by"
       - "are you"
+      - "built you"
+      - "create you"
+      - "build you"
+      - "about your team"
     41:
       - "I love you"
     42:
@@ -291,7 +296,11 @@ Conversation:
       - "your origin"
     65:
       - "your birthday"
-
+    66:
+     - "your birthplace"
+     - "your headquaters"
+     - "your headoffice"
+     - "your office"
     
      
 
@@ -315,9 +324,9 @@ Conversation:
       - "I am doing well. what about you"
       - "i am Feel Perfect in DC office"
     6:
-      - 'In March 2021 fab lab has been established'
+      - "I wish to see argentina as a champion because I am a huge fan of Lionel messi but according to probability there is a high chance of brazil become the champion"
     7:
-      - 'I am very tall, my height around 6 feet'
+      - 'Quanta Robotics is a robotics startup. they make robots like me. Their privious robots are robot sheena and robot blueberry. They also take training the school, college students about robotics and programming'
     8:
       - 'i work in DC office and help people to find the destination in dc office. meet new people and updating my Artificial intelligence'
     9:
@@ -447,7 +456,8 @@ Conversation:
     65:
       - "Todays is my launching day, so 6th december is my birthday"
 
-
+    66:
+     - "Comilla DC office, Fablab"
 
 
 

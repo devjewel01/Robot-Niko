@@ -127,9 +127,9 @@ def show_prediction_labels_on_image(frame, predictions):
 
 
 if __name__ == "__main__":
-    print("Training KNN classifier...")
-    classifier = train("Images/train", model_save_path="trained_knn_model.clf", n_neighbors=2)
-    print("Training complete!")
+    #print("Training KNN classifier...")
+    #classifier = train("Images/train", model_save_path="trained_knn_model.clf", n_neighbors=2)
+    #print("Training complete!")
     # process one frame in every 30 frames for speed
  
     process_this_frame = 29

@@ -28,8 +28,8 @@ from indicator import robotIndicator
 #from mobility import Forward, Backward, Stop, Left, Right, rightCircle, leftCircle
 
 from move import speakingModeOn
-from talk import say
-from talk import custom_conversation
+from talk1 import say
+from talk1 import custom_conversation
 
 try:
     FileNotFoundError
