@@ -1,0 +1,11 @@
+/home/pi/robotEnv/lib/python3.7/site-packages/urllib3/util/selectors.py:14: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import namedtuple, Mapping
+
+
+/home/pi/robotEnv/lib/python3.7/site-packages/urllib3/_collections.py:2: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Mapping, MutableMapping
+  
+/home/pi/robotEnv/lib/python3.7/site-packages/google/assistant/library/assistant.py:90: DeprecationWarning: Google Assistant Library for Python is deprecated
+  warnings.warn('Google Assistant Library for Python is deprecated', DeprecationWarning)
+device_model_id: robotniko3-niko-yrrcle
+device_id: B27B3BF873FBA7E3D0F49A919B5784AD
