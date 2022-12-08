@@ -39,7 +39,7 @@
 # Thank you again all
 
 
-from talk import say
+from talk1 import say
 from move import speakingModeOn, servoMove
 from movement.head import rotate as rotateHead
 from movement.hand import omoplateUp, omoplateDown, shoulderUp, shoulderDown, bicepUp, bicepDown, rotateArm
@@ -84,7 +84,11 @@ def fifa():
     say("but according to probability there is a high chance of brazil become the champion")
 
 
+def newDC():
+    say("Helllo Mohammad Shamim alom sir, Welcome to the comilla DC office Fablab. We are vary happy to see you")
 
+def oldDC():
+    say("Hello Honoralble Kamrul hasan sir, I recently got the news that you have been promoted as a join secretary at Cabinet Division, congratalations sir, I am very glad to hear this news. Thank you for being with us. you will be miss")
 
 
 

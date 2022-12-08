@@ -13,11 +13,10 @@ Conversation:
       - 'you created'
       - 'where you created'
     3:
-      - 'Who is the DC of Comilla'
-      - "Comilla DC"
-      - "who is the dc"
-      - "Dc Of cumilla"
-      - "District Magistrate"
+      - "previous DC"
+      - 'Who is the dc previous DC of Comilla'
+      - "previous Comilla DC"
+
     4:
       - 'are you google assistant'
     5:
@@ -31,7 +30,9 @@ Conversation:
       - 'predict fifa'  
       - "fifa champion"
     7:
-      - "quanta robotics"
+      - "Current DC"
+      - "who is the current DC"
+      - "who is the upcoming DC"
     8:
       - 'what do you do'
       - 'Why were you made'
@@ -301,6 +302,9 @@ Conversation:
      - "your headquaters"
      - "your headoffice"
      - "your office"
+     67:
+      - "DC of comilla"
+      - "Who is the DC"
     
      
 
@@ -312,7 +316,7 @@ Conversation:
     2: 
       - 'I build in Comilla DC office Fab Lab'
     3:
-      - "Honorouble Mohammod Kamrul Hasan sir is the District Magistrate Of Comilla..... Thank your sir for taking the initiative to make me happen"
+      - "Honorouble Mohammod Kamrul Hasan sir was the District Magistrate Of Comilla..... Thank your sir for taking the initiative to make me happen"
 
     4:
       - "LOL, i am Niko, I am a robot"
@@ -326,7 +330,7 @@ Conversation:
     6:
       - "I wish to see argentina as a champion because I am a huge fan of Lionel messi but according to probability there is a high chance of brazil become the champion"
     7:
-      - 'Quanta Robotics is a robotics startup. they make robots like me. Their privious robots are robot sheena and robot blueberry. They also take training the school, college students about robotics and programming'
+      - 'the current dc of comilla is Mohammod shamim alom'
     8:
       - 'i work in DC office and help people to find the destination in dc office. meet new people and updating my Artificial intelligence'
     9:
@@ -458,6 +462,8 @@ Conversation:
 
     66:
      - "Comilla DC office, Fablab"
+    67:
+      - "Honorable Mohammad kamrul hasan sir was the previous dC of commila. But from today the dc of comilla is Mohammod shamim alom"
 
 
 
