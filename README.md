@@ -27,7 +27,7 @@
 <img align='right' src="Extras/images/robot-front.jpg" width="350">
 
 - [ ] **Robot Voice**
-  - [ ] WakeWord
+  - [X] WakeWord
   - [X] Listening
   - [X] Speaking
   - [X] Custome conversation
@@ -36,52 +36,52 @@
 <br>
 
 - [ ] **Robot System Design**
-  - [ ] Robot System Installer Script
-  - [ ] Robot Service Installer Script 
-  - [ ] Running System in Startup
-  - [ ] Gui for Robot interfece
+  - [X] Robot System Installer Script
+  - [X] Robot Service Installer Script 
+  - [X] Running System in Startup
+  - [X] Gui for Robot interfece
   - [ ] Setup Robot Operating System(ROS)
 
 <br>
 
 - [ ] **Robot Basic Functions**
-  - [ ] Greetings
-  - [ ] Searching Information
-  - [ ] Capturing Images.
-  - [ ] Predicts Time, Date, Weather Report etc. 
-  - [ ] Say Jokes :grin:
-  - [ ] Tells you latest news feeds.
-  - [ ] Send an Email
+  - [X] Greetings
+  - [X] Searching Information
+  - [X] Capturing Images.
+  - [X] Predicts Time, Date, Weather Report etc. 
+  - [X] Say Jokes :grin:
+  - [X] Tells you latest news feeds.
+  - [X] Send an Email
 
 <img align='right' src="Extras/images/robot-side.png" width="350">
 
 <br>
 
 - [ ] **Robot Mobility**
-  - [ ] Go forward, backward, left and right using Wheel 
-  - [ ] Object Avoiding Mode 
-  - [ ] Human Following Mode 
+  - [X] Go forward, backward, left and right using Wheel 
+  - [x] Object Avoiding Mode 
+  - [X] Human Following Mode 
   - [ ] Path planning
   - [ ] Mapping a location 
   
 <br>
 
 - [ ] **Robot Arm Movement**
-  - [ ] Handsake 
+  - [X] Handsake 
   - [ ] Salute 
-  - [ ] Hand's Up 
-  - [ ] Picking Object
+  - [X] Hand's Up 
+  - [X] Picking Object
   - [ ] Other's arm move 
 
 <br>
 
 - [ ] **Advanced Machine Learning Features**
   - [ ] Object Detection
-  - [ ] Image Detection
-  - [ ] Image Recognition 
+  - [X] Image Detection
+  - [X] Image Recognition 
   - [ ] read Face Emotion
   - [ ] Gender Detection 
-  - [ ] Mask Detection 
+  - [X] Mask Detection 
 
 <br>
 
