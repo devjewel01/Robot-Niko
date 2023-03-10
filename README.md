@@ -163,3 +163,11 @@ sudo ./robot-installer.sh
 <h2 id="Acknowledge"> Acknowledge</h2>
 
  * [StackOverflow](https://stackoverflow.com/questions/tagged/raspberry-pi)
+ * [Raspberry Pi](https://www.raspberrypi.org/)
+ * [InMoov](https://inmoov.fr/)
+
+
+## Contributors
+<a href="https://github.com/devjewel01/Robot-Niko/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=devjewel01/Robot-Niko" />
+</a>
