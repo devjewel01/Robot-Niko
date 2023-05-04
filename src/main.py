@@ -23,6 +23,7 @@ from google.assistant.library.device_helpers import register_device
 from indicator import robotIndicator
 
 from talk1 import say
+import yaml
 
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
 USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
