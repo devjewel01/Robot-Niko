@@ -56,6 +56,6 @@ def fun(name,path,MAX_NUMBER_OF_IMAGES):
 	video_capture.release()
 	cv2.destroyAllWindows()
 
-fun("togor hasan","Images/train",8)
-fun("togor hasan","Images/test",2)
+fun("Nasir","Images/train",8)
+fun("Nasir","Images/test",2)
 

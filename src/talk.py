@@ -3,14 +3,6 @@
 
 import os
 import os.path
-import yaml
-
-
-ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
-USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
-
-with open('{}/src/conversation.yaml'.format(ROOT_PATH),'r', encoding='utf8') as conf:
-    custom_conversation = yaml.load(conf, Loader=yaml.FullLoader)
 
 from selenium import webdriver
 from time import sleep
@@ -36,8 +28,8 @@ driver.get(Website)
 sleep(0.5)
 driver.find_element(by=By.XPATH, value='//*[@id="sprachwahl"]/option[51]').click()
 
-driver.find_element(by=By.XPATH, value='//*[@id="mat-dialog-6"]/app-pw-voices/div/div/div/button[2]/span[1]/div[2]').click()
-driver.find_element(by=By.XPATH, value='//*[@id="mat-dialog-6"]/app-pw-voices/mat-dialog-content/div/mat-selection-list/mat-list-option[9]/div/div[2]/div/div[1]').click()
+#driver.find_element(by=By.XPATH, value='//*[@id="mat-dialog-6"]/app-pw-voices/div/div/div/button[2]/span[1]/div[2]').click()
+#driver.find_element(by=By.XPATH, value='//*[@id="mat-dialog-6"]/app-pw-voices/mat-dialog-content/div/mat-selection-list/mat-list-option[9]/div/div[2]/div/div[1]').click()
 
 def say(Text):
     try:
@@ -58,5 +50,4 @@ def say(Text):
     print("")
     print(f" Robot-Niko Answer : {Text}.")
     print("")
-    sleep( max(2, len(Data)/12) )
-    
+    sleep( max(3, len(Data)/12) )

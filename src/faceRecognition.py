@@ -1,4 +1,4 @@
-from talk import say
+from talk2 import say
 from time import sleep
 from movement.rightHand import handshake
 import multiprocessing
@@ -19,10 +19,11 @@ def detect(name):
         elif name == "DC sir":
             say("Hello Honoralble Kamrul hasan sir, I recently got the news that you have been promoted as a join secretary at Cabinet Division, congratalations sir, I am very glad to hear this news. Thank you for being with us. you will be miss")
             handshake()
-        elif name == "shamim alom":
-            cmd = ""
+        elif name == "Jewel Nath":
+            cmd = "Hello Mr. Jewel. My programmer. How are you"
             say(cmd)
             handshake()
+            say("I am also fine. Have a great day")
         else:
             cmd = "Hello " + name + " sir, I am now able to perfectly recognise you...,  how are you sir, I am happy to see you"
             say(cmd)

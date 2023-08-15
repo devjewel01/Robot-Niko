@@ -22,7 +22,14 @@ from google.assistant.library.file_helpers import existing_file
 from google.assistant.library.device_helpers import register_device
 from indicator import robotIndicator
 
-from talk1 import say
+#from rightHand import grip, open
+#from leftHand import grip, open
+#from hand import handshake, handup
+#from mobility import Forward, Backward, Stop, Left, Right, rightCircle, leftCircle
+
+from move import speakingModeOn
+from talk import say
+import yaml 
 
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
 USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
@@ -30,12 +37,10 @@ USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
 with open('{}/src/conversation.yaml'.format(ROOT_PATH),'r', encoding='utf8') as conf:
     custom_conversation = yaml.load(conf, Loader=yaml.FullLoader)
 
-
 try:
     FileNotFoundError
 except NameError:
     FileNotFoundError = IOError
-
 
 WARNING_NOT_REGISTERED = ""
 
@@ -50,6 +55,8 @@ formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(message)s')
 console.setFormatter(formatter)
 logging.getLogger("").addHandler(console)
 
+ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
+USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
 
 
 mutestopbutton=True
@@ -62,8 +69,10 @@ wakeword_length=1
 
 numQuestion=len(custom_conversation['Conversation']['Question'])
 numAnswer=len(custom_conversation['Conversation']['Answer'])
+# numInput=len(custom_conversation['Action']['Input'])
+# numOutput=len(custom_conversation['Action']['Output'])
 
-
+speakingModeOn()
 
 class Myassistant():
     def __init__(self):
@@ -265,6 +274,16 @@ class Myassistant():
                 say('Please check if the number of questions matches the number of answers')
 
 
+        # for i in range(1,numInput+1):
+        #     try:
+        #         for ques in custom_conversation['Action']['Input'][i]:
+        #             if str(ques).lower() in str(usrcmd).lower():
+        #                 self.assistant.stop_conversation()
+        #                 selectedans=random.sample(custom_conversation['Action']['Output'][i],1)
+        #                 eval(selectedans[0])
+        #                 break
+        #     except Keyerror:
+        #         say('Please check if the number of questions matches the number of answers')
 
 
 
