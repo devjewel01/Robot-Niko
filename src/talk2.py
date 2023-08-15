@@ -5,6 +5,7 @@ from gtts import gTTS
 import os
 import os.path
 
+
 TTSChoice='GTTS'
 
 translator = Translator()
@@ -56,6 +57,3 @@ def say(words,sourcelang=None,destinationlang=None):
             sayword=words
         
         gttssay(sayword,translanguage,gender)
-        sleep(2)
-
-say("I am a robot. my name is niko")
