@@ -13,23 +13,23 @@ pwm2 = Adafruit_PCA9685.PCA9685(address=0x41, busnum=1)
 servo_min = 100 
 servo_max = 600 
 
-ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
+ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..', '..'))
 
 def readYaml():
-    with open('{}/servoConfiguration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/config/servo-configuration.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         servoConfig = yaml.load(conf, Loader=yaml.FullLoader)
     return servoConfig
 
 
 def writeYaml(s=None):
-    with open('{}/servoConfiguration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
+    with open('{}/config/servo-configuration.yaml'.format(ROOT_PATH),'w', encoding='utf8') as conf:
             yaml.dump(s,conf)
 
 
 servoConfig = readYaml()
 
 if servoConfig == None:
-    with open('{}/servoConfigurationBackUp.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
+    with open('{}/config/servo-configuration-backup.yaml'.format(ROOT_PATH),'r+', encoding='utf8') as conf:
         servoBackUp = yaml.load(conf, Loader=yaml.FullLoader)
     writeYaml(servoBackUp)
     servoConfig = readYaml()

@@ -1,4 +1,6 @@
 #!/bin/bash
+# Based on GassistPi's scripts/gassist-installer.sh: https://github.com/shivasiddharth/GassistPi
+# Copyright (c) 2020 Shivasiddharth, MIT License
 
 set -o errexit
 
@@ -14,10 +16,10 @@ fi
 
 clear
 echo ""
-credname="/home/pi/robotniko2.json"
+credname="/home/${USER}/robotniko2.json"
 
 sudo apt-get update -y
-sed 's/#.*//' ${GIT_DIR}/Requirements/robot-system-requirements.txt | xargs sudo apt-get install -y
+sed 's/#.*//' ${GIT_DIR}/scripts/apt-packages.txt | xargs sudo apt-get install -y
 
 
 echo ""
@@ -25,7 +27,7 @@ cd /home/${USER}/
 python3 -m venv robotEnv
 robotEnv/bin/python -m pip install --upgrade pip setuptools wheel
 source robotEnv/bin/activate
-pip install -r ${GIT_DIR}/Requirements/robot-pip-requirements.txt
+pip install -r ${GIT_DIR}/requirements.txt
 
 
 pip install RPi.GPIO>=0.6.3

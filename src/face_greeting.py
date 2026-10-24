@@ -1,6 +1,6 @@
-from talk2 import say
+from talk_gtts import say
 from time import sleep
-from movement.rightHand import handshake
+from movement.right_hand import handshake
 import multiprocessing
 sleep(3)
 

@@ -1,5 +1,10 @@
+# Based on face_recognition's examples/facerec_ipcamera_knn.py: https://github.com/ageitgey/face_recognition
+# Copyright (c) 2021, Adam Geitgey, MIT License
+import os
 import sys
-sys.path.append("/home/pi/Robot-Niko/src")
+ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..', '..'))
+MODEL_PATH = os.path.join(ROOT_PATH, 'assets', 'models', 'trained_knn_model.clf')
+sys.path.append(os.path.join(ROOT_PATH, 'src'))
 
 import cv2
 import math
@@ -13,7 +18,7 @@ from face_recognition.face_recognition_cli import image_files_in_folder
 import numpy as np
 import multiprocessing
 
-from faceRecognition import detect as  detectImage
+from face_greeting import detect as  detectImage
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'JPG'}
 
@@ -128,7 +133,7 @@ def show_prediction_labels_on_image(frame, predictions):
 
 if __name__ == "__main__":
     #print("Training KNN classifier...")
-    #classifier = train("Images/train", model_save_path="trained_knn_model.clf", n_neighbors=2)
+    #classifier = train(os.path.join(ROOT_PATH, 'data', 'faces', 'train'), model_save_path=MODEL_PATH, n_neighbors=2)
     #print("Training complete!")
     # process one frame in every 30 frames for speed
  
@@ -141,7 +146,7 @@ if __name__ == "__main__":
             img = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5)
             process_this_frame = process_this_frame + 1
             if process_this_frame % 30 == 0:
-                predictions = predict(img, model_path="trained_knn_model.clf")
+                predictions = predict(img, model_path=MODEL_PATH)
             frame = show_prediction_labels_on_image(frame, predictions)
             cv2.imshow('camera', frame)
             if ord('q') == cv2.waitKey(10):

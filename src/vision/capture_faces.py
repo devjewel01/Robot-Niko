@@ -6,15 +6,18 @@ from imutils import face_utils
 from imutils.face_utils import FaceAligner
 
 
+ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..', '..'))
+FACES_PATH = os.path.join(ROOT_PATH, 'data', 'faces')
+
 detector = dlib.get_frontal_face_detector()
-shape_predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+shape_predictor = dlib.shape_predictor(os.path.join(ROOT_PATH, 'assets', 'models', 'shape_predictor_68_face_landmarks.dat'))
 face_aligner = FaceAligner(shape_predictor, desiredFaceWidth=400)
 
 def fun(name,path,MAX_NUMBER_OF_IMAGES):
 	video_capture = cv2.VideoCapture(0)
 
 
-	# path = 'Images/test'
+	# path = os.path.join(FACES_PATH, 'test')
 	print(path)
 	directory = os.path.join(path, name)
 	print(directory)
@@ -56,6 +59,6 @@ def fun(name,path,MAX_NUMBER_OF_IMAGES):
 	video_capture.release()
 	cv2.destroyAllWindows()
 
-fun("Nasir","Images/train",8)
-fun("Nasir","Images/test",2)
+fun("Nasir",os.path.join(FACES_PATH, "train"),8)
+fun("Nasir",os.path.join(FACES_PATH, "test"),2)
 

@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 chrome_options = Options()
 chrome_options.add_argument('--log-level=3')
-PathofDriver = "Driver/chromedriver"
+PathofDriver = "/usr/bin/chromedriver"
 chrome_options.add_experimental_option("prefs", {"profile.default_content_setting_values.media_stream_mic":1})
 chrome_options.add_argument("--mute-audio")
 driver = webdriver.Chrome(PathofDriver,options=chrome_options)

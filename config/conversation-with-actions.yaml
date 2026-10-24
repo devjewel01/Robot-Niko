@@ -37,11 +37,11 @@ Action:
     1:
       - "hand.handsup()"
     2:
-      - "rightHand.handshane()"
+      - "right_hand.handshane()"
     3:
-      - "rightHand.grip()"
+      - "right_hand.grip()"
     4:
-      - "leftHand.grip()"
+      - "left_hand.grip()"
     5:
       - "mobility.Forward(40)"
     6:

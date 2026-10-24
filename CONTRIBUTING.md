@@ -1,16 +1,12 @@
-This project is only educational purpose. Everyone can contribute in our project.
+# Contributing
 
+Niko was a 2022 learning project, and ideas and fixes are welcome.
 
-<h2 id="Contribution">Looking for contributors!</h2>
-Looking for contributors to help build out the Robot. There are a lot of work to do. This would be a good oppurtunity to learn Robotics, ROS, Machine Learning and how to Engineer an entire Robot system from the ground up. You can add your any idea to our project.
+1. Look at the [issues](https://github.com/jewel-nath/robot-niko/issues), or
+   open one for your idea.
+2. Fork the repository and make your change on a branch.
+3. Keep each commit to one change, with a clear message.
+4. Open a pull request that says what you changed and how you tested it.
 
-<br>
-
-### Contribution guidelines 
-Follow these algorithms to contribute to the voice assistant project. 
-- Fork this repository 
-- Add your any idea to the project. Or 
-- Select your comfortable issues given in issues feature [click here to see the issues](https://github.com/jewel-nath/robot-niko/issues).
-- Try to solve the mentioned issues and make a pull request by using branch folder 🌿 .
-- Stricly maintain the clear commit name and message.
-- Make a pull request to this repository ❤
+The [README](README.md#repository-layout) shows where each part of the code
+lives.

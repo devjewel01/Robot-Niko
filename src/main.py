@@ -1,4 +1,6 @@
 #!/home/pi/robotEnv/bin python 
+# Based on GassistPi's src/main.py: https://github.com/shivasiddharth/GassistPi
+# Copyright (c) 2020 Shivasiddharth, MIT License
 
 import sys
 from threading import Thread
@@ -22,8 +24,8 @@ from google.assistant.library.file_helpers import existing_file
 from google.assistant.library.device_helpers import register_device
 from indicator import robotIndicator
 
-#from rightHand import grip, open
-#from leftHand import grip, open
+#from right_hand import grip, open
+#from left_hand import grip, open
 #from hand import handshake, handup
 #from mobility import Forward, Backward, Stop, Left, Right, rightCircle, leftCircle
 
@@ -34,7 +36,7 @@ import yaml
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
 USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
 
-with open('{}/src/conversation.yaml'.format(ROOT_PATH),'r', encoding='utf8') as conf:
+with open('{}/config/conversation.yaml'.format(ROOT_PATH),'r', encoding='utf8') as conf:
     custom_conversation = yaml.load(conf, Loader=yaml.FullLoader)
 
 try:
@@ -66,7 +68,7 @@ mutestopbutton=True
 access_key = os.environ.get("PICOVOICE_ACCESS_KEY")
 if not access_key:
     sys.exit("Set PICOVOICE_ACCESS_KEY to your Picovoice access key (see README).")
-picovoice_models=['/home/pi/Robot-Niko/Extras/hey-niko.ppn']
+picovoice_models=['{}/assets/models/hey-niko.ppn'.format(ROOT_PATH)]
 wakeword_length=1
 
 numQuestion=len(custom_conversation['Conversation']['Question'])
@@ -112,7 +114,7 @@ class Myassistant():
 
 
         if event.type == EventType.ON_CONVERSATION_TURN_STARTED:
-            subprocess.Popen(["aplay", "{}/audio-files/listening.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.Popen(["aplay", "{}/assets/sounds/listening.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.can_start_conversation = False
             robotIndicator('listening')
 
@@ -349,7 +351,7 @@ class Myassistant():
         with Assistant(credentials, device_model_id) as assistant:
             self.assistant = assistant
             
-            subprocess.Popen(["aplay", "/home/pi/Robot-Niko/audio-files/welcome.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            subprocess.Popen(["aplay", "{}/assets/sounds/welcome.wav".format(ROOT_PATH)], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             
             events = assistant.start()
             device_id = assistant.device_id

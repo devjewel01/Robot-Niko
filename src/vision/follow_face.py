@@ -1,11 +1,13 @@
+import os
 import sys
-sys.path.append("/home/pi/Robot-Niko/src/movement")
+ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..', '..'))
+sys.path.append(os.path.join(ROOT_PATH, 'src', 'movement'))
 from head import  servoMove
 from time import sleep
 
 import cv2
 
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(os.path.join(ROOT_PATH, 'assets', 'models', 'haarcascade_frontalface_default.xml'))
 cap = cv2.VideoCapture(0)
 
 while cap.isOpened():

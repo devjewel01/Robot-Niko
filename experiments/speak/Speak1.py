@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 chrome_options = Options()
 chrome_options.add_argument('--log-level=3')
 chrome_options.headless = True
-PathofDriver = "Driver/chromedriver"
+PathofDriver = "/usr/bin/chromedriver"
 driver = webdriver.Chrome(PathofDriver,options=chrome_options)
 driver.maximize_window()
 

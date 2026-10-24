@@ -33,3 +33,4 @@ build-essential
 libmpg123-dev
 portaudio19-dev
 mpg123
+chromium-chromedriver

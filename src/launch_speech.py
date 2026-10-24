@@ -39,7 +39,7 @@
 # Thank you again all
 
 
-from talk1 import say
+from talk_gtts import say
 from move import speakingModeOn, servoMove
 from movement.head import rotate as rotateHead
 from movement.hand import omoplateUp, omoplateDown, shoulderUp, shoulderDown, bicepUp, bicepDown, rotateArm

@@ -8,3 +8,6 @@ __pycache__/
 
 *.dat
 
+
+# Downloaded separately (see experiments/README.md and the README)
+experiments/listen/DataBase/
