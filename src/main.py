@@ -63,7 +63,9 @@ mutestopbutton=True
 
 
 
-access_key = "RZk+UIYxsDmjiYXb4ctA0dx8SOfMxpFcm0wlGUz2WWg6rOwCmTf7nA=="
+access_key = os.environ.get("PICOVOICE_ACCESS_KEY")
+if not access_key:
+    sys.exit("Set PICOVOICE_ACCESS_KEY to your Picovoice access key (see README).")
 picovoice_models=['/home/pi/Robot-Niko/Extras/hey-niko.ppn']
 wakeword_length=1
 

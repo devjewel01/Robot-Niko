@@ -1,173 +1,102 @@
 # Robot Niko
 
-![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
-![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
-![Forks](https://img.shields.io/github/forks/devjewel01/Robot-Niko.svg?logo=github)
-![Stargazers](https://img.shields.io/github/stars/devjewel01/Robot-Niko.svg?logo=github)
-![Issues](https://img.shields.io/github/issues/devjewel01/Robot-Niko.svg?logo=github)
+A life-size, 3D-printed humanoid assistant in the InMoov style, built in
+2022 at the FabLab of the Deputy Commissioner's Office, Cumilla. It talks,
+moves its head, eyes, jaw, arms and fingers, and knows people by their
+faces. It runs Python on a Raspberry Pi.
 
+![Niko, finished, in November 2022](media/robot-niko-2022-11-29-full-robot.jpg)
 
- <a href="#Robot-Niko">Introduction</a></br>
- <a href="#Features">Features</a></br>
- <a href="#Device">Component and Device</a></br>
- <a href="#Contribution">Contributions</a></br>
- <a href="#Instalation">Instalation</a></br>
- <a href="#languageTools">Language and Tools</a></br>
- <a href="#Diagram">Robot Diagram</a></br>
- <a href="#memory">Memories</a></br>
- <a href="#Acknowledge">Acknowledge</a></br>
+**Videos:** [the head turning and the mouth moving](media/robot-niko-2022-11-03-head-test.mp4)
+(15 s) · [Niko's model in Blender](media/robot-niko-2022-08-07-virtual-model.mp4) (17 s)
 
-<p id="Robot-Niko"></p>
+## What it does
 
-**Humanoid Robot Using Raspberry PI**
+- **Talks.** It wakes to "Hey Niko", a Porcupine wake word, and holds
+  spoken conversations: questions it knows are answered from
+  [`src/conversation.yaml`](src/conversation.yaml), and the rest go to an
+  online assistant. Its jaw moves as it speaks.
+- **Moves.** 27 servos turn its head and eyes, and move its jaw,
+  shoulders, arms, wrists and fingers.
+- **Knows faces.** It recognises the people it was trained on, with
+  `face_recognition` and a KNN classifier, and greets them with a
+  handshake ([`src/faceRecognition.py`](src/faceRecognition.py)).
+- **Gives a speech.** A scripted speech, with head and arm gestures
+  ([`src/special-speech.py`](src/special-speech.py)).
+- **Starts by itself** at boot, as a systemd service.
 
-<h2 id="Features">Features</h2> 
-<hr>
+**Written but switched off:** voice commands for gestures and for driving
+on wheels ([`src/conversation1.yaml`](src/conversation1.yaml),
+[`src/movement/mobility.py`](src/movement/mobility.py)). The final main
+program turns them off, and the finished robot stands on a fixed stand.
 
-<img align='right' src="Extras/images/robot-front.jpg" width="350">
+**Planned in 2022, not built:** speech in Bangla, ROS, mapping, and
+emotion and gender detection.
 
-- [ ] **Robot Voice**
-  - [X] WakeWord
-  - [X] Listening
-  - [X] Speaking
-  - [X] Custome conversation
-  - [ ] Talking in **Bangali** Language 
-  
-<br>
+## The build
 
-- [ ] **Robot System Design**
-  - [X] Robot System Installer Script
-  - [X] Robot Service Installer Script 
-  - [X] Running System in Startup
-  - [X] Gui for Robot interfece
-  - [ ] Setup Robot Operating System(ROS)
+| | |
+|---|---|
+| <a href="media/robot-niko-2022-08-07-virtual-model.mp4"><img src="media/robot-niko-2022-08-07-virtual-model-poster.jpg" width="300" alt="Niko's model in Blender"></a> | **2022-08:** Niko's model in Blender, its joints posed on the timeline ([video](media/robot-niko-2022-08-07-virtual-model.mp4), 17 s) |
+| <img src="media/robot-niko-2022-11-02-head-and-frame.jpg" width="300" alt="The head on its frame"> | **2022-11-02:** the head on its frame, its eyes in |
+| <img src="media/robot-niko-2022-11-02-arm-parts.jpg" width="300" alt="An arm and hand"> | **2022-11-02:** one arm and hand, printed and wired |
+| <a href="media/robot-niko-2022-11-03-head-test.mp4"><img src="media/robot-niko-2022-11-03-head-test-poster.jpg" width="300" alt="The head moving"></a> | **2022-11-03:** a head test: it turns, and the mouth moves ([video](media/robot-niko-2022-11-03-head-test.mp4), 15 s) |
+| <img src="media/robot-niko-2022-11-23-torso-assembled.jpg" width="300" alt="The head on the torso"> | **2022-11-23:** the head on the assembled torso |
+| <img src="media/robot-niko-2022-11-27-arms-fitted.jpg" width="300" alt="Niko's name on its chest"> | **2022-11-27:** one arm fitted, and the name on the chest |
+| <img src="media/robot-niko-2022-11-29-jewel-with-niko-in-lab.jpg" width="300" alt="Me with Niko"> | **2022-11-29:** finished: me with Niko and its green chest light |
 
-<br>
+## How it works
 
-- [ ] **Robot Basic Functions**
-  - [X] Greetings
-  - [X] Searching Information
-  - [X] Capturing Images.
-  - [X] Predicts Time, Date, Weather Report etc. 
-  - [X] Say Jokes :grin:
-  - [X] Tells you latest news feeds.
-  - [X] Send an Email
+| | |
+|---|---|
+| Body | The InMoov design: a 3D-printed head, torso, arms and hands, on a metal stand |
+| Servos | 27, on two PCA9685 boards (I2C addresses 0x40 and 0x41), driven by [`src/movement/`](src/movement) |
+| Voice | A Porcupine wake word, PyAudio, gTTS and pyttsx3, and an online assistant for open questions |
+| Vision | A camera; OpenCV face detection, and `face_recognition` with a KNN classifier ([`src/Face-Recognition/`](src/Face-Recognition)) |
+| Arduino | Commands over USB serial ([`src/arduino.py`](src/arduino.py)) |
+| System | Python on a Raspberry Pi, a systemd service ([`systemd/robot.service`](systemd/robot.service)), and installers in [`scripts/`](scripts) |
 
-<img align='right' src="Extras/images/robot-side.png" width="350">
+![The servo map](Extras/servoConfig.png)
 
-<br>
+Each servo's channel, starting position and range. Where a part has two
+channels, they are its left and right.
 
-- [ ] **Robot Mobility**
-  - [X] Go forward, backward, left and right using Wheel 
-  - [x] Object Avoiding Mode 
-  - [X] Human Following Mode 
-  - [ ] Path planning
-  - [ ] Mapping a location 
-  
-<br>
+## My part
 
-- [ ] **Robot Arm Movement**
-  - [X] Handsake 
-  - [ ] Salute 
-  - [X] Hand's Up 
-  - [X] Picking Object
-  - [ ] Other's arm move 
+Niko was built by the team at Quanta Robotics, the robotics team I
+co-founded at Comilla University, at the FabLab of the Deputy
+Commissioner's Office in Cumilla. I was its programmer: most of the commits here are
+mine, with code from [@tousifo](https://github.com/tousifo),
+[@mahinkhan1408](https://github.com/mahinkhan1408) and
+[@Anikcb](https://github.com/Anikcb). Its body follows
+[InMoov](https://inmoov.fr/), Gaël Langevin's open-source, 3D-printed
+robot.
 
-<br>
+## Run it
 
-- [ ] **Advanced Machine Learning Features**
-  - [ ] Object Detection
-  - [X] Image Detection
-  - [X] Image Recognition 
-  - [ ] read Face Emotion
-  - [ ] Gender Detection 
-  - [X] Mask Detection 
+On a Raspberry Pi wired to Niko's servo boards, camera, microphone and
+speaker. The code expects the repository at `~/Robot-Niko`:
 
-<br>
-
-<img src="Extras/images/gif1.gif" width="50%" >
-
-<br>
-
-<h2 id="Device">Component and Device</h2>
-
-1. **Raspberry Pi** microprocessor
-2. **Arduino** microcontroller
-3. **Servo Motors** 
-4. **DC Motors** 
-5. **Ultrasonic Sensors** 
-6. **LCD Display** 
-7. **Gas sensor** 
-8. **Smoke sensor**
-9.  **Fire sensor**
-10. **Gyroscope sensor**
-11. **Gps Tracker** 
-12. **LED matrix cube**
-
-<h2 id="Contribution">Looking for contributors!</h2>
-Looking for contributors to help build out the Robot. There are a lot of work to do. This would be a good oppurtunity to learn Robotics, ROS, Machine Learning and how to Engineer an entire Robot system from the ground up. You can add your any idea to our project.
-
-<br>
-
-### Contribution guidelines 
-Follow these algorithms to contribute to the voice assistant project. 
-- Fork this repository 
-- Add your any idea to the project. Or 
-- Select your comfortable issues given in issues feature [click here to see the issues](https://github.com/devjewel01/Robot-Niko).
-- Try to solve the mentioned issues and make a pull request by using branch folder 🌿 .
-- Stricly maintain the clear commit name and message.
-- Make a pull request to this repository ❤
-
-<br>
-
-<h2 id="Instalation">Installation Robot System</h2>
-
-
-```sh
-git clone https://github.com/devjewel01/Robot-Niko
-```
-```sh
-cd Robot-Niko/scripts
-```
-```sh
-sudo chmod +x robot-installer.sh
-```
-```sh
-sudo ./robot-installer.sh 
+```bash
+git clone https://github.com/jewel-nath/robot-niko ~/Robot-Niko
+cd ~/Robot-Niko/scripts
+./robot-installer.sh
 ```
 
-<h2 id="languageTools">Language and Tools</h2>
+The installer sets up a Python environment in `~/robotEnv`, installs the
+requirements in [`Requirements/`](Requirements), and signs in to the
+online assistant, which needs an OAuth client file at
+`/home/pi/robotniko2.json`. Then:
 
-| Python | C++ |  Bash | Terminal | Raspberry Pi |  Arduino |
-| ------ | ----| ------| -------- | ------------ | --------- |
-|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/cpp/cpp.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/bash/bash.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/raspberry-pi/raspberry-pi.png" />|<img align="left"  width="46px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/arduino/arduino.png" />|
+1. Put your Picovoice access key in `/home/pi/robot-niko.env`, as
+   `PICOVOICE_ACCESS_KEY=<your key>`. The key stays out of the repository.
+2. Install the service and start it:
 
-<br />
+   ```bash
+   sudo ./service-installer.sh
+   sudo systemctl enable --now robot.service
+   ```
 
+## Licence
 
-<h2 id="Diagram">Robot Diagram</h2>
-
-<img width="60%"  src="Extras/images/robot-back.png">
-
-
-
-<h2 id="memory">Memories</h2>
-<details>
-    <summary>
-        <strong>Photos:</strong>
-    </summary>
-    <img src="pic" width="50%"/>
-
-</details>
-
-<h2 id="Acknowledge"> Acknowledge</h2>
-
- * [StackOverflow](https://stackoverflow.com/questions/tagged/raspberry-pi)
- * [Raspberry Pi](https://www.raspberrypi.org/)
- * [InMoov](https://inmoov.fr/)
-
-
-## Contributors
-<a href="https://github.com/devjewel01/Robot-Niko/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=devjewel01/Robot-Niko" />
-</a>
+MIT: see [LICENSE](LICENSE).
