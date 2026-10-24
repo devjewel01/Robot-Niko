@@ -1,4 +1,4 @@
-#!/home/pi/robotEnv/bin python 
+#!/usr/bin/env python3
 
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
@@ -32,5 +32,3 @@ def robotIndicator(activity):
     elif (activity=='on' or activity=='mute'):
         GPIO.output(speakingindicator,GPIO.HIGH)
         GPIO.output(listeningindicator,GPIO.HIGH)
-        
-

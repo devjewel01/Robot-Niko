@@ -9,18 +9,13 @@ sys.path.append(os.path.join(ROOT_PATH, 'src'))
 import cv2
 import math
 from sklearn import neighbors
-import os
-import os.path
 import pickle
 from PIL import Image, ImageDraw
 import face_recognition
 from face_recognition.face_recognition_cli import image_files_in_folder
 import numpy as np
-import multiprocessing
 
 from face_greeting import detect as  detectImage
-
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'JPG'}
 
 cnt = []
 
@@ -90,7 +85,6 @@ def predict(X_frame, knn_clf=None, model_path=None, distance_threshold=0.5):
     # Predict classes and remove classifications that aren't within the threshold
     return [(pred, loc) if rec else ("unknown", loc) for pred, loc, rec in zip(knn_clf.predict(faces_encodings), X_face_locations, are_matches)]
 
-globe_cnt=0
 
 def show_prediction_labels_on_image(frame, predictions):
     pil_image = Image.fromarray(frame)
@@ -107,17 +101,12 @@ def show_prediction_labels_on_image(frame, predictions):
 
         # There's a bug in Pillow where it blows up with non-UTF-8 text
         # when using the default bitmap font
-        #print(name)
         if name!="unknown" and cnt.count(name)<12:
-            print(cnt)
             cnt.append(name)
             if cnt.count(name)==10:
               detectImage(name)
-              #p1 = multiprocessing.Process(target=detectImage, args=(name))
-              #p1.start
 
         name = name.encode("UTF-8")
-        #print("Detect name = ", name)
         # Draw a label with a name below the face
         text_width, text_height = draw.textsize(name)
         draw.rectangle(((left, bottom - text_height - 10), (right, bottom)), fill=(0, 0, 255), outline=(0, 0, 255))
@@ -132,9 +121,7 @@ def show_prediction_labels_on_image(frame, predictions):
 
 
 if __name__ == "__main__":
-    #print("Training KNN classifier...")
-    #classifier = train(os.path.join(ROOT_PATH, 'data', 'faces', 'train'), model_save_path=MODEL_PATH, n_neighbors=2)
-    #print("Training complete!")
+    # To retrain the model: train(os.path.join(ROOT_PATH, 'data', 'faces', 'train'), model_save_path=MODEL_PATH, n_neighbors=2)
     # process one frame in every 30 frames for speed
  
     process_this_frame = 29

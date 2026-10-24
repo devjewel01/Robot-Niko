@@ -107,30 +107,7 @@ def lhnumber(a,b,c,d,e):
     sleep(1)
     servoMove(18, 45)
     sleep(1)
-    #bicepkoibro
     sleep(1)
     servoMove(17, 95)
     sleep(1)
     lhf(a,b,c,d,e)
-
-def test():
-    for d in range(120):
-        servoMove(21, 80)
-        servoMove(22, d)
-        servoMove(23, d)
-        servoMove(24, d)
-        servoMove(25, d)
-        sleep(t)
-
-    sleep(2)
-
-    for d in range(120, 0, -1):
-        servoMove(21, d)
-        servoMove(22, d)
-        servoMove(23, d)
-        servoMove(24, d)
-        servoMove(25, d)
-        sleep(t)
-    
-    sleep(2)
-

@@ -1,10 +1,10 @@
-#!/home/pi/robotEnv/bin python 
+#!/usr/bin/env python3
 # Based on GassistPi's src/main.py: https://github.com/shivasiddharth/GassistPi
-# Copyright (c) 2020 Shivasiddharth, MIT License
+# Copyright (c) 2020 Shivasiddharth. MIT licence with two conditions: not for
+# competitions or assessments without the owner's permission (see its LICENSE)
 
 import sys
 from threading import Thread
-import multiprocessing
 import argparse
 import json
 import os.path
@@ -24,11 +24,6 @@ from google.assistant.library.file_helpers import existing_file
 from google.assistant.library.device_helpers import register_device
 from indicator import robotIndicator
 
-#from right_hand import grip, open
-#from left_hand import grip, open
-#from hand import handshake, handup
-#from mobility import Forward, Backward, Stop, Left, Right, rightCircle, leftCircle
-
 from move import speakingModeOn
 from talk import say
 import yaml 
@@ -38,13 +33,6 @@ USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
 
 with open('{}/config/conversation.yaml'.format(ROOT_PATH),'r', encoding='utf8') as conf:
     custom_conversation = yaml.load(conf, Loader=yaml.FullLoader)
-
-try:
-    FileNotFoundError
-except NameError:
-    FileNotFoundError = IOError
-
-WARNING_NOT_REGISTERED = ""
 
 if os.path.isfile('/tmp/robot.log'):
     os.system('sudo rm /tmp/robot.log')
@@ -57,14 +45,6 @@ formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(message)s')
 console.setFormatter(formatter)
 logging.getLogger("").addHandler(console)
 
-ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..'))
-USER_PATH = os.path.realpath(os.path.join(__file__, '..', '..','..'))
-
-
-mutestopbutton=True
-
-
-
 access_key = os.environ.get("PICOVOICE_ACCESS_KEY")
 if not access_key:
     sys.exit("Set PICOVOICE_ACCESS_KEY to your Picovoice access key (see README).")
@@ -72,9 +52,6 @@ picovoice_models=['{}/assets/models/hey-niko.ppn'.format(ROOT_PATH)]
 wakeword_length=1
 
 numQuestion=len(custom_conversation['Conversation']['Question'])
-numAnswer=len(custom_conversation['Conversation']['Answer'])
-# numInput=len(custom_conversation['Action']['Input'])
-# numOutput=len(custom_conversation['Action']['Output'])
 
 speakingModeOn()
 
@@ -88,14 +65,11 @@ class Myassistant():
         self._input_device_index = None
         self._sensitivities = [0.5]*wakeword_length
         self.mutestatus=False
-        self.singleresposne=False
-        self.singledetectedrespone=''
+        self.singleresponse=False
+        self.singledetectedresponse=''
         self.t1 = Thread(target=self.picovoice_run)
 
     def process_event(self,event):
-        print()
-        print('Now event is ', event)
-        print()
         if event.type == EventType.ON_MUTED_CHANGED:
             self.mutestatus=event.args["is_muted"]
 
@@ -140,7 +114,7 @@ class Myassistant():
 
         if event.type == EventType.ON_RECOGNIZING_SPEECH_FINISHED:
             robotIndicator('off')
-            if self.singleresposne:
+            if self.singleresponse:
                 self.assistant.stop_conversation()
                 self.singledetectedresponse= event.args["text"]
             else:
@@ -167,31 +141,6 @@ class Myassistant():
         if event.type == EventType.ON_DEVICE_ACTION:
             for command, params in event.actions:
                 print('Do command', command, 'with params', str(params))
-
-
-        if event.type == EventType.ON_RENDER_RESPONSE:
-            onlineAnswer= event.args["text"]
-            print('online answer is  ', onlineAnswer)
-            print('length of answer = ', len(onlineAnswer))
-
-
-
-    def register_device(self,project_id, credentials, device_model_id, device_id):
-        base_url = '/'.join([DEVICE_API_URL, 'projects', project_id, 'devices'])
-        device_url = '/'.join([base_url, device_id])
-        session = google.auth.transport.requests.AuthorizedSession(credentials)
-        r = session.get(device_url)
-        print(device_url, r.status_code)
-        if r.status_code == 404:
-            print('Registering....')
-            r = session.post(base_url, data=json.dumps({
-                'id': device_id,
-                'model_id': device_model_id,
-                'client_type': 'SDK_LIBRARY'
-            }))
-            if r.status_code != 200:
-                raise Exception('failed to register device: ' + r.text)
-            print('\rDevice registered.')
 
 
     def detected(self):
@@ -253,12 +202,12 @@ class Myassistant():
 
     def single_user_response(self,prompt):
         self.singledetectedresponse=''
-        self.singleresposne=True
+        self.singleresponse=True
         say(prompt)
         self.assistant.start_conversation()
         while self.singledetectedresponse=='':
             time.sleep(.1)
-        self.singleresposne=False
+        self.singleresponse=False
         return self.singledetectedresponse
 
 
@@ -270,26 +219,10 @@ class Myassistant():
                         self.assistant.stop_conversation()
                         selectedans=random.sample(custom_conversation['Conversation']['Answer'][i],1)
                         say(*selectedans)
-                        print("offline answer length = ", len(*selectedans))
-                        # l = (int)(len(*selectedans))/8
-                        # time.sleep(max(4,l))
-                        break
-            except Keyerror:
+                        # Answer once: the first matching question wins
+                        return
+            except KeyError:
                 say('Please check if the number of questions matches the number of answers')
-
-
-        # for i in range(1,numInput+1):
-        #     try:
-        #         for ques in custom_conversation['Action']['Input'][i]:
-        #             if str(ques).lower() in str(usrcmd).lower():
-        #                 self.assistant.stop_conversation()
-        #                 selectedans=random.sample(custom_conversation['Action']['Output'][i],1)
-        #                 eval(selectedans[0])
-        #                 break
-        #     except Keyerror:
-        #         say('Please check if the number of questions matches the number of answers')
-
-
 
 
     def main(self):
@@ -369,18 +302,11 @@ class Myassistant():
                             'last_device_id': device_id,
                             'model_id': device_model_id,
                         }, f)
-                else:
-                    print(WARNING_NOT_REGISTERED)
 
             for event in events:
-                if event.type == EventType.ON_RENDER_RESPONSE:
-                    #  mouthExpression("online", (int)(len(event.args["text"])) )
-                    nothing = None
                 if event.type == EventType.ON_START_FINISHED and args.query:
                     assistant.send_text_query(args.query)
                 self.process_event(event)
-
-        self.detector.terminate()
 
 
 if __name__ == '__main__':
@@ -388,9 +314,3 @@ if __name__ == '__main__':
         Myassistant().main()
     except Exception as error:
         logging.exception(error)
-
-
-
-
-
-

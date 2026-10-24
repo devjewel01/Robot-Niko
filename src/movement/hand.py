@@ -86,7 +86,3 @@ def rotateArm():
         r += 1
         l -= 1
         sleep(t)
-
-
-
-    

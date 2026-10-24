@@ -1,8 +1,8 @@
 import os
 import sys
 ROOT_PATH = os.path.realpath(os.path.join(__file__, '..', '..', '..'))
-sys.path.append(os.path.join(ROOT_PATH, 'src', 'movement'))
-from head import  servoMove
+sys.path.append(os.path.join(ROOT_PATH, 'src'))
+from move import servoMove
 from time import sleep
 
 import cv2
@@ -18,7 +18,6 @@ while cap.isOpened():
 
     for (x, y , w ,h) in faces:
         cv2.rectangle(img, (x,y), (x+w, y+h), (0, 0 , 0), 3)
-        print(x, y)
         servoMove(11, (int)(90+(-250+x)/12))
         sleep(0.1)        
 

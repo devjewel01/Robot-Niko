@@ -1,4 +1,4 @@
-#!/home/pi/robotEnv/bin python 
+#!/usr/bin/env python3
 
 from time import sleep
 import RPi.GPIO as io
@@ -123,7 +123,6 @@ def Stop(speed=50):
 
 
 def setMotorLeft(power):
-   int(power)
    if power < 0:
       pwm = -int(PWM_MAX * power)
       if pwm > PWM_MAX:
@@ -143,7 +142,6 @@ def setMotorLeft(power):
 	  
 
 def setMotorRight(power):
-   int(power)
    if power < 0:
       pwm = -int(PWM_MAX * power)
       if pwm > PWM_MAX:
@@ -203,5 +201,3 @@ def RB(speed=30):
    io.output(rightBackward, True)
    leftMotorSpeed.ChangeDutyCycle(0)
    rightMotorSpeed.ChangeDutyCycle(speed)
-
-

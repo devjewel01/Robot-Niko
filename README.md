@@ -17,19 +17,19 @@ faces. It runs Python on a Raspberry Pi.
 ## What it does
 
 - **Talks.** It wakes to "Hey Niko", a Porcupine wake word, and holds
-  spoken conversations. It knows 67 questions, each in several phrasings,
-  from [`config/conversation.yaml`](config/conversation.yaml), and speaks
-  their answers itself; an online assistant answers the rest. Its jaw
-  moves as it speaks.
+  spoken conversations. It knows 51 questions, most of them in several
+  phrasings, from [`config/conversation.yaml`](config/conversation.yaml),
+  and speaks their answers itself; an online assistant answers the rest.
+  Its jaw moves as it speaks.
 - **Moves.** 27 servos turn its head and eyes, and move its jaw,
-  shoulders, arms, wrists and fingers.
+  shoulders, arms, wrists and fingers ([servo map](#servo-map)).
 - **Knows faces.** [`src/vision/recognise_faces.py`](src/vision/recognise_faces.py)
   watches the camera and recognises the people it was trained on, with
   `face_recognition` and a KNN classifier. [`src/face_greeting.py`](src/face_greeting.py)
   then greets each one by name and shakes their hand.
-- **Gives a speech:** the one written for its launch, in
-  [`src/launch_speech.py`](src/launch_speech.py).
-- **Starts by itself** at boot, as a systemd service.
+- **Gives a speech.** [`src/launch_speech.py`](src/launch_speech.py) holds
+  the speech written for its launch, in seven parts.
+- **Starts by itself.** A systemd service starts it at boot.
 
 **Written but switched off:** ten voice commands for gestures and for
 driving, such as "hands up", "handshake" and "go forward"
@@ -58,7 +58,7 @@ Niko's 3D model in August 2022, made from InMoov's parts in Blender, its name
 on the chest. A [video of the model](docs/media/robot-niko-2022-08-07-virtual-model.mp4)
 (17 s) shows its joints posed on the timeline:
 
-<a href="docs/media/robot-niko-2022-08-07-virtual-model.mp4"><img src="docs/media/robot-niko-2022-08-07-virtual-model-poster.jpg" width="400" alt="Niko's model posed in Blender"></a>
+<a href="docs/media/robot-niko-2022-08-07-virtual-model.mp4"><img src="docs/media/robot-niko-2022-08-07-virtual-model-poster.jpg" width="250" alt="Niko's model posed in Blender"></a>
 
 ## The build
 
@@ -76,32 +76,63 @@ November 2022, in date order.
 | | |
 |---|---|
 | Body | The InMoov design: a 3D-printed head, torso, arms and hands, on a metal stand over a wheeled base |
-| Servos | 27, on two PCA9685 boards (I2C addresses 0x40 and 0x41), driven by [`src/move.py`](src/move.py) and [`src/movement/`](src/movement). Their channels and positions are in [`config/servo-configuration.yaml`](config/servo-configuration.yaml) |
+| Servos | 27, on two PCA9685 boards (I2C addresses 0x40 and 0x41), driven by [`src/move.py`](src/move.py) and [`src/movement/`](src/movement). Their channels and starting angles are in [`config/servo-configuration.yaml`](config/servo-configuration.yaml), and in the [servo map](#servo-map) below |
 | Voice | A Porcupine wake word, and an online assistant for listening and open questions. Niko's own answers are spoken by ttsmp3.com in a headless Chromium ([`src/talk.py`](src/talk.py)); the greetings and the speech use gTTS ([`src/talk_gtts.py`](src/talk_gtts.py)) |
-| Jaw | It moves while a signal on GPIO 18 says Niko is speaking |
+| Jaw | It moves while a signal on GPIO 18 says Niko is speaking ([`src/move.py`](src/move.py)) |
 | Vision | A camera; `face_recognition` with a KNN classifier, trained on the photos in [`data/faces/`](data/faces). A separate script turns the head toward a face it sees, with OpenCV ([`src/vision/`](src/vision)) |
 | Lights | Two status lights, for listening and speaking ([`src/indicator.py`](src/indicator.py)) |
 | System | Python on a Raspberry Pi, started at boot by a systemd service ([`systemd/robot.service`](systemd/robot.service)) |
 
-![The servo map](docs/servo-map.png)
+### Servo map
 
-Each servo's channel, starting position and range. Where a part has two
-channels, they are its left and right.
+Each servo's channel and starting angle, as set in
+[`config/servo-configuration.yaml`](config/servo-configuration.yaml), the
+file [`src/move.py`](src/move.py) loads at start; the moves in
+[`src/movement/`](src/movement) use the same channels. Channels 0–15 are on
+the first PCA9685 board (0x40), and 16–26 are the second board's (0x41)
+channels 0–10. Angles are in degrees, from 0 to 180.
+
+**Head**
+
+| Servo | Channel | Starting angle |
+|---|--:|--:|
+| Head rotation | 11 | 90° |
+| Neck | 12 | 30° |
+| Neck, left | 14 | 85° |
+| Neck, right | 13 | 100° |
+| Eyes, side to side | 10 | 90° |
+| Eyes, up and down | 26 | 120° |
+| Jaw | 15 | 70° |
+
+**Arms and hands**
+
+| Servo | Right channel | Right start | Left channel | Left start |
+|---|--:|--:|--:|--:|
+| Shoulder | 0 | 90° | 16 | 90° |
+| Omoplate (shoulder blade) | 1 | 90° | 17 | 100° |
+| Arm rotation | 2 | 90° | 18 | 45° |
+| Bicep | 3 | 90° | 19 | 90° |
+| Wrist | 4 | 90° | 20 | 90° |
+| Thumb | 5 | 0° | 21 | 0° |
+| Index finger | 6 | 0° | 22 | 0° |
+| Middle finger | 7 | 0° | 23 | 0° |
+| Ring finger | 8 | 0° | 24 | 0° |
+| Little finger | 9 | 0° | 25 | 0° |
 
 ## Repository layout
 
 | Folder | Holds |
 |---|---|
 | [`src/`](src) | The programs: [`main.py`](src/main.py), the voice that runs at boot, and [`launch_speech.py`](src/launch_speech.py), with the modules they share |
-| [`src/movement/`](src/movement) | The moves of the head, eyes, mouth, arms, hands and wheels |
+| [`src/movement/`](src/movement) | The moves of the head, eyes, arms, hands and wheels |
 | [`src/vision/`](src/vision) | Recognising faces, turning the head toward one, and taking face photos for training |
-| [`config/`](config) | What Niko says, and its servos' channels and positions |
+| [`config/`](config) | What Niko says, and its servos' channels and starting angles |
 | [`assets/`](assets) | Its sounds, the "Hey Niko" wake word and the face models |
 | [`data/faces/`](data/faces) | The face photos the recogniser was trained on |
 | [`scripts/`](scripts) | The installers, the list of system packages and the USB sound card setup |
 | [`systemd/`](systemd) | The service that starts Niko at boot |
-| [`docs/`](docs) | The servo map, and the photos and videos on this page |
-| [`experiments/`](experiments) | The first tests from 2022: listening, speaking, servos and motors |
+| [`docs/`](docs) | The photos and videos on this page |
+| [`experiments/`](experiments) | The first tests from 2022: listening, speaking, servos and motors, and an unused Arduino link |
 
 ## My part
 
@@ -110,8 +141,21 @@ Comilla University, at the FabLab of the Deputy Commissioner's Office in
 Cumilla. The team was Shanjit Mondol, Anik Chakraborty
 ([@Anikcb](https://github.com/Anikcb)), Tousif Bin Parves
 ([@tousifo](https://github.com/tousifo)), Mahin Khan
-([@mahinkhan1408](https://github.com/mahinkhan1408)) and me. I was its
-programmer: most of the commits here are mine.
+([@mahinkhan1408](https://github.com/mahinkhan1408)) and me.
+
+I worked on every part of Niko:
+
+- **Body:** 3D-printing its parts and assembling it.
+- **Servos:** tuning all 27. Each one's channel and starting angle are in
+  [`config/servo-configuration.yaml`](config/servo-configuration.yaml) (the
+  [servo map](#servo-map) above), and the angles of each move in
+  [`src/movement/`](src/movement).
+- **Motion:** planning its arm motions as timed sequences of servo angles,
+  such as the handshake
+  ([`src/movement/right_hand.py`](src/movement/right_hand.py)) and moves
+  of both arms together ([`src/movement/hand.py`](src/movement/hand.py)).
+- **Software:** leading its programming and writing most of its code. Most
+  of the commits here are mine.
 
 It stands on others' work:
 
@@ -128,8 +172,8 @@ It stands on others' work:
 
 Niko ran on Raspberry Pi OS with Python 3.7, in 2022. The assistant library
 it listens with is no longer supported, and [`requirements.txt`](requirements.txt)
-pins 2022's versions, so these steps record how it was set up; they are not
-tested on today's Raspberry Pi OS.
+pins 2022's versions where they are known, so these steps record how it was
+set up; they are not tested on today's Raspberry Pi OS.
 
 On a Raspberry Pi wired to Niko's servo boards, camera, microphone and
 speaker:
@@ -161,14 +205,18 @@ For a USB sound card, run `sudo ./scripts/audio/install-usb-sound-card.sh`
 first.
 
 To recognise faces, run `python src/vision/recognise_faces.py` with a camera
-attached. [`src/vision/capture_faces.py`](src/vision/capture_faces.py) takes
-face photos for training; it needs dlib's
+attached. To add a person, run
+`python src/vision/capture_faces.py "<name>"`: it takes their face photos
+for training into `data/faces/`, and needs dlib's
 `shape_predictor_68_face_landmarks.dat` in `assets/models/`.
 
 ## Licence
 
 The code is under the MIT licence: see [LICENSE](LICENSE). The files that
-came from other projects keep those projects' notices at the top: GassistPi
-and face_recognition are MIT, and Google's service installer is Apache 2.0.
+came from other projects keep those projects' notices at the top.
+face_recognition is MIT, and Google's service installer is Apache 2.0.
+GassistPi's licence is MIT with two conditions: its code may not be used
+for competitions or submitted for assessments without its owner's
+permission.
 Niko's body, and the renders of its model, follow InMoov's licence,
 [CC BY-NC 3.0](https://creativecommons.org/licenses/by-nc/3.0/).

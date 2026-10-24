@@ -49,7 +49,7 @@ initialPosition:
     eyeX: 90
     eyeY: 120
   mouth: 
-    jaw: 15
+    jaw: 70
   rightHand:
     arm:
       shoulder: 90
@@ -87,7 +87,7 @@ currentPosition:
     eyeX: 90
     eyeY: 120
   mouth: 
-    jaw: 15
+    jaw: 70
   rightHand:
     arm:
       shoulder: 90

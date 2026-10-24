@@ -1,6 +1,7 @@
 #!/bin/bash
 # Based on GassistPi's audio-drivers/USB-MIC-HDMI/scripts/install-usb-mic-hdmi.sh: https://github.com/shivasiddharth/GassistPi
-# Copyright (c) 2020 Shivasiddharth, MIT License
+# Copyright (c) 2020 Shivasiddharth. MIT licence with two conditions: not for
+# competitions or assessments without the owner's permission (see its LICENSE)
 
 set -o errexit
 

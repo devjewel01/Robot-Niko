@@ -1,8 +1,6 @@
 libxml2-dev
 libxslt-dev
-mpv
 mplayer
-vlc
 libffi-dev
 libssl-dev
 python3
@@ -12,8 +10,6 @@ python3-pip
 python3-setuptools
 socat
 nmap
-python-setuptools
-python-pip
 libjack-jackd2-dev
 libatlas-base-dev
 git
@@ -27,10 +23,7 @@ python3-lxml
 zlib1g-dev
 sox
 libsox-fmt-mp3
-python
-python-dev
 build-essential
 libmpg123-dev
 portaudio19-dev
-mpg123
 chromium-chromedriver

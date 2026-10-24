@@ -1,4 +1,4 @@
-#!/home/pi/robotEnv/bin python 
+#!/usr/bin/env python3
 
 from googletrans import Translator
 from gtts import gTTS
@@ -6,12 +6,9 @@ import os
 import os.path
 
 
-TTSChoice='GTTS'
-
 translator = Translator()
 femalettsfilename="/tmp/female-say.mp3"
 malettsfilename="/tmp/male-say.wav"
-ttsfilename="/tmp/gcloud.mp3"
 language='en-US'
 translanguage=language.split('-')[0]
 gender='Female'
@@ -35,7 +32,6 @@ def trans(words,destlang,srclang):
     transword=transword.text
     transword=transword.replace("Text, ",'',1)
     transword=transword.strip()
-    print(transword)
     return transword
 
 

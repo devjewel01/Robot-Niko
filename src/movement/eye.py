@@ -34,6 +34,3 @@ def moveUp():
 
 def moveDown():
     servoMove(26, 160)
-
-
-    

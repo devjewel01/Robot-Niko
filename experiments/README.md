@@ -10,6 +10,7 @@ movement were worked out.
 | [`speak/`](speak) | Text to speech: web voices through Selenium (ttsmp3.com, naturalreaders.com, text-to-speech.org and ttsreader.com, in `Speak1.py`, `Speak2.py` and `talk3.py` to `talk5.py`), pyttsx3 (`Speak3.py`, `talk-test.py`) and Google Translate's voice (`speech.sh`) |
 | [`servo/`](servo) | Servos on a PCA9685 board: a sweep, the jaw and the neck |
 | [`motor/`](motor) | Driving the two wheel motors from the keyboard |
+| [`arduino/`](arduino) | Sending text commands to an Arduino over USB serial; it was in `src/`, but no program used it |
 
 The Selenium tests use `/usr/bin/chromedriver`, from Raspberry Pi OS's
 `chromium-chromedriver` package. `Listen3.py` loads its model from
