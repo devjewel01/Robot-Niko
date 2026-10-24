@@ -7,12 +7,15 @@ faces. It runs Python on a Raspberry Pi.
 
 ![Niko, finished, in November 2022](docs/media/robot-niko-2022-11-29-full-robot.jpg)
 
-**Videos:**
+**Niko working, December 2022** (videos on YouTube, with sound):
 
-- [The head turning and the mouth moving](docs/media/robot-niko-2022-11-03-head-test.mp4)
-  (15 s, November 2022)
-- [Niko's model in Blender](docs/media/robot-niko-2022-08-07-virtual-model.mp4)
-  (17 s, August 2022)
+| | |
+|---|---|
+| <a href="https://youtu.be/6iEj3AY1AlA"><img src="docs/media/robot-niko-2022-12-06-head-follows-face.gif" width="380" alt="Niko's head turning to follow a person"></a><br>[Its head follows a face](https://youtu.be/6iEj3AY1AlA) (53 s) | <a href="https://youtu.be/Iotg0E8AKoU"><img src="docs/media/robot-niko-2022-12-07-introducing-itself-poster.jpg" width="380" alt="Niko introducing itself"></a><br>[It introduces itself](https://youtu.be/Iotg0E8AKoU) (41 s) |
+
+**From the build:** [the head turning and the mouth moving](docs/media/robot-niko-2022-11-03-head-test.mp4)
+(15 s, November 2022) and [Niko's model in Blender](docs/media/robot-niko-2022-08-07-virtual-model.mp4)
+(17 s, August 2022).
 
 ## What it does
 
@@ -27,6 +30,9 @@ faces. It runs Python on a Raspberry Pi.
   watches the camera and recognises the people it was trained on, with
   `face_recognition` and a KNN classifier. [`src/face_greeting.py`](src/face_greeting.py)
   then greets each one by name and shakes their hand.
+- **Follows a face.** [`src/vision/follow_face.py`](src/vision/follow_face.py)
+  finds a face in the camera's view with OpenCV and turns the head toward
+  it ([video](https://youtu.be/6iEj3AY1AlA)).
 - **Gives a speech.** [`src/launch_speech.py`](src/launch_speech.py) holds
   the speech written for its launch, in seven parts.
 - **Starts by itself.** A systemd service starts it at boot.
