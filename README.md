@@ -43,6 +43,13 @@ and gender detection.
 
 ## The design
 
+[InMoov](https://inmoov.fr/) is the open-source, life-size robot of Gaël
+Langevin, a French sculptor and designer. He began it in 2012 as a
+prosthetic hand, and its parts print on any home 3D printer with a
+12 × 12 × 12 cm bed. Niko is InMoov's head, torso, arms and hands on a
+stand, run by a Raspberry Pi with its own Python code instead of InMoov's
+usual Arduino and MyRobotLab.
+
 | | | |
 |---|---|---|
 | <img src="docs/media/robot-niko-2022-08-model-front.jpg" height="300" alt="Niko's model from the front"> | <img src="docs/media/robot-niko-2022-08-model-side.jpg" height="300" alt="Niko's model from the side"> | <img src="docs/media/robot-niko-2022-08-model-back.jpg" height="300" alt="Niko's model from the back"> |
